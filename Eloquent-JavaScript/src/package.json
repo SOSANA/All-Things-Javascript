@@ -1,0 +1,24 @@
+{
+  "name": "Eloquent-JavaScript",
+  "license": "CC BY-NC 3.0",
+  "version": "0.1.0",
+  "author": "Marijn Haverbeke <marijnh@gmail.com>",
+  "description": "Sources for the book Eloquent JavaScript",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/marijnh/Eloquent-JavaScript.git"
+  },
+  "dependencies": {
+    "acorn": "0.3",
+    "codemirror": "4",
+    "jszip": "^2.5.0",
+    "uglify-js": "2"
+  },
+  "devDependencies": {
+    "contextify": "kkoopa/contextify",
+    "jsdom": "0.10",
+    "canvas": "git://github.com/learnboost/node-canvas",
+    "promise": "6",
+    "jszip": "2"
+  }
+}
