@@ -1,7 +1,7 @@
 Programming JavaScript Applications 
 ==========
 
-This is the example code that accompanies Programming JavaScript Applications  by Eric Elliott (9781491950296). 
+This is the example code that accompanies [Programming JavaScript Applications](https://github.com/oreillymedia/programming_javascript_applications)  by Eric Elliott (9781491950296). 
 
 Click the Download Zip button to the right to download example code.
 
