@@ -17,7 +17,20 @@
  *    execution contexts. It can contain things beyond what you've written in your code
  *  - the javascript engine creates a global object and creates a special variable for you 
  *    called 'this' or 'window' which are both equal
- *
+ *  - the execution context is created in two phases: 
+ *      - The first phase is called the "creation phase"
+ *        - in this phase we have the "Global Object", "this", and "Outer Environment"
+ *        - sets up the memory space so when the code begins executing those things are 
+ *          ready to start executing
+ *        - in this creation phase as the parser runs through the code and set up what you 
+ *          have written for translation, it recognizes where you created variables and 
+ *          where you have created functions. Its in this step the memory phase it sets up
+ *          "Hoisting". The functions and variables exist in memory. So when the code begins
+ *          to execute line by line it can access them. With variables its a little bit
+ *          different. All variables are initial set to undefined
+ *      - The second phase is called the "execution phase"
+ *        - executes code line by line
+ * 
  * Name Value Pairs:
  *  - a name which maps to a unique value
  *  - the name may be defined more than once, but only can have one calue in any given context
