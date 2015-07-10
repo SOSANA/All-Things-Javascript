@@ -1,5 +1,7 @@
 /**
- *
+ * Global:
+ *  - "Not Inside a Function"
+ *  
  * Syntax parser:
  *  - a program that reads your code and determines what it does and if its grammer is valid
  *  - someone else wrote a program to translate it for the computer, ex: a compiler
@@ -14,7 +16,7 @@
  *  - there are lots of lexical environments. Which one is currently running is managed via
  *    execution contexts. It can contain things beyond what you've written in your code
  *  - the javascript engine creates a global object and creates a special variable for you 
- *    called 'this'
+ *    called 'this' or 'window' which are both equal
  *
  * Name Value Pairs:
  *  - a name which maps to a unique value
