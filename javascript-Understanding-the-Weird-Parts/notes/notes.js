@@ -10,9 +10,11 @@
  *    programming languages in which where you write something is important
  *
  * Execution Context:
- *  - a wrapper to help manage the code that is running.
+ *  - a wrapper (javascript engine) to help manage the code that is running.
  *  - there are lots of lexical environments. Which one is currently running is managed via
  *    execution contexts. It can contain things beyond what you've written in your code
+ *  - the javascript engine creates a global object and creates a special variable for you 
+ *    called 'this'
  *
  * Name Value Pairs:
  *  - a name which maps to a unique value
