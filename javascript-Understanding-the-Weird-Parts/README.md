@@ -10,4 +10,4 @@ An advanced Javascript course for everyone! Scope, closures, prototypes, 'this',
 * Section 8 - Examining Famous Frameworks And Libraries
 * Section 9 - Lets Build A Framework Library
 * Section 10 - Bonus Lecture on TypeScript, ES6, Transpiled Languages
-* Section 11 - Bonus Lecture on Existing and Upcoming feaatures for ES6
+* Section 11 - Bonus Lecture on Existing and Upcoming features for ES6
