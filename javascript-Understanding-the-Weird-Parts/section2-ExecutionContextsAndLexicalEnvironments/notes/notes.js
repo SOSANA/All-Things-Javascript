@@ -23,7 +23,9 @@
  *          them. With variables its a little bit different. All variables are initial set to 
  *          undefined
  *      - The second phase is called the "execution phase"
- *        - executes code line by line
+ *        - in the execution phase we already have the "creation phase" setup
+ *        - runs your code line by line, interpeting it, converting it, compiling it, executing
+ *          it on the computer into something the computer can understand line by line
  * Global:
  *  - "Not Inside a Function"
  * 
