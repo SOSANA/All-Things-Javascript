@@ -55,6 +55,14 @@
  *  			number: 301
  *  		}
  *  	}
+ * 
+ * Single Threaded:
+ *  - one command at a time
+ *  - under the hood of the browser, maybe not
+ * 
+ * Synchronous:
+ *  - one at a time, one line of code being excuted in order that it appears
+ * 
  * Syntax parser:
  *  - a program that reads your code and determines what it does and if its grammer is valid
  *  - someone else wrote a program to translate it for the computer, ex: a compiler
