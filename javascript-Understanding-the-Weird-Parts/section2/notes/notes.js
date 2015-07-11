@@ -29,6 +29,11 @@
  * Global:
  *  - "Not Inside a Function"
  * 
+ * Invocation:
+ *  - is Running A function, otherwised refer'd to calling a function, run a function or invoking 
+ *    a function
+ *  - in javascript, by using parenthesis (), example: a()
+ *   
  * Lexical Environment:
  *  - where something sits physically in the code your write
  *  - 'lexical' means 'having to do with words or grammar'. A lexical environment exists in
