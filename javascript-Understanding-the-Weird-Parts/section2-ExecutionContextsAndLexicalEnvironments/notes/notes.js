@@ -1,16 +1,4 @@
 /**
- * Global:
- *  - "Not Inside a Function"
- *  
- * Syntax parser:
- *  - a program that reads your code and determines what it does and if its grammer is valid
- *  - someone else wrote a program to translate it for the computer, ex: a compiler
- *
- * Lexical Environment:
- *  - where something sits physically in the code your write
- *  - 'lexical' means 'having to do with words or grammar'. A lexical environment exists in
- *    programming languages in which where you write something is important
- *
  * Execution Context:
  *  - a wrapper (javascript engine) to help manage the code that is running.
  *  - there are lots of lexical environments. Which one is currently running is managed via
@@ -24,12 +12,25 @@
  *          ready to start executing
  *        - in this creation phase as the parser runs through the code and set up what you 
  *          have written for translation, it recognizes where you created variables and 
- *          where you have created functions. Its in this step the memory phase it sets up
- *          "Hoisting". The functions and variables exist in memory. So when the code begins
- *          to execute line by line it can access them. With variables its a little bit
- *          different. All variables are initial set to undefined
+ *          where you have created functions. Its in this step the memory phase sets up
+ *          "Hoisting". +
+ *        - Hoisting is JavaScript's default behavior of moving declarations to the top. In 
+ *          JavaScript, a variable can be declared after it has been used. In other words; 
+ *          a variable can be used before it has been declared. Hoisting is JavaScript's 
+ *          default behavior of moving all declarations to the top of the current scope (to 
+ *          the top of the current script or the current function).The functions and variables 
+ *          exist in memory. So when the code begins to execute line by line it can access 
+ *          them. With variables its a little bit different. All variables are initial set to 
+ *          undefined
  *      - The second phase is called the "execution phase"
  *        - executes code line by line
+ * Global:
+ *  - "Not Inside a Function"
+ * 
+ * Lexical Environment:
+ *  - where something sits physically in the code your write
+ *  - 'lexical' means 'having to do with words or grammar'. A lexical environment exists in
+ *    programming languages in which where you write something is important
  * 
  * Name Value Pairs:
  *  - a name which maps to a unique value
@@ -52,4 +53,11 @@
  *  			number: 301
  *  		}
  *  	}
+ * Syntax parser:
+ *  - a program that reads your code and determines what it does and if its grammer is valid
+ *  - someone else wrote a program to translate it for the computer, ex: a compiler
+ * 
+ * Undefined:
+ *  - is a special keyword, its a special value in javascript
+ *  - happens when we never set the value ex: var a;
  */
