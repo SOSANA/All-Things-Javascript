@@ -1,4 +1,11 @@
 /**
+ * Asynchronous:
+ *  - more than one at a time and is about what is happening outside the js engine
+ *  - event queue runs after the execution stack is complete or empty. The event loop
+ *    is continuously checking and when its sees something like a listener/handler it 
+ *    will run it and will process these events in the order they happen 
+ *  - ex: folder B11
+ * 
  * Execution Context:
  *  - a wrapper (javascript engine) to help manage the code that is running.
  *  - there are lots of lexical environments. Which one is currently running is managed via
