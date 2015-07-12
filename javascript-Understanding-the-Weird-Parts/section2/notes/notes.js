@@ -63,6 +63,12 @@
  *  		}
  *  	}
  * 
+ * Scope Chain:
+ *  - scope means where can I access the variable
+ *  - chain is those links of outter environment references aka "lexical" where it was written
+ *    in your code: ex: B10
+ *  - scope chain references the outer Lexical Environment
+ * 
  * Single Threaded:
  *  - one command at a time
  *  - under the hood of the browser, maybe not
