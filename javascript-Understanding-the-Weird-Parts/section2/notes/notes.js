@@ -63,6 +63,10 @@
  *  		}
  *  	}
  * 
+ * Scope:
+ * - where a variable is available in your code
+ * - if its truly the same variable, or a new copy
+ * 
  * Scope Chain:
  *  - scope means where can I access the variable
  *  - chain is those links of outter environment references aka "lexical" where it was written
