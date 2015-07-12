@@ -19,4 +19,12 @@
  *        can make math weird
  *      - STRING: a sequence of characters (both single '' and double "" quotes can be used)
  *      - SYMBOL: Used in ES6 (the next version of Javascript)
+ * 
+ * Operator:
+ *  - operators are functions
+ *  - a special function that is syntactically (written) differently
+ *  - generally, operators take two parameters and return one result
+ *  - the js engine provides the ability to write whats is called infix notation, means the operator 
+ *    sits between two parameters
+ *  - common operators are +, -, > (greater than), < (less than)
  */
