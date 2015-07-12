@@ -32,24 +32,26 @@
  * Invocation:
  *  - is Running A function, otherwised refer'd to calling a function, run a function or invoking 
  *    a function
- *  - in javascript, by using parenthesis (), example: a()
+ *  - in javascript, by using parenthesis (), ex: a()
  *   
  * Lexical Environment:
  *  - where something sits physically in the code your write
  *  - 'lexical' means 'having to do with words or grammar'. A lexical environment exists in
  *    programming languages in which where you write something is important
+ *  - if the order of execution can't find the local variable inside a function it will look 
+ *    in its lexical environment outside the function for outter reference ex: folder B10
  * 
  * Name Value Pairs:
  *  - a name which maps to a unique value
  *  - the name may be defined more than once, but only can have one calue in any given context
  *  - That value may be more name/value pairs
- *  - example var address = '100 main street';
+ *  - ex: var address = '100 main street';
  *  	'address' is the name and '100 main street' is the value
  *
  * Object:
  * 	- a collection of name value pairs
  * 	= the simplest definition when talking about javascript
- *  - example is address and apartment is a collection of name value pairs
+ *  - ex: address and apartment is a collection of name value pairs
  *  	address:
  *  	{
  *  		street: 'Main',
