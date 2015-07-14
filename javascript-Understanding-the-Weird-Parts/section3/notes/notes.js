@@ -2,7 +2,7 @@
  * Associativity:
  * 	- what order operator functions get called in: left to right (called left associativity) or
  * 		right to left (called right associativity)
- * 	- when functions have the same precedence
+ * 	- when two or more operator functions have the same precedence
  * 	- ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
  * 			- the one with the biggest number will get called first and the one with the smaller second as parameters
  * 				pdf in /notes folder and mdn link above
