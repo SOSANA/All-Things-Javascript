@@ -6,6 +6,10 @@
  * 	- ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
  * 			- the one with the biggest number will get called first and the one with the smaller second as parameters
  * 				pdf in /notes folder and mdn link above
+ * 
+ * Coercion:
+ *  - converting a value from one type to another
+ *  - this happens quite often in javascript because its dynamically typed.
  *
  * Dynamic Typing:
  *  - you don't tell the engine what type of data a variable holds, it figures out while
