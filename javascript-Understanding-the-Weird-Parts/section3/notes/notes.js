@@ -10,6 +10,8 @@
  * Coercion:
  *  - converting a value from one type to another
  *  - this happens quite often in javascript because its dynamically typed.
+ *  - operators are just functions so they are running code and is apart of the process of calling that function
+ *  - check out example: c5 folder
  *
  * Dynamic Typing:
  *  - you don't tell the engine what type of data a variable holds, it figures out while
