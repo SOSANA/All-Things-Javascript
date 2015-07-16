@@ -8,10 +8,10 @@
  * 				pdf in /notes folder and mdn link above
  * 
  * Coercion:
- *  - converting a value from one type to another
+ *  - converting a value from one type to another (you can coerce a string to a number ex: console.log(Number("3"))
  *  - this happens quite often in javascript because its dynamically typed.
  *  - operators are just functions so they are running code and is apart of the process of calling that function
- *  - check out example: c5 folder
+ *  - check out example: c5 and c_10 folder
  *
  * Dynamic Typing:
  *  - you don't tell the engine what type of data a variable holds, it figures out while
@@ -19,6 +19,14 @@
  *  - variables can hold different types of values because it's all figured out during
  *    execution
  *  - figures it out on the fly
+ * 
+ * Equality "... == ..." vs Strict Equality "... === ..."
+ *  - Equality allows for coercion while strict equality doesn't
+ *  - recommended to use strict equality 99.99% of the time to avoid unexpected errors caused by equality operators
+ *    and makes it very difficult to anticipate what will happen
+ *  - ex: See c_10 folder
+ *  - ref: https:
+ *      - as look at equalty-comparison-and-sameness.pdf
  *
  * Primitive Types:
  *  - a type of data that represents a single value
