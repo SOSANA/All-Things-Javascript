@@ -25,7 +25,7 @@
  *  - recommended to use strict equality 99.99% of the time to avoid unexpected errors caused by equality operators
  *    and makes it very difficult to anticipate what will happen
  *  - ex: See c_10 folder
- *  - ref: https:
+ *  - ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
  *      - as look at equalty-comparison-and-sameness.pdf
  *
  * Primitive Types:
