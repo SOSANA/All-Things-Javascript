@@ -1,4 +1,4 @@
 /**
  * look at lib2 for notes
  */
-console.log(libraryName);
+var libraryName = "Lib 1";
