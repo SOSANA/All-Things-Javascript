@@ -1,5 +1,5 @@
 /**
- * using existence and boolean
+ * using coercion to check for booolean existence
  */
 var a;
 
