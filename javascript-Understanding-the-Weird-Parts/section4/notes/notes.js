@@ -20,6 +20,7 @@
  *    methods are: that is primitives, objects, and functions that make up the object
  * 
  * Objects And The Dot:
- * - 
- * 
+ * - the dot is a operator (a function) and it takes two parameters ex: person.firstname
+ * - always use the dot operator over the computed member access operator []. see the
+ *   d1-objects-and-the-dot folder for more info
  */
