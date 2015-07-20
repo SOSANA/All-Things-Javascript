@@ -25,7 +25,20 @@
  *  	it, and other things the funciton can do, it can be moved around, copied, and given to
  *  	other elements or other areas of your code. Just like any objects, value, string and
  *  	number.
- *
+ * 
+ * Function Expression & Expressions:
+ *  - a unit of code that results in a value
+ *  - puts it into a variable and sets it to undefined before executing the code, once it
+ *    starts executing the code and assigns the anonymous function to the variable
+ *  - it doesn't have to save to a value inside a variable
+ *  - ex: a = 3, 1 + 2, a = { greeting: 'hi' } refer to .../d6-function-expressions
+ * 
+ * Function Statement & Statements:
+ *  - just does the work, does not provide a value
+ *  - puts the function statement into memory and it gets hoisted, creates function before 
+ *    executing the code
+ *  - ex: refer to .../d6-function-expressions
+ *  
  * Objects And Functions:
  *  - objects are collections of name value pairs. A set of values that are given names
  *  - an object can have properties and methods. The following could be sitting off or
@@ -44,7 +57,10 @@
  *  - Think about an object as sitting in memory and than having references to other things
  *    sitting memory that are connected it. It knows where its different properites and
  *    methods are: that is primitives, objects, and functions that make up the object
- *
+ * 
+ * Object Literal:
+ *  - ex: var person = { firstname: 'John', lastname: 'Doe' }; refer to .../d2-object-literals
+ * 
  * Objects And The Dot:
  *  - the dot is a operator (a function) and it takes two parameters ex: person.firstname
  *  - always use the dot operator over the computed member access operator []. see the
