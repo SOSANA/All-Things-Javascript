@@ -38,6 +38,14 @@
  *  - puts the function statement into memory and it gets hoisted, creates function before 
  *    executing the code
  *  - ex: refer to .../d6-function-expressions
+ * 
+ * Mutate:
+ *  - to change something
+ *  - "immutable" means it can't be changed.
+ * 
+ * Namespace:
+ *  - a container (just a holder) for variables and functions.
+ *  - Typically to keep variables and functions with same name separate
  *  
  * Objects And Functions:
  *  - objects are collections of name value pairs. A set of values that are given names
@@ -66,7 +74,16 @@
  *  - always use the dot operator over the computed member access operator []. see the
  *    d1-objects-and-the-dot folder for more info
  *
- * Namespace:
- *  - a container (just a holder) for variables and functions.
- *  - Typically to keep variables and functions with same name separate
+ * By Reference vs By Value:
+ *  - in both cases we are talking about variables
+ *    - by reference 
+ *      - all objects are by reference
+ *      - instead of getting a new location in memory it points to the same location in memory 
+ *        space (address).
+ *      - important to understand that all objects interact by reference when setting or passing
+ *        to a function
+ *      - refer to byValue.png slide in /notes and /d6b-by-value-by-reference folder
+ *    - by value
+ *      - all primitive types (number, boolean, string) are by value
+ *      - refer to /d6b-by-value-by-reference folder
  */
