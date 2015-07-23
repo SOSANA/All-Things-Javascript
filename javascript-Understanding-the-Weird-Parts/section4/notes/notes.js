@@ -2,6 +2,9 @@
  * Arguments:
  *  - the parameters or arguments you pass to a function
  *  - javascript gives you a keyword of the same name which contains them all
+ *  - in es6 arguments will become deprecated, can still be used but will
+ *    not be the most efficent way ex: refer to /d8-arguments folder
+ *    function greet(firstname, lastname, language, ...other)
  * 
  * First Class Functions:
  * 	- everything you can do with other types such as objects, strings, numbers, and booleans
