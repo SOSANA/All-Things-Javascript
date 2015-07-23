@@ -1,4 +1,8 @@
 /**
+ * Arguments:
+ *  - the parameters or arguments you pass to a function
+ *  - javascript gives you a keyword of the same name which contains them all
+ * 
  * First Class Functions:
  * 	- everything you can do with other types such as objects, strings, numbers, and booleans
  * 		you can do with functions
