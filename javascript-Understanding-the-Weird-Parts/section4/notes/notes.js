@@ -6,6 +6,19 @@
  *    not be the most efficent way ex: refer to /d8-arguments folder
  *    function greet(firstname, lastname, language, ...other)
  * 
+ * By Reference vs By Value:
+ *  - in both cases we are talking about variables
+ *    - by reference 
+ *      - all objects are by reference
+ *      - instead of getting a new location in memory it points to the same location in memory 
+ *        space (address).
+ *      - important to understand that all objects interact by reference when setting or passing
+ *        to a function
+ *      - refer to byValue.png slide in /notes and /d6b-by-value-by-reference folder
+ *    - by value
+ *      - all primitive types (number, boolean, string) are by value
+ *      - refer to /d6b-by-value-by-reference folder
+ * 
  * First Class Functions:
  * 	- everything you can do with other types such as objects, strings, numbers, and booleans
  * 		you can do with functions
@@ -81,16 +94,7 @@
  *  - always use the dot operator over the computed member access operator []. see the
  *    d1-objects-and-the-dot folder for more info
  *
- * By Reference vs By Value:
- *  - in both cases we are talking about variables
- *    - by reference 
- *      - all objects are by reference
- *      - instead of getting a new location in memory it points to the same location in memory 
- *        space (address).
- *      - important to understand that all objects interact by reference when setting or passing
- *        to a function
- *      - refer to byValue.png slide in /notes and /d6b-by-value-by-reference folder
- *    - by value
- *      - all primitive types (number, boolean, string) are by value
- *      - refer to /d6b-by-value-by-reference folder
+ * White Space:
+ *  - invisible characters that create literal 'space' in your written code
+ *  - carriage returns, tabs, spaces
  */
