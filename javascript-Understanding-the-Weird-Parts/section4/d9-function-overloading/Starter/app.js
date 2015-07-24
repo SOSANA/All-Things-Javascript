@@ -1,9 +1,12 @@
 /**
- * example of function overloading
+ * example of function overloading, all functions are objects so in javascript 
+ * we don't worry about function overloading. There are patterns shown below and
+ * later in the course that handles this
  */
 
 // one pattern
 function greet(firstname, lastname, language) {
+  // default to english
   language = language || 'en';
   
   if (language === 'en') {
