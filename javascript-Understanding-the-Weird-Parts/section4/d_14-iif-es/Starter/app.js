@@ -1,5 +1,5 @@
 /**
- * working with "Immediately-Invoked Function Expression's" (IIFEs)
+ * working with "Immediately-Invoked Function Expression" (IIFEs)
  * try to understand we are just executing code on the fly, just 
  * execuding a function after we create it 
  */
