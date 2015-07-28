@@ -1,12 +1,15 @@
 // IIFE
 var firstname = 'John';
 
-(function(name) {
+(function(global, name) {
     
     var greeting = 'Hello';
+    global.greeting = 'Hello';
     console.log(greeting + ' ' + name);
     
-}(firstname)); // IIFE
+}(window, firstname)); // IIFE
+
+console.log(greeting);
 
 
 
