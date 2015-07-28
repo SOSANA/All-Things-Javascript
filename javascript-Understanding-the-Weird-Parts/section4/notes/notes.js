@@ -7,7 +7,11 @@
  *    function greet(firstname, lastname, language, ...other)
  * 
  * Closures:
- *  - 
+ *  - are a feature of the javascript programming language, this just happens
+ *  - the js engine will always make sure that what ever function you are running that it will 
+ *    have access to the variables its suppose to have access too and that its scope is intact
+ *  - when you run a function it works the way it suppose too
+ *  -  the js engine creates the closure, you don't make the closure
  * 
  * By Reference vs By Value:
  *  - in both cases we are talking about variables
