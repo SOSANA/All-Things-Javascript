@@ -6,6 +6,9 @@
  *    not be the most efficent way ex: refer to /d8-arguments folder
  *    function greet(firstname, lastname, language, ...other)
  * 
+ * Closures:
+ *  - 
+ * 
  * By Reference vs By Value:
  *  - in both cases we are talking about variables
  *    - by reference 
