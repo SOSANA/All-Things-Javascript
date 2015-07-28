@@ -59,6 +59,19 @@
  *    executing the code
  *  - ex: refer to .../d6-function-expressions
  * 
+ * Immediately-Invoked Function Expression (IIFE):
+ *  - execuding a function after we create it
+ *  - invoking function express immediately with parentheses after and passing parameter
+ *  - when you want a function expression instead of a normal function statement. You put the 
+ *    function inside the parentheses
+ *  - ex: see folder /d_14-iif-es and /d_15-iif-es-and-safe-code
+ *    - this is classic example of an IIFE
+ *      var firstName = 'Johnny';
+ *      (function (name) {
+          var greeting = 'Inside IIFE: Hello';
+          console.log(greeting + ' ' + name);  
+        }(firstName));
+ * 
  * Mutate:
  *  - to change something
  *  - "immutable" means it can't be changed.
