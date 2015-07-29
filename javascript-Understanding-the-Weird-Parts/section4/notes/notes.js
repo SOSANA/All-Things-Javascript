@@ -12,6 +12,7 @@
  *    have access to the variables its suppose to have access too and that its scope is intact
  *  - when you run a function it works the way it suppose too
  *  -  the js engine creates the closure, you don't make the closure
+ *  - ex: see folder /d_17-function-factories /d_18-closures-and-callbacks d_20-functional-programming
  * 
  * By Reference vs By Value:
  *  - in both cases we are talking about variables
@@ -59,6 +60,9 @@
  *    starts executing the code and assigns the anonymous function to the variable
  *  - it doesn't have to save to a value inside a variable
  *  - ex: a = 3, 1 + 2, a = { greeting: 'hi' } refer to .../d6-function-expressions
+ * 
+ * Function Factory:
+ *  - a function that returns or makes other things for you
  * 
  * Function Statement & Statements:
  *  - just does the work, does not provide a value
