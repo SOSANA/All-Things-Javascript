@@ -6,6 +6,11 @@
  *    not be the most efficent way ex: refer to /d8-arguments folder
  *    function greet(firstname, lastname, language, ...other)
  * 
+ * Callback Function:
+ *  - a function you give to another function, to be run when the other function is finished
+ *  - so the function you call (ex: invoke), 'calls back' by calling the function you gave it when it 
+ *    finishes
+ * 
  * Closures:
  *  - are a feature of the javascript programming language, this just happens
  *  - the js engine will always make sure that what ever function you are running that it will 
