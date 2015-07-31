@@ -6,6 +6,19 @@
  *    not be the most efficent way ex: refer to /d8-arguments folder
  *    function greet(firstname, lastname, language, ...other)
  * 
+ * .apply():
+ *  - same as call method but only difference is it wants an array of parameters and decides what 
+ *    the "this" variable is
+ *  - see folder ex: /d_19-call-apply-bind 
+ * 
+ * .bind():
+ *  - creates a copy of the function and you can tell it what the "this" variable is
+ *  - see folder ex: /d_19-call-apply-bind
+ * 
+ * .call():
+ *  - unlike the bind method call actually executes it and decides what the "this" variable is
+ *  - see folder ex: /d_19-call-apply-bind
+ * 
  * Callback Function:
  *  - a function you give to another function, to be run when the other function is finished
  *  - so the function you call (ex: invoke), 'calls back' by calling the function you gave it when it 
