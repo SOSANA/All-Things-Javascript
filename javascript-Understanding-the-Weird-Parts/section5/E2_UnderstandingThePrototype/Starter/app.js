@@ -22,3 +22,8 @@ var jane = {
 
 jane.__proto__ = person;
 console.log(jane.getFullName());
+
+// try in brower console with a.__proto__. to see list of methods and properties
+var a = {}; // object {}
+var b = function() { }; // function anonymous()
+var c = []; // []
