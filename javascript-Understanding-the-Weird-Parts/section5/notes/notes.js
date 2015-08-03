@@ -19,4 +19,7 @@
  * Prototype:
  *  - all functions and arrays have prototype pointing to an object with those function methods
  *    -  see line 26 ex: /E2_UnderstandingThePrototype
+ * 
+ * Reflection:
+ *  - an object can look at itself, listing, and changing its properties and methods
  */
