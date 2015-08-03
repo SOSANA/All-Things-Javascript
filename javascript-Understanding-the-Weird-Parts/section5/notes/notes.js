@@ -1,5 +1,5 @@
 /**
- * Classical Vs Prototypal Inheritance
+ * Classical Vs Prototypal Inheritance:
  *  - Inheritance
  *    - one object gets access to the properites and methods of another object.
  *  - Classical Inheritance
@@ -15,4 +15,8 @@
  *        - clone an existing object and extend it
  *  - good explanation found here: 
  *    http://stackoverflow.com/questions/2800964/benefits-of-prototypal-inheritance-over-classical
+ * 
+ * Prototype:
+ *  - all functions and arrays have prototype pointing to an object with those function methods
+ *    -  see line 26 ex: /E2_UnderstandingThePrototype
  */
