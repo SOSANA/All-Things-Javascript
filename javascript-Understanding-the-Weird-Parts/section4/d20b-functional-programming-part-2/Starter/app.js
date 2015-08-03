@@ -1,12 +1,18 @@
+/**
+ * check out http://underscorejs.org/ and read through the source code
+ * check out https://lodash.com/ and read through the source code
+ * underscorejs came first but lodash improved upon it by faster and better
+ * performing code
+ */
 function mapForEach(arr, fn) {
-    
+
     var newArr = [];
     for (var i=0; i < arr.length; i++) {
         newArr.push(
-            fn(arr[i])   
+            fn(arr[i])
         )
     };
-    
+
     return newArr;
 }
 
@@ -15,59 +21,40 @@ console.log(arr1);
 
 
 var arr2 = mapForEach(arr1, function(item) {
-   return item * 2; 
+   return item * 2;
 });
 console.log(arr2);
 
 
 var arr3 = mapForEach(arr1, function(item) {
-   return item > 2; 
+   return item > 2;
 });
 console.log(arr3);
 
 
 var checkPastLimit = function(limiter, item) {
-    return item > limiter;   
-}
+    return item > limiter;
+};
 var arr4 = mapForEach(arr1, checkPastLimit.bind(this, 1));
 console.log(arr4);
 
 
 var checkPastLimitSimplified = function(limiter) {
     return function(limiter, item) {
-        return item > limiter;   
-    }.bind(this, limiter); 
+        return item > limiter;
+    }.bind(this, limiter);
 };
 
 var arr5 = mapForEach(arr1, checkPastLimitSimplified(1));
 console.log(arr5);
 
+// using underscore.js
+var arr6 = _.map(arr1, function(item) {
+  return item * 3;
+});
+console.log(arr6);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var arr7 = _.filter([2,3,4,5,6,7], function(item) {
+  return item % 2 === 0;
+});
+console.log(arr7);
