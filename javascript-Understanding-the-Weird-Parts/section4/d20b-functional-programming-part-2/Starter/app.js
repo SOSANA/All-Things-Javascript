@@ -2,7 +2,7 @@
  * check out http://underscorejs.org/ and read through the source code
  * check out https://lodash.com/ and read through the source code
  * underscorejs came first but lodash improved upon it by faster and better
- * performing code
+ * performing code. Check out line 51 below
  */
 function mapForEach(arr, fn) {
 
@@ -10,8 +10,8 @@ function mapForEach(arr, fn) {
     for (var i=0; i < arr.length; i++) {
         newArr.push(
             fn(arr[i])
-        )
-    };
+        );
+    }
 
     return newArr;
 }
