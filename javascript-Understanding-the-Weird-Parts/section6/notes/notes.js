@@ -4,6 +4,9 @@
  *  - the 'this' variable points to a new empty object, and that object is returned from the
  *    function automatically
  * 
+ * PolyFill:
+ *  - code that adds a feature which the engine may lack
+ * 
  * Prototype:
  *  - all functions have a property called prototype that starts out as an empty object
  *  - always use captial letter ex: function Person(firstname, lastname) {};
