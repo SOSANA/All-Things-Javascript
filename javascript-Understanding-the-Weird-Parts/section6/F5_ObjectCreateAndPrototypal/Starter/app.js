@@ -5,7 +5,7 @@
 
 // polyfill
 // if we are using an older browser engine that does not have Object.create
-// this whole state will be skipped if the Object.create exists
+// this whole statement will be skipped if the Object.create exists
 if (!Object.create) {
   Object.create = function (o) {
     if (arguments.length > 1) {
