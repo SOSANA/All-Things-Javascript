@@ -19,4 +19,7 @@
  *    and getting a copy for every object ex: if you have a 1000 Person Objects with getFullName 
  *    methods you will have a 1000 getFullName methods taking up memory space rather than having
  *    a prototype you will only have need one method
+ * 
+ * Syntactic Sugar:
+ *  - a different way to type something that doesn't change how it works under the hood
  */
