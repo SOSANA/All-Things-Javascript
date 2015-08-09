@@ -24,7 +24,7 @@ var person = {
     return 'Hi ' + this.firstname;
   }
 };
-
+// creates a empty object assigned to john with access to person properties and methods
 var john = Object.create(person);
 john.firstname = 'John';
 john.lastname = 'Doe';
