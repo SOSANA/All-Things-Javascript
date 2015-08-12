@@ -4,6 +4,11 @@
  *  - the 'this' variable points to a new empty object, and that object is returned from the
  *    function automatically
  * 
+ * Method Chaining:
+ *  - calling one method after another, and each method affects the parent object.
+ *  - so obj.method1().method2() where both methods end up with a 'this' variable pointing at 'obj'
+ *    ex: see section 8
+ * 
  * PolyFill:
  *  - code that adds a feature which the engine may lack
  * 
