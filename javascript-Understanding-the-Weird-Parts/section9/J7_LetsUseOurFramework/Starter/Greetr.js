@@ -1,3 +1,5 @@
+// adding semicolon before IIFE is a trick used in case there is a script before it that doesn't
+// quite finish its semicolon properly
 ;(function(global, $) {
     
     // 'new' an object

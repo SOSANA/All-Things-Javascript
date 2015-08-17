@@ -2,7 +2,9 @@
  * using IIFE to apply structure around the code your about to write and
  * is now safe inside of your function to be used by anybody
  */
-(function(global, $){
+// adding semicolon before IIFE is a trick used in case there is a script before it that doesn't
+// quite finish its semicolon properly
+;(function(global, $){
   // a function that creates an object
   var Greetr = function(firstName, lastName, language) {
     // return new empty object
