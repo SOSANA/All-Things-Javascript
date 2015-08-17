@@ -9,8 +9,8 @@
     return new Greetr.init(firstName, lastName, language);
   }
   
-  // thanks to closures we have access to its lexical environment inside this
-  // function
+  // thanks to closures we will have access to its lexical environment inside this
+  // memory space function
   var supportedLangs = ['en', 'es'];
   
   var greetings = {
@@ -39,6 +39,7 @@
     validate: function() {
       // looking in the supportedLangs array to see if it supports given lang 
       if (supportedLangs.indexOf(this.language) === -1) {
+        // simple way to throw an error
         throw "Invalid language";
       }
     },
@@ -66,24 +67,25 @@
         console.log(msg);
       }
       
-      // 'this' refers to the calling object at execution time
-      // makes the method chainable
+      // returning the 'this' variable so they are chainable
       return this;
     },
-      
+    
+    // when you want to manually log
     log: function() {
       if (console) {
         console.log(logMessages[this.language] + ': ' + this.fullName());
       }
-      
+      // returning the 'this' variable so they are chainable
       return this;
     },
     
     setLang: function(lang) {
+      // here you update your object
       this.language = lang;
-      
+      // here you call validate to make sure its valid
       this.validate();
-      
+      // returning the 'this' variable so they are chainable
       return this;
     }
   };
