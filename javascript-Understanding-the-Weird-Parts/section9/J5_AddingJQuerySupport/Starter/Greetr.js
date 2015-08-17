@@ -87,7 +87,33 @@
       this.validate();
       // returning the 'this' variable so they are chainable
       return this;
-    }
+    },
+    
+    // adding a jQuery method that accepts a selector and weither or not its 
+    // a formal greeting
+    HTMLGreeting: function(selector, formal) {
+      if (!$) {
+        throw 'jQuery not loaded';
+      }
+      
+      if (!selector) {
+        throw 'Missing jQuery selector';
+      }
+      
+      var msg;
+      // sets up the greetign itself
+      if (formal) {
+        msg = this.formalGreeting();
+        
+      }
+      else {
+        msg = this.greeting();
+      }
+      // updates what ever value is there
+      $(selector).html(msg);
+      // returning the 'this' variable so they are chainable
+      return this;
+    } 
   };
   
   // a function constructor that builds properties sets its value if you pass 
