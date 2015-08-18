@@ -27,4 +27,10 @@
  * 
  * Syntactic Sugar:
  *  - a different way to type something that doesn't change how it works under the hood
+ * 
+ * Transpile:
+ *  - convert the syntax of one programming language, to another
+ *  - in this case languages that don't really ever run anywhere, but instead are processed by 
+ *    'transpilers' that generate JavaScript. ex: (babel.js, typescript.js, etc)
+ *  - refer to hear for a list of features for ES6: https://github.com/lukehoban/es6features
  */
