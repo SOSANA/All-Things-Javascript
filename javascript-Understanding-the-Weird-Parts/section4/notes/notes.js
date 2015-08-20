@@ -1,11 +1,4 @@
 /**
- * Arguments:
- *  - the parameters or arguments you pass to a function
- *  - javascript gives you a keyword of the same name which contains them all
- *  - in es6 arguments will become deprecated, can still be used but will
- *    not be the most efficent way ex: refer to /d8-arguments folder
- *    function greet(firstname, lastname, language, ...other)
- *
  * .apply():
  *  - similar to the call method, invokes the function and lets you set the 'this' keyword but only difference
  *  	is it wants an array of parameters
@@ -20,6 +13,26 @@
  *  - unlike the bind method ,call doesn't make a copy it actually executes or invokes it and decides what
  *  	the "this" variable is
  *  - see folder ex: /d_19-call-apply-bind
+ * 
+ * Arguments:
+ *  - the parameters or arguments you pass to a function
+ *  - javascript gives you a keyword of the same name which contains them all
+ *  - in es6 arguments will become deprecated, can still be used but will
+ *    not be the most efficent way ex: refer to /d8-arguments folder
+ *    function greet(firstname, lastname, language, ...other)
+ * 
+ * By Reference vs By Value:
+ *  - in both cases we are talking about variables
+ *    - by reference
+ *      - all objects are by reference
+ *      - instead of getting a new location in memory it points to the same location in memory
+ *        space (address).
+ *      - important to understand that all objects interact by reference when setting or passing
+ *        to a function
+ *      - refer to byValue.png slide in /notes and /d6b-by-value-by-reference folder
+ *    - by value
+ *      - all primitive types (number, boolean, string) are by value
+ *      - refer to /d6b-by-value-by-reference folder
  *
  * Callback Function:
  *  - a function you give to another function, to be run when the other function is finished
@@ -33,19 +46,6 @@
  *  - when you run a function it works the way it suppose too
  *  -  the js engine creates the closure, you don't make the closure
  *  - ex: see folder /d_17-function-factories /d_18-closures-and-callbacks d_20-functional-programming
- *
- * By Reference vs By Value:
- *  - in both cases we are talking about variables
- *    - by reference
- *      - all objects are by reference
- *      - instead of getting a new location in memory it points to the same location in memory
- *        space (address).
- *      - important to understand that all objects interact by reference when setting or passing
- *        to a function
- *      - refer to byValue.png slide in /notes and /d6b-by-value-by-reference folder
- *    - by value
- *      - all primitive types (number, boolean, string) are by value
- *      - refer to /d6b-by-value-by-reference folder
  *
  * First Class Functions:
  * 	- everything you can do with other types such as objects, strings, numbers, and booleans
@@ -143,7 +143,15 @@
  *  - the dot is a operator (a function) and it takes two parameters ex: person.firstname
  *  - always use the dot operator over the computed member access operator []. see the
  *    d1-objects-and-the-dot folder for more info
- *
+ * 
+ * Recursion:
+ *  - Recursion is an important programming technique. It is used to have a function call itself 
+ *    from within itself. One example is the calculation of factorials. The factorial of 0 is 
+ *    defined specifically to be 1. The factorials of larger numbers are calculated by multiplying 
+ *    1 * 2 * ..., incrementing by 1 until you reach the number for which you are calculating the 
+ *    factorial. 
+ *  - Ex: url ref https://msdn.microsoft.com/library/wwbyhkx4
+ * 
  * White Space:
  *  - invisible characters that create literal 'space' in your written code
  *  - carriage returns, tabs, spaces
