@@ -12,7 +12,6 @@
  * ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
  */
 
-
 // ES6
 import React from 'react';
 import {Route, DefaultRoute, NotFoundRoute} from 'react-router';
