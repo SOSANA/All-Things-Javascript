@@ -2,6 +2,8 @@
  * - using map method
  * - will not only work on memory in an array but also works on data that arrives
  * 	 asynchronously over time
+ * - is good if you want to apply some transformation and collect the result in
+ * 	 an new array
  */
 
 // 'getStockSymbols' function, job is to get an array of stocks, pull out the symbol from
