@@ -4,7 +4,8 @@
   "description": "working with rx.js",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack ./js/main.js ./public/bundle.js",
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
