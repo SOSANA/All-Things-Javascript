@@ -5,7 +5,7 @@
  * -  observables data is asynchronous which arrive over time. No data is stored
  * 		in memory rather than a normal array which stores its data in memory
  */
-var Rx = require('rx');
+var Rx = require('rx.all');
 var Observable = Rx.Observable;
 
 var button = document.getElementById('button');
