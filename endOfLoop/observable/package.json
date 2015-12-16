@@ -1,0 +1,16 @@
+{
+  "name": "observable",
+  "version": "1.0.0",
+  "description": "working with rx.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "rx": "^4.0.7",
+    "rx-node": "^1.0.1"
+  }
+}
