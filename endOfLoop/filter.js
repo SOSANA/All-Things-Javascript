@@ -5,7 +5,7 @@
 function getStocksOver(stocks, minPrice) {
   return stocks.filter(function(stock) {
     return stock.price <= minPrice;
-  })
+  });
 }
 
 var expensiveStocks = getStocksOver([
