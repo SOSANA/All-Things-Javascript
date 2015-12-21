@@ -43,5 +43,5 @@ console.log('-------------------');
 exchanges.forEach(function(exchange) {
   exchange.forEach(function(stock) {
     console.log(JSON.stringify(stock));
-  })
+  });
 });
