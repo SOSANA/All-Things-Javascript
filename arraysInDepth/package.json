@@ -1,0 +1,15 @@
+{
+  "name": "Arrays-In-Depth",
+  "version": "1.0.0",
+  "description": "looking at various array methods",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack ./js/main.js ./public/bundle.js",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
