@@ -9,10 +9,9 @@ var name = 'shane Osbourne';
 // uppercasing the string
 var upper = name.split(' ') // this creates [shane, osbourne]
     .map(x => x.charAt(0).toUpperCase() + x.slice(1)) // this creates [Shane, Osbourne]
-    .join( ' '); // this creates Shane Osbourne
+    .join(' '); // this creates Shane Osbourne
 
 console.log(upper);
-
 
 /*
 // chain other array methods using es5
@@ -27,7 +26,6 @@ var upper = name.split(' ')
 console.log(upper);
 */
 
-
 /*
 // using in help command line with node arrayJoin.js help
 var help = [
@@ -39,7 +37,6 @@ if (process.argv[2] === 'help') {
   console.log(help.join('\n'));
 }
 */
-
 
 /*
 // using join()
