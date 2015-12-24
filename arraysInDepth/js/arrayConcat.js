@@ -8,25 +8,26 @@
  */
 var people = [
   {
-    name: 'Shane'
+    name: 'Shane',
   },
   {
-    name: 'Sally'
-  }
+    name: 'Sally',
+  },
 ];
 
 var people2 = [
   {
-    name: 'Simon'
+    name: 'Simon',
   },
   {
-    name: 'Ben'
-  }
+    name: 'Ben',
+  },
 ];
+
 // adds a copy of people plus any arguments and adds it to a new array
 people
 .concat(people2)
-.forEach(function (person) {
+.forEach(function(person) {
   console.log(person.name);
 });
 
