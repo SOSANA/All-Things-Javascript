@@ -6,7 +6,7 @@
  * 	- ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
  * 			- the one with the biggest number will get called first and the one with the smaller second as parameters
  * 				pdf in /notes folder and mdn link above
- * 
+ *
  * Coercion:
  *  - converting a value from one type to another (you can coerce a string to a number ex: console.log(Number("3"))
  *  - this happens quite often in javascript because its dynamically typed.
@@ -19,7 +19,7 @@
  *  - variables can hold different types of values because it's all figured out during
  *    execution
  *  - figures it out on the fly
- * 
+ *
  * Equality "... == ..." vs Strict Equality "... === ..."
  *  - Equality allows for coercion while strict equality doesn't
  *  - recommended to use strict equality 99.99% of the time to avoid unexpected errors caused by equality operators
