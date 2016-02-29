@@ -13,14 +13,14 @@
  *  - unlike the bind method ,call doesn't make a copy it actually executes or invokes it and decides what
  *  	the "this" variable is
  *  - see folder ex: /d_19-call-apply-bind
- * 
+ *
  * Arguments:
  *  - the parameters or arguments you pass to a function
  *  - javascript gives you a keyword of the same name which contains them all
  *  - in es6 arguments will become deprecated, can still be used but will
  *    not be the most efficent way ex: refer to /d8-arguments folder
  *    function greet(firstname, lastname, language, ...other)
- * 
+ *
  * By Reference vs By Value:
  *  - in both cases we are talking about variables
  *    - by reference
@@ -143,15 +143,15 @@
  *  - the dot is a operator (a function) and it takes two parameters ex: person.firstname
  *  - always use the dot operator over the computed member access operator []. see the
  *    d1-objects-and-the-dot folder for more info
- * 
+ *
  * Recursion:
- *  - Recursion is an important programming technique. It is used to have a function call itself 
- *    from within itself. One example is the calculation of factorials. The factorial of 0 is 
- *    defined specifically to be 1. The factorials of larger numbers are calculated by multiplying 
- *    1 * 2 * ..., incrementing by 1 until you reach the number for which you are calculating the 
- *    factorial. 
+ *  - Recursion is an important programming technique. It is used to have a function call itself
+ *    from within itself. One example is the calculation of factorials. The factorial of 0 is
+ *    defined specifically to be 1. The factorials of larger numbers are calculated by multiplying
+ *    1 * 2 * ..., incrementing by 1 until you reach the number for which you are calculating the
+ *    factorial.
  *  - Ex: url ref https://msdn.microsoft.com/library/wwbyhkx4
- * 
+ *
  * White Space:
  *  - invisible characters that create literal 'space' in your written code
  *  - carriage returns, tabs, spaces
