@@ -6,6 +6,18 @@ function displayInformation(library) {
       console.log('Already read '  + "'" + obj.title+ "'" + ' by ' + obj.author + '.');
     }
   });
+
+  /*
+  // using for loop
+  var i = 0, len = library.length;
+  for (; i < len; i++) {
+    if (library[i].readingStatus === false) {
+      console.log('You still need to read ' + "'" + library[i].title + "'" + ' by ' + library[i].author + '.');
+    } else {
+      console.log('Already read ' + "'" + library[i].title  + "'" + ' by ' + library[i].author + '.');
+    }
+  }
+  */
 }
 
 // tail starts here
