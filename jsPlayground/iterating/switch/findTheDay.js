@@ -1,11 +1,15 @@
-var input1 = 10/11/2009;
-var input2 = 11/10/2010;
-var input3 = -1;
-var myDate = input1 + input2 + input3;
-console.log(myDate);
-function findDay(myDate) {
-    if (myDate !== -1) {
-        var date = new Date(myDate), day = "";
+var myDate = function(callback) {
+  var input = ['10/11/2009', '11/10/2010', '-1'];
+
+	// loop through list and apply callback to EACH item
+  for (var i = 0; i < input.length; i++) {
+  	callback(input[i]);
+	}
+};
+
+function findDay(dateString) {
+    if (dateString != -1) {
+        var date = new Date(dateString), day = "";
         switch (date.toDateString().slice(0,3)) { //Pick the first 3 characters of a date string
             case "Sun":
                 day = "Sunday";
@@ -32,23 +36,26 @@ function findDay(myDate) {
         console.log(day);
     }
     else{
-        process.end(); //If input is -1
+        console.log(dateString + ' is not a valid date'); //If input is -1
     }
 }
-findDay(myDate);
 
-// tail starts here
-process.stdin.resume();
-process.stdin.setEncoding("ascii");
-_input = "";
-process.stdin.on("data", function (input) {
-    _input += input;
-});
+myDate(findDay);
 
-process.stdin.on("end", function () {
-    var dates = _input.split('\n');
+/*
+// another way to solve this problem without a switch statement
+var input = ['10/11/2009', '11/10/2010', '-1'],
+    output = input.map(findDay); // iterator with callback
 
-    for (var i = 0; i < dates.length - 1; i++) {
-        findDay(dates[i]);
+function findDay(myDate) { // callback
+    var date,
+        days = { Sun: 'Sunday', Mon: 'Monday', Tue: 'Tuesday', Wed: 'Wednesday', Thu: 'Thursday', Fri: 'Friday', Sat: 'Saturday' };
+    if (myDate !== '-1') { // <-- changed to string!
+        date = new Date(myDate);
+        return days[date.toDateString().slice(0, 3)];
     }
-});
+    return myDate + ' is not a valid date';
+}
+
+document.write('<pre>' + JSON.stringify(output, 0, 4) + '</pre>');
+ */
