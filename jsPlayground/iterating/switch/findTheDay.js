@@ -59,3 +59,47 @@ function findDay(myDate) { // callback
 
 document.write('<pre>' + JSON.stringify(output, 0, 4) + '</pre>');
  */
+
+/*
+// another way to solve this problem without a switch statement
+function findmyDate ( input ) {
+	input.forEach( function (myDate,k) {
+
+    if (myDate !== '-1') {
+        var date = new Date(myDate), day = "";
+        switch (date.toDateString().slice(0,3)) { //Pick the first 3 characters of a date string
+            case "Sun":
+                day = "Sunday";
+                break;
+            case "Mon":
+                day = "Monday";
+                break;
+            case "Tue":
+                day = "Tuesday";
+                break;
+            case "Wed":
+                day = "Wednesday";
+                break;
+            case "Thu":
+                day = "Thursday";
+                break;
+            case "Fri":
+                day = "Friday";
+                break;
+            default:
+                day = "Saturday";
+                break;
+        }
+        console.log(day);
+    }
+    else{
+        console.log(myDate + ' is not a valid date'); //If input is -1
+    }
+
+  });
+}
+
+
+
+findmyDate( ['10/11/2009', '11/10/2010', '-1'] );
+ */
