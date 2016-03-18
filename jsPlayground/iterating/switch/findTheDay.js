@@ -103,3 +103,38 @@ function findmyDate ( input ) {
 
 findmyDate( ['10/11/2009', '11/10/2010', '-1'] );
  */
+
+/*
+// hackerrank 7 days solution
+if (myDate !== -1) {
+        var date = new Date(myDate), day = "";
+        switch (date.toDateString().slice(0,3)) { //Pick the first 3 characters of a date string
+            case "Sun":
+                day = "Sunday";
+                break;
+            case "Mon":
+                day = "Monday";
+                break;
+            case "Tue":
+                day = "Tuesday";
+                break;
+            case "Wed":
+                day = "Wednesday";
+                break;
+            case "Thu":
+                day = "Thursday";
+                break;
+            case "Fri":
+                day = "Friday";
+                break;
+            default:
+                day = "Saturday";
+                break;
+        }
+        console.log(day);
+    }
+    else{
+        process.end(); //If input is -1
+    }
+}
+ */
