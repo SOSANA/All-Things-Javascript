@@ -38,8 +38,6 @@ function findmyDate ( myDate ) {
   });
 }
 
-
-
 findmyDate( myDate );
 
 /*
