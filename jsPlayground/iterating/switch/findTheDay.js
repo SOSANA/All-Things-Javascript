@@ -43,7 +43,55 @@ function findmyDate ( myDate ) {
 findmyDate( myDate );
 
 /*
-//
+// same as above but changed name of each value variable givenDay
+var myDate = ['10/11/2009', '11/10/2010', '-1', '05/10/1982'];
+
+function findmyDate ( myDate ) {
+	myDate.forEach( function (givenDay) {
+
+    if (givenDay !== '-1') {
+        var date = new Date(givenDay), day = "";
+        switch (date.toDateString().slice(0,3)) { //Pick the first 3 characters of a date string
+            case "Sun":
+                day = "Sunday";
+                break;
+            case "Mon":
+                day = "Monday";
+                break;
+            case "Tue":
+                day = "Tuesday";
+                break;
+            case "Wed":
+                day = "Wednesday";
+                break;
+            case "Thu":
+                day = "Thursday";
+                break;
+            case "Fri":
+                day = "Friday";
+                break;
+            default:
+                day = "Saturday";
+                break;
+        }
+        console.log(day);
+    }
+    else{
+        console.log(givenDay + ' is not a valid date'); //If input is -1
+    }
+
+  });
+}
+
+
+
+findmyDate( myDate );
+
+*/
+
+
+/*
+// another way to do it
 var myDate = function(callback) {
   var input = ['10/11/2009', '11/10/2010', '-1'];
 
