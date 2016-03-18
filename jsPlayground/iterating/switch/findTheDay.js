@@ -1,3 +1,49 @@
+// mm/dd/yyyy
+var myDate = ['10/11/2009', '11/10/2010', '-1', '05/10/1982'];
+
+function findmyDate ( myDate ) {
+	myDate.forEach( function (myDate) {
+
+    if (myDate !== '-1') {
+        var date = new Date(myDate), day = "";
+        switch (date.toDateString().slice(0,3)) { //Pick the first 3 characters of a date string
+            case "Sun":
+                day = "Sunday";
+                break;
+            case "Mon":
+                day = "Monday";
+                break;
+            case "Tue":
+                day = "Tuesday";
+                break;
+            case "Wed":
+                day = "Wednesday";
+                break;
+            case "Thu":
+                day = "Thursday";
+                break;
+            case "Fri":
+                day = "Friday";
+                break;
+            default:
+                day = "Saturday";
+                break;
+        }
+        console.log(day);
+    }
+    else{
+        console.log(myDate + ' is not a valid date'); //If input is -1
+    }
+
+  });
+}
+
+
+
+findmyDate( myDate );
+
+/*
+//
 var myDate = function(callback) {
   var input = ['10/11/2009', '11/10/2010', '-1'];
 
@@ -41,6 +87,8 @@ function findDay(dateString) {
 }
 
 myDate(findDay);
+*/
+
 
 /*
 // another way to solve this problem without a switch statement
