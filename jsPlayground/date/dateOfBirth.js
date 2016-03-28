@@ -56,6 +56,31 @@ function getDayOfWeekNameFromDayNumber(dayOfWeek) {
 console.log(getDayOfWeekNameFromDayNumber(dayNumber));
 console.log('-------------------------');
 
+// how to convert date in javascript to 'mm/dd/yyyy' format
+function formatDate(date) {
+  var year = date.getFullYear();
+  var month = date.getMonth();
+  // remember month starts with 0 for january
+  month = month + 1;
+
+  // prefixing month with 0 if its not double digits
+  if (month < 10) {
+    month = '0' + month;
+  }
+
+  var day = date.getDate();
+
+  // prefixing day to with - if its not double digits
+  if (day < 10) {
+    day = '0' + day;
+  }
+
+  return month + '/' + day + '/' + year;
+}
+
+console.log(formatDate(dateOfBirth));
+
+// if using html to quickly output results
 // considered bad practice but good for development testing
 // will log error in jslint document.write can be a form of eval.
 /*
