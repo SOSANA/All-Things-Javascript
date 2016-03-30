@@ -9,6 +9,7 @@
  * 	  or it could change the internal state of the machine in a way that will affect the
  * 	  statements that come after it. These changes are called side effects
  *  - every statement that needs a semicolon will always be terminated by one
+ *  - you can have conditional (if, else, and switch) or looping (while, do, for) statements
  * Variables:
  *  - holds internal state to catch and hold values
  *  - its a special key word
@@ -39,6 +40,6 @@
  * Conditional execution:
  *  - choose between two different routes based on a Boolean value
  *  - is written with the if keyword in JavaScript. In the simple case, we just want some
- *  	code to be executed if, and only if, a certain condition holds
- *  - ex: if, while, do, for loops
+ *  	code to be executed if, else, and switch looping, a certain condition holds
+ *  - ex: if, while, do, switch
  */
