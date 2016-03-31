@@ -17,3 +17,30 @@
  * change the program so that it works for any size , outputting a grid of the given width
  * and height.
  */
+
+var chessBoard = function () {
+  // assign our board size to a variable
+  var size = 8;
+  // assign our board variable to empty string
+  var board = '';
+
+  // iterate though string 8 times with line break
+  for (var y = 0; y < size; y++) {
+    // on each iteration create 4 spaces and 4 hash's before new line break
+    for (var x = 0; x < size; x++) {
+      // if first iteration has no remainders create space or create hash
+      if ((x + y) % 2 === 0) {
+        board += ' ';
+      } else {
+        board += '#';
+      }
+    }
+
+    // after each iteration create line break
+    board += '\n';
+}
+    // log board to console
+    console.log(board);
+};
+
+chessBoard();
