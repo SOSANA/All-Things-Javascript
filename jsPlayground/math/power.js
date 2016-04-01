@@ -4,6 +4,7 @@
  * is being multiplied.
  */
 
+/*eslint-disable */
  var power = function (base, exponent) {
    var result = 1;
 
