@@ -18,6 +18,7 @@
  * and height.
  */
 
+ /*eslint-disable */
 var chessBoard = function () {
   // assign our board size to a variable
   var size = 8;

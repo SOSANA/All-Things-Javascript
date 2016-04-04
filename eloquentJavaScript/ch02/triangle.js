@@ -1,3 +1,4 @@
+ /*eslint-disable */
 // write a loop that makes seven calls to to console.log(); to output triangle
 var hashSymbol = '#';
 

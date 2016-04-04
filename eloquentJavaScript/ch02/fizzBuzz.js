@@ -7,6 +7,7 @@
  * divisible by only one of those).
  */
 
+ /*eslint-disable */
 var fizzBuzz = function () {
   for (var n = 1; n <= 100; n++) {
     var output = '';
