@@ -11,4 +11,38 @@
  */
 
  /* eslint-disable */
- 
+function countChar(string, ch) {
+  var counted = 0;
+
+  for (var i = 0; i < string.length; i++) {
+    if (string.charAt(i) === ch ) {
+      counted += 1;
+    }
+  }
+  return counted;
+}
+
+function capitalBFinder(string) {
+  return countChar(string, "B");
+}
+
+console.log(capitalBFinder("BBC")); // 2
+console.log(countChar('knickknack', 'k')); // 4
+console.log(countChar('knicKKnack', 'k')); // 2
+console.log(capitalBFinder("BoBBy")); // 3
+
+/*
+// first figure out how to add in a string that returns how many capital B's there are
+function countBs(string) {
+  var counted = 0;
+
+  for (var i = 0; i < string.length; i++) {
+    if (string.charAt(i) === "B") {
+      counted += 1;
+    }
+  }
+  return counted;
+}
+
+console.log(countBs("BoBBy")); // 3
+*/
