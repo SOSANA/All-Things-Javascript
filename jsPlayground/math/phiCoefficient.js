@@ -16,13 +16,13 @@
  *    table, the part above the division line (the dividend) would be 1×76 - 4×9 = 40,
  *    and the part below it (the divisor) would be the square root of 5×85×10×80, or
  *    √340000. This comes out to ϕ ≈ 0.069, which is tiny. Eating pizza does not appear to
- *    have influence on the transformations. Computing correlation
+ *    have influence on the transformations.
  */
 
  /*eslint-disable */
- // We can represent a two-by-two table in JavaScript with a four-element array ([76, 9, 4, 1])
- // the flat array is simple and makes the expressions that access the table pleasantly short.
- // We’ll interpret the indices to the array as two-bit binary number,
+ // We can represent a two-by-two table in JavaScript with a four-element array ([76, 9, 4, 1]).
+ // The flat array is simple and makes the expressions that access the table pleasantly short.
+ // We’ll interpret the indices to the array as two-bit binary number.
 function phi(table) {
   return ( table[3] * table[0] - table[2] * table[1]) /
     Math.sqrt((table[2] + table[3]) *
