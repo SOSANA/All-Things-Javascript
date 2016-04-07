@@ -13,8 +13,8 @@ function squareRoot(n, g) {
   }
   // ignore vars declared at top function scope as we need to grab a guess
   // otherwise will run recursively until times out
-  var d = n / g;             // Divide our guess into the number
-  var ng = (d + g) / 2;     // Use average of g and d as our new guess
+  var d = n / g;          // Divide our guess into the number
+  var ng = (d + g) / 2;  // Use average of g and d as our new guess
   if (g === ng) {
     // The new guess is the same as the old guess; further guesses
     // can get no more accurate so we return this guess
