@@ -5,7 +5,6 @@
  *  	of correlation and is relatively easy to compute. To compute ϕ , we need a table n
  *  	that contains the number of times the various combinations of the two variables
  *  	were observed.
- *
  *  - ϕ can be computed using the following formula, where n refers to the table:
  *  	ϕ = n11n00 - n10n01 / √ n1•n0•n•1n•0
  *  	The notation n 01 indicates the number of measurements where the first variable
