@@ -6,7 +6,6 @@ for (hashSymbol; hashSymbol.length <= 7; hashSymbol += '#') {
   console.log(hashSymbol);
 }
 
-
 /*
 // example using while and for
 // using while loop to output each result plus 2
