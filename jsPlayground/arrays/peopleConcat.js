@@ -6,6 +6,7 @@
  *  - can flatten arrays
  *  - cannot do nested arrays
  */
+
 var people = [
   {
     name: 'Shane',
