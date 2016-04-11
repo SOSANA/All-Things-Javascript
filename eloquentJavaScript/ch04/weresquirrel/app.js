@@ -37,13 +37,24 @@ function hasEvent(event, entry) {
   return entry.events.indexOf(event) !== -1;
 }
 
+/**
+ * The table is trying to record all the different possible outcomes from the if statements.
+ *  - You get 0 if there's no event, and there's no squirrel.
+ *  - You get 1 if there's an event but no squirrel.
+ *  - You get 2 if there's no event, but there is a squirrel.
+ *  - you get 3 if there is an event, and a squirrel.
+ * You then increment one of four different positions in the table variable index based results.
+ * You can basically think of index as keeping track of all possible states.
+ * Since you're iterating over a journal with i, you're trying to keep track of what's happening.
+ */
 function tableFor(event, journal) {
   var table = [0, 0, 0, 0];
 
   for (var i = 0; i < journal.length; i++) {
     var entry = journal[i];
+    // You get index 0 if there's no event, and there's no squirrel.
     var index = 0;
-
+    // You get index 1 if there's an event but no squirrel.
     if (hasEvent(event, entry)) {
       index += 1
     }
@@ -54,7 +65,6 @@ function tableFor(event, journal) {
 
     table[index] += 1;
   }
-
   return table;
 }
 
