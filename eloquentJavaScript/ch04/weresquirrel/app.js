@@ -1,22 +1,20 @@
- /* eslint-disable */
-
 // adding entries
-var journal = [];
+const journalEntries = [];
 
 function addEntry(events, didITurnIntoASquirrel) {
-  journal.push({
-    events: events,
-    squirrel: didITurnIntoASquirrel
+  journalEntries.push({
+    events,
+    didITurnIntoASquirrel,
   });
-  //console.log(journal);
-  //console.log('-------------');
+  // console.log(journal);
+  // console.log('-------------');
 }
 
-addEntry(["carrot","exercise","weekend"], false);
-addEntry(["cauliflower","ice cream","brushed teeth","cycling","work"], false);
-addEntry(["spaghetti","peanuts","computer","weekend"], true);
-console.log(journal);
-console.log('-------------');
+addEntry(['carrot', 'exercise', 'weekend'], false);
+addEntry(['cauliflower', 'ice cream', 'brushed teeth', 'cycling', 'work'], false);
+addEntry(['spaghetti', 'peanuts', 'computer', 'weekend'], true);
+console.log(journalEntries); // eslint-disable-line
+console.log('-------------'); // eslint-disable-line
 
 // creating a 4x4 table to find out the correlations using phi formula
 function phi(table) {
@@ -26,8 +24,8 @@ function phi(table) {
               (table[1] + table[3]) *
               (table[0] + table[2]));
 }
-console.log(phi([76,9,4,1]));
-console.log('-------------');
+console.log(phi([76,9,4,1])); // eslint-disable-line
+console.log('-------------'); // eslint-disable-line
 
 
 import { JOURNAL } from './jacques_journal';
@@ -48,19 +46,19 @@ function hasEvent(event, entry) {
  * Since you're iterating over a journal with i, you're trying to keep track of what's happening.
  */
 function tableFor(event, journal) {
-  var table = [0, 0, 0, 0];
+  const table = [0, 0, 0, 0];
 
-  for (var i = 0; i < journal.length; i++) {
-    var entry = journal[i];
+  for (let i = 0; i < journal.length; i++) {
+    const entry = journal[i];
     // You get index 0 if there's no event, and there's no squirrel.
-    var index = 0;
+    let index = 0;
     // You get index 1 if there's an event but no squirrel.
     if (hasEvent(event, entry)) {
-      index += 1
+      index += 1;
     }
 
     if (entry.squirrel) {
-      index += 2
+      index += 2;
     }
 
     table[index] += 1;
@@ -68,45 +66,47 @@ function tableFor(event, journal) {
   return table;
 }
 
-console.log(tableFor("pizza", JOURNAL));
-console.log('-------------');
+console.log(tableFor('pizza', JOURNAL)); // eslint-disable-line
+console.log('-------------'); // eslint-disable-line
 
 
 function gatherCorrelations(journal) {
-  var phis = {};
-  for (var entry = 0; entry < journal.length; entry++) {
-    var events = journal[entry].events;
-    for (var i = 0; i < events.length; i++) {
-      var event = events[i];
-      if (!(event in phis))
+  const phis = {};
+  for (let entry = 0; entry < journal.length; entry++) {
+    const events = journal[entry].events;
+    for (let i = 0; i < events.length; i++) {
+      const event = events[i];
+      if (!(event in phis)) {
         phis[event] = phi(tableFor(event, journal));
+      }
     }
   }
   return phis;
 }
 
-var correlations = gatherCorrelations(JOURNAL);
-console.log(correlations);
-console.log('-------------');
-
+const correlations = gatherCorrelations(JOURNAL);
+console.log(correlations); // eslint-disable-line
+console.log('-------------'); // eslint-disable-line
 
 
 /*
 for (var i = 0; i < JOURNAL.length; i++) {
   var entry = JOURNAL[i];
-  if (hasEvent("peanuts", entry) &&
-     !hasEvent("brushed teeth", entry))
-    entry.events.push("peanut teeth");
+  if (hasEvent('peanuts', entry) &&
+     !hasEvent('brushed teeth', entry))
+    entry.events.push('peanut teeth');
 }
 */
 
-var list = {
+const list = {
   value: 1,
   rest: {
     value: 2,
     rest: {
       value: 3,
-      rest: null
-    }
-  }
+      rest: null,
+    },
+  },
 };
+
+console.log(list); // eslint-disable-line
