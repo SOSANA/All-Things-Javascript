@@ -27,21 +27,6 @@
  */
 
  /* eslint-disable */
-
-/**
- * The table is trying to record all the different possible outcomes from the if statements.
- *  - You get 0 if there's no event, and there's no squirrel.
- *  - You get 1 if there's an event but no squirrel.
- *  - You get 2 if there's no event, but there is a squirrel.
- *  - you get 3 if there is an event, and a squirrel.
- * You then increment one of four different positions in the table variable index based results.
- * You can basically think of index as keeping track of all possible states.
- * Since you're iterating over a journal with i, you're trying to keep track of what's happening.
- *
- * Note:
- * - checkout /All-Things-Javascript/eloquentJavaScript/ch04/weresquirrel/
- */
-
  var JOURNAL = [
   {"events":["carrot","exercise","weekend"],"squirrel":false},
   {"events":["bread","pudding","brushed teeth","weekend","touched tree"],"squirrel":false},
@@ -134,6 +119,20 @@
   {"events":["bread","brushed teeth","television","weekend"],"squirrel":false},
   {"events":["cauliflower","peanuts","brushed teeth","weekend"],"squirrel":false}
 ];
+
+/**
+ * The table is trying to record all the different possible outcomes from the if statements.
+ *  - You get 0 if there's no event, and there's no squirrel.
+ *  - You get 1 if there's an event but no squirrel.
+ *  - You get 2 if there's no event, but there is a squirrel.
+ *  - you get 3 if there is an event, and a squirrel.
+ * You then increment one of four different positions in the table variable index based results.
+ * You can basically think of index as keeping track of all possible states.
+ * Since you're iterating over a journal with i, you're trying to keep track of what's happening.
+ *
+ * Note:
+ * - checkout /All-Things-Javascript/eloquentJavaScript/ch04/weresquirrel/
+ */
 
 // check to see if event exists
 function hasEvent(event, entry) {
