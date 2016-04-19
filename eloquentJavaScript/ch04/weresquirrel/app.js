@@ -50,17 +50,22 @@ function tableFor(event, journal) {
 
   for (let i = 0; i < journal.length; i++) {
     const entry = journal[i];
+
     // You get index 0 if there's no event, and there's no squirrel.
     let index = 0;
+
     // You get index 1 if there's an event but no squirrel.
     if (hasEvent(event, entry)) {
       index += 1;
     }
 
+    // You get index 2 if there's no event, but there is a squirrel.
+    // you get index 3 if there is an event, and a squirrel.
     if (entry.squirrel) {
       index += 2;
     }
 
+    // each iteration at 1 to the corresponding index
     table[index] += 1;
   }
   return table;
