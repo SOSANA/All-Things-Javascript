@@ -1,5 +1,5 @@
 // adding entries
-const journalEntries = [];
+const journalEntries = []; // eslint-disable-line
 
 function addEntry(events, didITurnIntoASquirrel) {
   journalEntries.push({
@@ -35,7 +35,7 @@ function hasEvent(event, entry) {
   return entry.events.indexOf(event) !== -1;
 }
 
-/**
+/*
  * The table is trying to record all the different possible outcomes from the if statements.
  *  - You get 0 if there's no event, and there's no squirrel.
  *  - You get 1 if there's an event but no squirrel.
