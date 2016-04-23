@@ -7,7 +7,7 @@
  * in order to reverse its elements. Neither may use the standard reverse method.
  */
 /* eslint-disable */
-function reverseArray (array) {
+function reverseArray(array) {
   newArray = [];
 
   for (var i = array.length-1; i >= 0; i--) {
