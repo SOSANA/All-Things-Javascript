@@ -6,3 +6,17 @@
  * The second, reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument
  * in order to reverse its elements. Neither may use the standard reverse method.
  */
+
+function reverseArray (array) {
+  newArray = [];
+
+  for (var i = array.length-1; i >= 0; i--) {
+    newArray.push(array[i]);
+  }
+
+  return newArray;
+}
+
+var test = [1,2,3,4,5,6];
+
+console.log(reverseArray(test));
