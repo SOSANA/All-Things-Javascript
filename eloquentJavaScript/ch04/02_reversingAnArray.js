@@ -42,11 +42,11 @@ function reverseArray2(array) {
 }
 
 var test = [1, 2, 3, 4, 5, 6];
-console.log('looping back to front with push method:');
+console.log('creating a new array reversed, looping back to front with push method:');
 console.log(reverseArray(test));
 console.log(reverseArray(['A', 'B', 'C']));
 console.log('--------------------');
-console.log('looping front to back with unshift method:');
+console.log('creating a new array reversed, looping front to back with unshift method:');
 console.log(reverseArray2(test));
 console.log(reverseArray2(['A', 'B', 'C']));
 console.log('--------------------');
