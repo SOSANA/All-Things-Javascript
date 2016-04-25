@@ -10,32 +10,45 @@
  * Make sure it also works with negative step values so that range(5, 2, -1) produces [5, 4, 3, 2].
  */
 
+/* eslint-disable */
 function range(start, end, step){
+  // If no optional step, set step to 1
   if (step === undefined) {
     step = 1;
   }
 
+  // Initialize the array that will eventually be returned
   var output = [];
 
+  // If the range is increasing, continue pushing 'i' to the array and incrementing 'i' by step until 'i' is greater
+  // than end, then stop
   if (step > 0) {
     for (var i = start; i <= end; i += step) {
       output.push(i);
     }
   } else {
+    // If the range is decreasing, continue pushing 'j' to the array until 'j' is less than end, then stop. Remember
+    // 'j' will get smaller because step is negative.
     for (var j = start; j >= end; j += step) {
       output.push(j);
     }
   }
 
+  // Return the result
   return output;
 }
 
 function sum(input) {
+  // Set total to start at 0
   var total = 0;
+
+  // Go through each item in the array and add it to result
   for (var i = 0; i < input.length; i++) {
     var value = input[i];
     total += value;
   }
+
+  // Return result
   return total;
 }
 
