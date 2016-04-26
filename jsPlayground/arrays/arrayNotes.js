@@ -76,10 +76,10 @@
  * 		to strings first
  *
  * .splice():
- * - changes the content of an array by removing existing elements and/or adding
- * 	 new elements
- * - when given a start and deleteCount as its first two parameters, any parameters after this will
- * 	 be added to the end of the array
+ *  - changes the content of an array by removing existing elements and/or adding
+ * 	 	new elements
+ *  - when given a start and deleteCount as its first two parameters, any parameters after this will
+ * 	 	be added to the end of the array
  *
  * .unshift():
  *  - adds last item to the start of array and does not remove last item
