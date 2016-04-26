@@ -86,9 +86,10 @@ function reverseArrayInPlace2(array) {
   }
   // once iteration is complete we now have double the length of our array
   // ex: [1, 2, 3, 4] → [4, 3, 2, 1, 1, 2, 3, 4], we slice (starting at index 4) and
-  // through last index 4
+  // and set deleteCount to 4 including the first index specified in this case index 4
   array.splice(Math.floor(array.length / 2), array.length / 2);
-
+  // so now our goes from [4, 3, 2, 1, 1, 2, 3, 4] → [ 4, 3, 2, 1 ] and we return
+  // the original array mutated to reversed
   return array;
 }
 
