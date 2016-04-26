@@ -81,9 +81,12 @@ function reverseArrayInPlace(array) {
 // reversing our array in place using the unshift(), splice(), and Math.Floor() method
 function reverseArrayInPlace2(array) {
   for (var i = 0; i < array.length; i += 2) {
+    // each time it unshifts our last item in the array to the front
     array.unshift(array[i]);
   }
-
+  // once iteration is complete we now have double the length of our array
+  // ex: [1, 2, 3, 4] → [4, 3, 2, 1, 1, 2, 3, 4], we slice (starting at index 4) and
+  // through last index 4
   array.splice(Math.floor(array.length / 2), array.length / 2);
 
   return array;
