@@ -59,5 +59,5 @@ console.log('-------------------');
 var arrayNumExample = [4, 3, 2, 1, 1, 2, 3, 4];
 // first argument in splice is starting index, second argument is the deleteCount, any
 // arguments past this second arguments are added to the end of the array
-arrayNumExample.splice(4,4, -1,-2,"mouse");
+arrayNumExample.splice(4, 4, -1, -2, "mouse");
 console.log(arrayNumExample); // [ 4, 3, 2, 1, -1, -2, 'mouse' ]
