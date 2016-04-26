@@ -53,16 +53,32 @@ console.log('--------------------');
 
 // this loops using Math.floor() method
 function reverseArrayInPlace(array) {
+  // inside the for loop of the function, there’s an expression, Math.floor(array.length / 2).
+  // this refers to the length of our array
+  // ex: [1, 2, 3, 4] length would be 4: Math.floor(4/2) → Math.floor(2) → 2
+  // so in our loop, 'i' has to be less than 2. Since i starts at 0, 'the loop will only run twice',
+  // when 'i' = 0 and when 'i' = 1
   for (var i = 0; i < Math.floor(array.length / 2); i++) {
-    // assign each iteration of the loop to old
+    // first time through the loop 'i' = 0, first old is set to array[0] = 1
+    // second time through the loop 'i' = 1, first old is set to array[1] = 2
     var old = array[i];
+    // first time, array[0] is set to array[array.length - 1 - i] → array[4 - 1 - 0] → array[3] → 4
+    // second time, array[1] is set to array[array.length - 1 - i] → array[4 - 1 - 1] → array[2] → 3
     array[i] = array[array.length - 1 - i];
+    // first time, we set array[array.length - 1 - i] to old. That means array[3] = 1
+    // After first time through the loop, array looks like this: [4, 2, 3, 1].
+    // finally on second time, we set array[array.length - 1 - i] to old. That means array[2] = 2.
+    // After 2 times through the loop, array looks like this: [4, 3, 2, 1] and we're done
+    // If you have an odd number of items in your array, it still works because the middle item never
+    // needs to move. First iteration shifts the items before and after middle items with odd # of items
+    // Side note: depending on length of array will affect the number of iterations the loop goes through
+    // to finally swap indexes until it meets in the middle of the index
     array[array.length - 1 - i] = old;
   }
   return array;
 }
 
-// reversing our array in place using the unshift() and splice() method
+// reversing our array in place using the unshift(), splice(), and Math.Floor() method
 function reverseArrayInPlace2(array) {
   for (var i = 0; i < array.length; i += 2) {
     array.unshift(array[i]);
@@ -77,7 +93,7 @@ console.log('reversing array in place using Math.floor method:');
 console.log(reverseArrayInPlace(test));
 console.log(reverseArrayInPlace(['A', 'B', 'C']));
 console.log('--------------------');
-console.log('reversing array in place using unshift and splice method:');
+console.log('reversing array in place using unshift, splice, and Math.Floor method:');
 var test2 = [1, 2, 3, 4, 5, 6]; // need to assign new array as its mutated above in reverseArrayInPlace()
 console.log(reverseArrayInPlace2(test2));
 console.log(reverseArrayInPlace2(['A', 'B', 'C']));
