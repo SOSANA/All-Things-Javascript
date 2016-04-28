@@ -112,7 +112,7 @@ function prepend(value, list) {
  * = nth(null, 1 - 1);
  * = nth(null, 0);
  * Now (!list) will be true, so the function will return undefined. Instead if you tried to get the 0th item
- * and called nth(list, 0), (n == 0) would be true, so the function would return list.value, which is 3
+ * and called nth(list, 0), (n === 0) would be true, so the function would return list.value, which is 3
  */
 function nth(list, n) {
   if (!list) {
