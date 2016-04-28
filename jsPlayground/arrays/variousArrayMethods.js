@@ -1,14 +1,18 @@
 /**
  * push():
  *  - can be used to add values to the end of the array
+ *
  * pop():
  *  - can be use to remove values at the end of the array
+ *
  * join():
  *  - an array of strings can be 'flattened' to a single string
  *  - the argument given to join() deteremines the text that is glued between array
  *  	elements
+ *
  * shift();
  *  - removes element from the start of the array
+ *  
  * unshift():
  *  - adds element to the start of array
  *
