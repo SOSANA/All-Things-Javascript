@@ -139,10 +139,10 @@ console.log('Turn an object list back into an array, listToArray(arrayToList()):
 console.log(listToArray(arrayToList(test))); // [10, 20, 30]
 console.log(listToArray(arrayToList([1, 2, 3]))); // [1, 2, 3]
 console.log('----------------------------');
-console.log('a helper function, prepend(firstValue, prepend(secondValue, null)):');
+console.log('A helper function that returns a new object, which is the first item, and the rest property in the first item points to the second item, prepend(firstValue, prepend(secondValue, null)):');
 console.log(prepend(10, prepend(20, null))); // {value: 10, rest: {value: 20, rest: null}}
 console.log('----------------------------');
-console.log('takes a list and a index number, returns the given position value in the list or undefined if no index is found, nth(arrayToList()):');
+console.log('Takes a list and a index number and returns the given index position value in the list or undefined if no index is found, nth(arrayToList()):');
 console.log(nth(arrayToList(test), 2)); // 30
 console.log(nth(arrayToList([1, 2, 3]), 1)); // 2
 console.log(nth(arrayToList(test), 3)); // undefined
