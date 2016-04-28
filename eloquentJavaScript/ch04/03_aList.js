@@ -130,11 +130,19 @@ function nth(list, n) {
   }
 }
 
-console.log(arrayToList([10, 20])); // {value: 10, rest: {value: 20, rest: null}}
+var test = [10, 20, 30];
+console.log('Turn an array into a object list, arrayToList:');
+console.log(arrayToList(test)); // { value: 10, rest: { value: 20, rest: { value: 30, rest: null }}}
+console.log(arrayToList([1, 2, 3])); // { value: 1, rest: { value: 2, rest: { value: 3, rest: null }}}
 console.log('----------------------------');
-console.log(listToArray(arrayToList([10, 20, 30]))); // [10, 20, 30]
+console.log('Turn an object list back into an array, listToArray(arrayToList()):');
+console.log(listToArray(arrayToList(test))); // [10, 20, 30]
+console.log(listToArray(arrayToList([1, 2, 3]))); // [1, 2, 3]
 console.log('----------------------------');
+console.log('a helper function, prepend(firstValue, prepend(secondValue, null)):');
 console.log(prepend(10, prepend(20, null))); // {value: 10, rest: {value: 20, rest: null}}
 console.log('----------------------------');
-console.log(nth(arrayToList([10, 20, 30]), 2)); // 30
-console.log(nth(arrayToList([10, 20, 30]), 0)); // 10
+console.log('takes a list and a index number, returns the given position value in the list or undefined if no index is found, nth(arrayToList()):');
+console.log(nth(arrayToList(test), 2)); // 30
+console.log(nth(arrayToList([1, 2, 3]), 1)); // 2
+console.log(nth(arrayToList(test), 3)); // undefined
