@@ -22,3 +22,50 @@
  */
 
 /* eslint-disable */
+function deepEqual(a, b) {
+  // If a and b are exactly the same value, return true. Remember that triple-equals (===)
+  // does not perform type coercion, while double-equals (==) does
+  if (a === b) {
+    return true;
+  }
+
+  // This is really tricky and tests two conditions:
+  // If a OR b is null, the function returns false
+  // If a OR b is NOT an object, the function returns false
+  if (a == null || typeof a != "object" || b == null || typeof b != "object") {
+    return false;
+  }
+
+  // If we get this far without returning false, it means both a and b are objects, so we
+  // have to test their individual properties
+  var propsInA = 0;
+  var propsInB = 0;
+
+  // Count the number of properties in a
+  for (var prop in a) {
+    propsInA += 1;
+  }
+
+  // Go through each property in b
+  for (var prop in b) {
+    // Count the number of properties in b. We’ll use this in the last line of the function
+    propsInB += 1;
+
+    // If prop is not also in a, return false.
+    // If prop is in a, recursively run deepEqual on the a[prop] and b[prop].
+    // If the call to deepEqual is false, return false
+    if (!(prop in a) || !deepEqual(a[prop], b[prop])){
+      return false;
+    }
+  }
+
+  // If everything has been equal so far and a and b have the same number of properties, return true
+  return propsInA == propsInB;
+
+}
+
+var obj = { here: { is: "an" }, object: 2};
+
+console.log(deepEqual(obj, obj)); // true
+console.log(deepEqual(obj, { here: 1, object: 2 })); // false
+console.log(deepEqual(obj, { here: {is: "an"}, object: 2 })); // true
