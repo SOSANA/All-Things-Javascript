@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "eslint-config-airbnb-es5"],
+  "extends": "airbnb",
   "parser": "babel-eslint",
   "env": {
     "browser": true,
