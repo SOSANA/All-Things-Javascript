@@ -131,7 +131,7 @@ function nth(list, n) {
 }
 
 var test = [10, 20, 30];
-console.log('Turn an array into a object list, arrayToList:');
+console.log('Turn an array into a object list, arrayToList():');
 console.log(arrayToList(test)); // { value: 10, rest: { value: 20, rest: { value: 30, rest: null }}}
 console.log(arrayToList([1, 2, 3])); // { value: 1, rest: { value: 2, rest: { value: 3, rest: null }}}
 console.log('----------------------------');
