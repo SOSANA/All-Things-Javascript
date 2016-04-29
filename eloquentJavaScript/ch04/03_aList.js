@@ -13,7 +13,7 @@
  * 	}
  * };
  * The resulting objects form a chain, like this:
- * value: 1
+ * value: 1,
  * rest:   → value: 2
  *           rest:   → value: 3
  *           					 rest: null
@@ -59,7 +59,7 @@ function arrayToList(array) {
     //  We then set list (left side of the equals sign) to the newly created object
     list = {
       value: array[i],
-      rest: list
+      rest: list,
     };
   }
 
@@ -98,7 +98,7 @@ function listToArray(list) {
 function prepend(value, list) {
   return {
     value: value,
-    rest: list
+    rest: list,
   };
 }
 
@@ -131,7 +131,7 @@ function nth(list, n) {
 }
 
 var test = [10, 20, 30];
-console.log('Turn an array into a object list, arrayToList():');
+console.log('Turn an array into a object list, arrayToList:');
 console.log(arrayToList(test)); // { value: 10, rest: { value: 20, rest: { value: 30, rest: null }}}
 console.log(arrayToList([1, 2, 3])); // { value: 1, rest: { value: 2, rest: { value: 3, rest: null }}}
 console.log('----------------------------');
