@@ -23,6 +23,7 @@
 
 /* eslint-disable */
 function deepEqual(a, b) {
+
   // If a and b are exactly the same value, return true. Remember that triple-equals (===)
   // does not perform type coercion, while double-equals (==) does
   if (a === b) {
@@ -83,7 +84,6 @@ console.log(deepEqual(obj, { here: 1, object: 2 })); // false
 console.log(deepEqual(obj, { here: { is: "an" }, object: 2 })); // true
 console.log(deepEqual(obj, obj2)); // false
 console.log('-------------------------');
-
 
 
 // Helper to return a value's internal object [[Class]]
