@@ -1,4 +1,6 @@
 /**
+ * eslint-disable
+ *
  * The == operator compares objects by identity. But sometimes, you would prefer to compare the values of their actual
  * properties.
  *
@@ -21,7 +23,6 @@
  *  	when a mismatch is noticed and returning true at the end of the function.
  */
 
-/* eslint-disable */
 function deepEqual(a, b) {
 
   // If a and b are exactly the same value, return true. Remember that triple-equals (===)
