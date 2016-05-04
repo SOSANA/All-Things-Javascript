@@ -1,3 +1,4 @@
+/* eslint-disable */
 function displayInformation(library) {
   library.forEach(function(obj){
     if (obj.readingStatus === false) {

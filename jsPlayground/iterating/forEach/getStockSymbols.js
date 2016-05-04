@@ -7,6 +7,7 @@
  * - really convenient if you want to do something to every item in an array
  */
 
+/* eslint-disable */
  // 'getStockSymbols' function, job is to get an array of stocks, pull out the symbol from
  // each one of those stocks and put all the symbols in an array and then return it
 function getStockSymbols(stocks) {
