@@ -11,4 +11,4 @@ function flattenArray(input) {
   });
 }
 
-console.log(flattenArray(arrays));
+console.log(flattenArray(arrays)); // [ 1, 2, 3, 4, 5, 6 ]
