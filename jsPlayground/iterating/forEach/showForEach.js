@@ -10,7 +10,7 @@
  */
 
 /* eslint-disable */
-// shows how a forEach Works
+// shows how a forEach Works internally
 function showForEach(array, action) {
   for (var i = 0; i < array.length; i++)
     action(array[i]);
