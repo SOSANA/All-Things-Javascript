@@ -22,30 +22,6 @@ showForEach(['Wampeter', 'Foma', 'Granfalloon'], console.log);
 // Granfalloon
 console.log('---------------------------');
 
-
-var names = ['Zach', 'Sosana'];
-
-function printName(name) {
-  console.log(name);
-}
-
-function showForEach2(name, fn) {
-  for (var i = 0; i < name.length; i++)
-    fn(name[i]);
-}
-
-showForEach2(names, printName);
-console.log('---------------------------');
-
-function showForEach3(names, printName) {
-  for (var i = 0; i < names.length; i++)
-    printName(name[i]);
-}
-
-showForEach3();
-console.log('---------------------------');
-
-
 var numbers = [1, 2, 3, 4, 5];
 var sum = 0;
 
@@ -53,4 +29,35 @@ showForEach(numbers, function(number) {
   // add all the numbers in the array
   sum += number;
 });
-console.log(sum);
+
+console.log('passing in a function as the arugment: ' + sum);
+console.log('---------------------------');
+
+
+var names = ['Zach', 'Sosana'];
+var names2 = ['The', 'Man'];
+var names3 = ['Jon', 'Don', 'Ron'];
+
+function printName(name) {
+  console.log('passing in a function name as arugment: ' + name);
+}
+
+function showForEach2(name, fn) {
+  for (var i = 0; i < name.length; i++)
+    fn(name[i]);
+}
+
+// passing in printName functon as argument
+showForEach2(names, printName);
+console.log('---------------------------');
+
+// passing in anonymous function as the call back arugment
+showForEach2(names2, function (name) {
+  console.log('passing in a function as the arugment: ' + name);
+});
+console.log('---------------------------');
+
+// for each item in the list log it to console
+names3.forEach(function(name) {
+  console.log(name);
+})
