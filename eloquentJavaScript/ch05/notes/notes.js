@@ -8,7 +8,15 @@
  * 		size of whatever data type the array holds))
  *
  * Higher-order functions:
- * 	-
+ * 	- Functions that operate on other functions, either by taking them as arguments or by returning them
+ * 	- If you have already accepted the fact that functions are regular values, there is nothing
+ * 		particularly remarkable about the fact that such functions exist. The term comes from mathematics,
+ * 		where the distinction between functions and other values is taken more seriously.
+ *  - Higher-order functions allow us to abstract over actions, not just values. They come in several forms
+ *  - ex:
+ *  	- you can have functions that change other functions
+ *  	- You can even write functions that provide new types of control flow
+ *  	- Passing along arguments, which wraps its argument in another function
  *
  * Passing along arguments:
  * 	-
