@@ -1,4 +1,9 @@
 /**
+ * .apply():
+ *  - doesn't make a copy, invokes the function and lets you set the 'this' keyword but only difference
+ *  	is it wants an array of parameters
+ *  - see ex: /call-apply-bind
+ *
  * .concat():
  * 	- is a method you call on an existing array and returns back to you a
  *  	new array that has the orignal array plus any parameters you pass in. It
