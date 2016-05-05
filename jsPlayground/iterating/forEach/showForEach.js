@@ -10,6 +10,8 @@
  */
 
 /* eslint-disable */
+'use strict';
+
 // shows how a forEach Works internally
 function showForEach(array, action) {
   for (var i = 0; i < array.length; i++)
@@ -60,4 +62,4 @@ console.log('---------------------------');
 // for each item in the list log it to console
 names3.forEach(function(name) {
   console.log(name);
-})
+});

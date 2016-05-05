@@ -26,6 +26,8 @@
  */
 
 /* eslint-disable */
+'use strict';
+
 function factorial(num) {
   // If the number is less than 0, reject it.
   if (num < 0) {
