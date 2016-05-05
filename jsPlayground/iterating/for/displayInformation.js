@@ -1,3 +1,6 @@
+/* eslint-disable */
+'use strict';
+
 function displayInformation(library) {
   var i = 0, len = library.length;
   for (; i < len; i++) {

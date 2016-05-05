@@ -26,7 +26,9 @@
  *    have influence on the transformations.
  */
 
- /* eslint-disable */
+/* eslint-disable */
+'use strict';
+
  var JOURNAL = [
   {"events":["carrot","exercise","weekend"],"squirrel":false},
   {"events":["bread","pudding","brushed teeth","weekend","touched tree"],"squirrel":false},

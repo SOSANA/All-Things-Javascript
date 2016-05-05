@@ -2,6 +2,10 @@
  * - chaining the map and filter array to pull only the stock symbol with value
  * 	 of the stock that is greater or equal to 150.00
  */
+
+/* eslint-disable */
+'use strict';
+
 var stocks = [
   { symbol: "XFX", price: 240.22, volume: 23432 },
   { symbol: "TNZ", price: 332.19, volume: 234 },

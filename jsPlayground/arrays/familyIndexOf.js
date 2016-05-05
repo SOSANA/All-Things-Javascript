@@ -5,6 +5,10 @@
  * 	- careful on mutating array and passing in second parameter as it might not
  * 		work as expected
  */
+
+/* eslint-disable */
+'use strict';
+
 var family = ['Shane', 'Sally', 'Isaac', 'Kittie'];
 console.log(family);
 console.log(family.indexOf('Kittie')); // 3

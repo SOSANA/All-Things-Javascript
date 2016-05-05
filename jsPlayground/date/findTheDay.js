@@ -1,3 +1,6 @@
+/* eslint-disable */
+'use strict';
+
 // mm/dd/yyyy
 var myDate = ['10/11/2009', '11/10/2010', '-1', '05/10/1982'];
 

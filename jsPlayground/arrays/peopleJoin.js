@@ -3,6 +3,10 @@
  * 	- produces a string that is the result of adding together all items in array
  */
 
+
+/* eslint-disable */
+'use strict';
+
 // chain other array methods using es6
 var name = 'shane Osbourne';
 

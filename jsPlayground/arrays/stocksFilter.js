@@ -2,6 +2,10 @@
  * - using filter method, to filter out items in an array and only returning
  *   items that match a certain criteria
  */
+
+/* eslint-disable */
+'use strict';
+
 function getStocksOver(stocks, minPrice) {
   return stocks.filter(function(stock) {
     return stock.price <= minPrice;

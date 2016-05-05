@@ -9,6 +9,11 @@
  *  - remember that you only need to return a truthy or a falsey value to then
  *  	function that gets called to each item
  */
+
+
+/* eslint-disable */
+'use strict';
+
 var items = [1, 2, 3, 4, 5];
 
 // filters out numbers 3 or less

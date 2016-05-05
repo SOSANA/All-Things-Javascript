@@ -1,4 +1,5 @@
 /* eslint-disable */
+'use strict';
 
 // Helper to return a value's internal object [[Class]]
 // That this returns [object Type] even for primitives

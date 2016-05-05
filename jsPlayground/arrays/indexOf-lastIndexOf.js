@@ -1,4 +1,5 @@
-/*eslint-disable */
+/* eslint-disable */
+'use strict';
 
 // show value 2 index starting at the beginning of the array
 var firstIndex = [ 1, 2, 3, 2, 1 ].indexOf(2);

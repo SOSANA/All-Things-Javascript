@@ -1,4 +1,9 @@
-// working with dates in javascript, src: https://www.youtube.com/watch?v=M3VEFVBRw-o&feature=youtu.be
+/**
+ * working with dates in javascript, src: https://www.youtube.com/watch?v=M3VEFVBRw-o&feature=youtu.be
+ */
+
+/* eslint-disable */
+'use strict';
 
 // write the current Date and Time to the web page without any arguments
 var d = new Date();

@@ -1,3 +1,7 @@
+/* eslint-disable */
+'use strict';
+
+
 // using the for loop method
 
 // 'getStockSymbols' function, job is to get an array of stocks, pull out the symbol from

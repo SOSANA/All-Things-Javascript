@@ -22,6 +22,8 @@
  */
 
 /* eslint-disable */
+'use strict';
+
 function deepEqual(a, b) {
   // If a and b are exactly the same value, return true. Remember that triple-equals (===)
   // does not perform type coercion, while double-equals (==) does

@@ -12,7 +12,7 @@
  *
  * shift();
  *  - removes element from the start of the array
- *  
+ *
  * unshift():
  *  - adds element to the start of array
  *
@@ -23,7 +23,9 @@
  * 	 	be added to the end of the array
  */
 
- /* eslint-disable */
+/* eslint-disable */
+'use strict';
+
 // example of using push(), join(), and pop()
 var mack = [];
 mack.push('Mack');

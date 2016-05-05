@@ -4,6 +4,9 @@
  * 	 concatAll() and abstract it into a useful function
  */
 
+/* eslint-disable */
+'use strict';
+
 var exchanges = [
   [
     { symbol: "XFX", price: 240.22, volume: 23432 },

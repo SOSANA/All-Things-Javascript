@@ -8,7 +8,9 @@
  * - Many languages will stop you, or at least warn you, when you are defining a variable with a name that
  * 	 is already taken. JavaScript does neither, so be careful.
  */
-/*eslint-disable */
+
+/* eslint-disable */
+'use strict';
 
 // If you need to do trigonometry, Math can help. It contains cos (cosine), sin (sine), and tan (tangent),
 // as well as their inverse functions, acos, asin, and atan, respectively. The number π (pi)—or at least the

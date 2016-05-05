@@ -4,6 +4,10 @@
  * 	- sorting defaults to unicode when sorting numbers which converts numbers
  * 		to strings first
  */
+
+/* eslint-disable */
+'use strict';
+
 var items = ['Shane', 'Sally', 'Thomas', 'Isaac', 'Alibaba', 'David'];
 var items2 = [10, 30, 2, 20];
 var items3 = [10, 30, 2, 20];

@@ -5,7 +5,9 @@
  *  - param g - the best guess so far (can omit from initial call)
  */
 
- /*eslint-disable */
+/* eslint-disable */
+'use strict';
+
 function squareRoot(n, g) {
   if (!g) {
     // Take an initial guess at the square root

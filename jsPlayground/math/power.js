@@ -3,7 +3,10 @@
  * power is represented with a base number and an exponent. The base number tells what number
  * is being multiplied.
  */
-/*eslint-disable */
+
+/* eslint-disable */
+'use strict';
+
  var power = function (base, exponent) {
    var result = 1;
 

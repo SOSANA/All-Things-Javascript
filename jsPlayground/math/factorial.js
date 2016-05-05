@@ -14,6 +14,8 @@
  */
 
 /* eslint-disable */
+'use strict';
+
 var factor = function(number) {
   var result = 1;
   var count;

@@ -6,6 +6,10 @@
  * 	- if the original array contains object references, it does not create a new
  * 		object that matches it, the reference itself is copied. It will motify both
  */
+
+/* eslint-disable */
+'use strict';
+
 var person = { name: 'Shane' };
 var items = [1, person, 2, 3, 4, 5, 6, 7, 8];
 var copy = items.slice(); // creates a copy

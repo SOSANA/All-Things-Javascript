@@ -11,6 +11,8 @@
  */
 
 /* eslint-disable */
+'use strict';
+
 function range(start, end, step){
   // If no optional step, set step to 1
   if (step === undefined) {

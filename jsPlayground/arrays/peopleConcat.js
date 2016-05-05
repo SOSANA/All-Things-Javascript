@@ -7,6 +7,9 @@
  *  - cannot do nested arrays
  */
 
+/* eslint-disable */
+'use strict';
+
 var people = [
   {
     name: 'Shane',
