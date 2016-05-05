@@ -54,12 +54,23 @@ console.log('-------------------');
 
 // You can even write functions that provide new types of control flow
 function unless(test, then) {
+  // The program will print to the console if (!test) is true. In other words, it will print
+  // to the console if test is false because (!false) evaluates to true. Test in this example
+  // is n % 2, which will be 0 only if n is even. Boolean(0) evaluates to false, so when this
+  // happens, (!test) is true and the number is printed to the console
+  //
   if (!test) {
     then();
   }
 }
 
+// The repeat function is called with two arguments, 3 (which is assigned to the variable times)
+// and a function, which is passed as an argument
 function repeat(times, body) {
+  // Since the first argument given to repeat is 3, the loop in the repeat function will run 3 times
+  // The first time, i is 0: 0 is even, so “0 is even” is printed to the console
+  // The second time, i is 1: 1 is odd, so nothing happens.
+  // The third (and last) time, i is 2: 2 is even, so “2 is even” is printed to the console
   for (var i = 0; i < times; i++) {
     body(i);
   }
