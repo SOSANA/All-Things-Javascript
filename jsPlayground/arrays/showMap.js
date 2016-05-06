@@ -80,5 +80,5 @@ console.log(showMap(overNinety, function(person) {
 }));
 console.log('-----------------------');
 console.log(showMap(overNinetyAge, function(person) {
-  return person;
+  return person.name;
 }));
