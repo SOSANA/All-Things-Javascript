@@ -1,6 +1,15 @@
 /**
- * Filter:
- *  -
+ * .filter():
+ *  - creates a new array including elements where the filter function returns true and
+ * 		omitting the ones where it returns false
+ * 	- creates a new array, it does this by calling a function that you provide
+ * 		as the argument with each item in the source array, then it looks at the
+ * 		return value from that function call. If it's a truthy value such as a
+ * 		number, string, boolean then the current item we are looking at will make
+ * 		it into the filtered array. How ever if the function call returns a
+ * 		falsey value then the item is discarded
+ *  - remember that you only need to return a truthy or a falsey value to then
+ *  	function that gets called to each item
  */
 
 /* eslint-disable */
@@ -53,6 +62,9 @@ console.log(ancestry.length);
 console.log('-----------------------');
 
 // shows how a filter Works internally
+// Note how the showFilter function, rather than deleting elements from the existing array, builds
+// up a new array with only the elements that pass the test. "This function is pure". It does not
+// modify the array it is given
 function showFilter(array, test) {
   var passed = [];
   for (var i = 0; i < array.length; i++) {
@@ -63,10 +75,14 @@ function showFilter(array, test) {
   return passed;
 }
 
+// using our example of filter
 console.log(showFilter(ancestry, function(person) {
+  // below tests this by checking that each person’s birth year is after 1900 but before 1925
   return person.born > 1900 && person.born < 1925;
 }));
 console.log('-----------------------');
+// using js built in filter method
 console.log(ancestry.filter(function(person) {
+  // below tests this by checking that each person’s birth year is after 1900 but before 1925
   return person.father === 'Carel Haverbeke';
 }));
