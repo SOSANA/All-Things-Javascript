@@ -68,17 +68,6 @@ var overNinety = ancestry.filter(function(person) {
   return person.died - person.born > 90;
 });
 
-var overNinetyAge = ancestry.filter(function(person) {
-  // people who lived to at least 90 years of age or greater
-  var age = person.died - person.born;
-  console.log(age);
-  return age;
-});
-
 console.log(showMap(overNinety, function(person) {
-  return person.name;
-}));
-console.log('-----------------------');
-console.log(showMap(overNinetyAge, function(person) {
   return person.name;
 }));
