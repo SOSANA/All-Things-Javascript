@@ -3,19 +3,25 @@
  *  - builds up a value by repeated calling the iterator, passing in previous values;
  * 		see the spec for the details; useful for summing the contents of an array and
  * 		many other things
- *  - Another common pattern of computation on arrays is computing a single value from
- *  	them. Our recurring example, summing a collection of numbers, is an instance of
- *  	this. Another example would be finding the person with the earliest year of birth
- *  	in the data set
  *  - The higher-order operation that represents this pattern is called reduce
  *  	(or sometimes fold). You can think of it as folding up the array, one element at a
  *  	time. When summing numbers, you’d start with the number zero and, for each element,
  *  	combine it with the current sum by adding the two.
  *  - The parameters to the reduce function are, apart from the array, a combining function
- *  	and a start value. This function is a little less straightforward than filter and map,
- *   	so pay careful attention.
+ *  	and a start value.
  *  - Remember the point of reduce is to turn an array of elements into a single value. For
  *  	example, you might want to use reduce to get the sum of all the elements in the array.
+ *  - Another common pattern of computation on arrays is computing a single value from
+ *  	them. Our recurring example, summing a collection of numbers, is an instance of
+ *  	this. Another example would be finding the person with the earliest year of birth
+ *  	in the data set
+ *  - has an added convenience. If your array contains at least one element, you are allowed
+ *  	to leave off the start argument. The method will take the first element of the array as
+ *  	its start value and start reducing at the second element
+ *  - Use the elements in a set to compute a single value. For example, we’ve taken an array
+ *  	of numbers and used reduce to get the sum of all the numbers.
+ *  	ex:
+ *  	we went through all the people objects in the ancestry array to find the oldest person
  */
 
 /* eslint-disable */
@@ -65,6 +71,12 @@ var ancestryArray = '[\n  ' + [
 
 var ancestry = JSON.parse(ancestryArray);
 
+// shows how reduce works internally
+// Remember the point of reduce is to turn an array of elements into a single value
+// For example, you might want to use reduce to get the sum of all the elements in the array.
+// To do this, you need to keep a running total of the sum, which starts at 0. Then, as you go
+// through each element in the array, you use combine to add each element to current,
+// which is the running total
 function showReduce(array, combine, start) {
   var current = start;
   for (var i = 0; i < array.length; i++) {
@@ -75,10 +87,13 @@ function showReduce(array, combine, start) {
 
 var test = [1, 2, 3, 4];
 
+// So in the parameters to the combine function below, a is current or the running total, and b
+// is each element in the array
 console.log(showReduce(test, function (a, b) {
   return a + b;
 }, 0)); // 10
 console.log('-----------------------');
+// using javascripts built in reduce method that comes with arrays
 console.log(ancestry.reduce(function (min, cur) {
   if (cur.born < min.born) {
     return cur;
