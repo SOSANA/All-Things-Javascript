@@ -65,11 +65,16 @@ function showMap(array, transform) {
 
 var overNinety = ancestry.filter(function(person) {
   // people who lived to at least 90 years of age or greater
-  return person.died - person.born > 90;
+  return person.died - person.born >= 90;
 });
 
-var filtered = ancestry.filter(function(person) {
-  return person.died - person.born > 90;
+var filtered = ancestry.map(function(person) {
+  // go through array and subtract year born from year death
+  var age = person.died - person.born;
+  // return a new array containing all the ages
+  return age;
+}).filter(function(x) { // filter out all ages under 90
+  return x >= 90;
 });
 
 var items = [1, 2, 3, 4, 5];
@@ -82,7 +87,11 @@ var filtered2 = items.filter(function (x) {
 console.log(showMap(overNinety, function(person) {
   return person.name;
 }));
+
 console.log('------------------');
 console.log(filtered);
 console.log('------------------');
 console.log(filtered2);
+console.log('------------------');
+console.log(overNinety);
+console.log('------------------');
