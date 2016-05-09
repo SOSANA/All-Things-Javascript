@@ -3,6 +3,19 @@
  *  - builds up a value by repeated calling the iterator, passing in previous values;
  * 		see the spec for the details; useful for summing the contents of an array and
  * 		many other things
+ *  - Another common pattern of computation on arrays is computing a single value from
+ *  	them. Our recurring example, summing a collection of numbers, is an instance of
+ *  	this. Another example would be finding the person with the earliest year of birth
+ *  	in the data set
+ *  - The higher-order operation that represents this pattern is called reduce
+ *  	(or sometimes fold). You can think of it as folding up the array, one element at a
+ *  	time. When summing numbers, you’d start with the number zero and, for each element,
+ *  	combine it with the current sum by adding the two.
+ *  - The parameters to the reduce function are, apart from the array, a combining function
+ *  	and a start value. This function is a little less straightforward than filter and map,
+ *   	so pay careful attention.
+ *  - Remember the point of reduce is to turn an array of elements into a single value. For
+ *  	example, you might want to use reduce to get the sum of all the elements in the array.
  */
 
 /* eslint-disable */
@@ -51,5 +64,25 @@ var ancestryArray = '[\n  ' + [
 ].join(',\n  ') + '\n]';
 
 var ancestry = JSON.parse(ancestryArray);
-console.log(ancestry.length);
+
+function showReduce(array, combine, start) {
+  var current = start;
+  for (var i = 0; i < array.length; i++) {
+    current = combine(current, array[i]);
+  }
+  return current;
+}
+
+var test = [1, 2, 3, 4];
+
+console.log(showReduce(test, function (a, b) {
+  return a + b;
+}, 0)); // 10
 console.log('-----------------------');
+console.log(ancestry.reduce(function (min, cur) {
+  if (cur.born < min.born) {
+    return cur;
+  } else {
+    return min;
+  }
+})); // {name: "Pauwels van Haverbeke", born: 1535, …}
