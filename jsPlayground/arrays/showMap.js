@@ -6,6 +6,10 @@
  *  	and building a new array from the returned values. The new array will have the same
  *  	length as the input array, but its content will have been “mapped” to a new form by
  *  	the function
+ *  - Transform every element in a set.
+ *  	ex:
+ *  	we went through the array of person objects in ancestry and used map to return an
+ *  	array of just names. In this case, person object was transformed to just a string
  */
 
 /* eslint-disable */
@@ -86,12 +90,10 @@ var filtered2 = items.filter(function (x) {
 
 console.log(showMap(overNinety, function(person) {
   return person.name;
-}));
-
+})); // // [ 'Philibert Haverbeke', 'Clara Aernoudts', 'Emile Haverbeke', 'Maria Haverbeke' ]
 console.log('------------------');
-console.log(filtered);
+console.log(filtered); // [ 90, 94, 91, 92 ]
 console.log('------------------');
-console.log(filtered2);
+console.log(filtered2); // [ 4, 5 ]
 console.log('------------------');
-console.log(overNinety);
-console.log('------------------');
+console.log(overNinety); // // {name: 'Philibert Haverbeke', sex: 'm', born: 1907, …}
