@@ -47,6 +47,14 @@
  * .map():
  * 	- creates a new array from the values returned by the iterator function
  *  - returns a new Array of objects created by taking some action on the original item
+ *  - The map method transforms an array by applying a function to all of its elements
+ *  	and building a new array from the returned values. The new array will have the same
+ *  	length as the input array, but its content will have been “mapped” to a new form by
+ *  	the function
+ *  - Transform every element in a set.
+ *  	ex:
+ *  	we went through the array of person objects in ancestry and used map to return an
+ *  	array of just names. In this case, person object was transformed to just a string
  *
  * .pop():
  *  - can be use to remove values at the end of the array
@@ -58,6 +66,25 @@
  * 	- builds up a value by repeated calling the iterator, passing in previous values;
  * 		see the spec for the details; useful for summing the contents of an array and
  * 		many other things
+ * 	- The higher-order operation that represents this pattern is called reduce
+ *  	(or sometimes fold). You can think of it as folding up the array, one element at a
+ *  	time. When summing numbers, you’d start with the number zero and, for each element,
+ *  	combine it with the current sum by adding the two.
+ *  - The parameters to the reduce function are, apart from the array, a combining function
+ *  	and a start value.
+ *  - Remember the point of reduce is to turn an array of elements into a single value. For
+ *  	example, you might want to use reduce to get the sum of all the elements in the array.
+ *  - Another common pattern of computation on arrays is computing a single value from
+ *  	them. Our recurring example, summing a collection of numbers, is an instance of
+ *  	this. Another example would be finding the person with the earliest year of birth
+ *  	in the data set
+ *  - has an added convenience. If your array contains at least one element, you are allowed
+ *  	to leave off the start argument. The method will take the first element of the array as i
+ *  	ts start value and start reducing at the second element
+ *  - Use the elements in a set to compute a single value. For example, we’ve taken an array
+ *  	of numbers and used reduce to get the sum of all the numbers.
+ *  	ex:
+ *  	we went through all the people objects in the ancestry array to find the oldest person
  *
  * .reduceRight():
  * 	- like reduce, but works in descending rather than ascending order
