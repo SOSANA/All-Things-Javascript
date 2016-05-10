@@ -52,3 +52,35 @@ console.log('---------------------');
 // Math.round() rounds a number to the nearest integer (to the nearest whole number).
 console.log('I am using the round method to round 2.5 to nearest interger: ' + Math.round(2.5)); // 3
 console.log('I am using the round method to round 4.4 to nearest interger: ' + Math.round(4.4)); // 4
+
+// using Math.round to round to 1 decimal place
+var number = 12.3456789;
+var rounded = Math.round( number * 10 ) / 10;
+console.log(rounded); // 12.3
+console.log('---------------------');
+
+var fixed = rounded.toFixed(1); // fixed is always to 1dp BUT: returns string!
+console.log(typeof fixed === 'string'); // true
+console.log('---------------------');
+console.log(fixed); // 12.3
+console.log('---------------------');
+// to get it back to number format use format below but will not have any trailing zeros
+// using parseFloat() and to fixed to round 1 and 2 decimal place
+// Generally, if you want to do the math it's best to follow your Math.round() example above. If you want to
+// display a number in your UI then use .toFixed()
+
+var number1 = 61.666666666666664;
+var number2 = 54.55555555555556;
+
+// to get it back to number format
+// fixed 1 decimal place
+var fixed1 = parseFloat(number1.toFixed(1));
+// fixed 2 decimal place
+var fixed2 = parseFloat(number2.toFixed(2));
+
+console.log(typeof fixed1 === 'number'); // true
+console.log(typeof fixed2 === 'number'); // true
+console.log('---------------------');
+// to get it back to number format
+console.log(fixed1); // 61.7
+console.log(fixed2); // 54.56
