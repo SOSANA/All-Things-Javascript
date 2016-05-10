@@ -47,6 +47,40 @@
  *  -  the js engine creates the closure, you don't make the closure
  *  - ex: see folder /d_17-function-factories /d_18-closures-and-callbacks d_20-functional-programming
  *
+ * Composability:
+ *  - known as "composition" refers to function composition (not to be confused
+ *  	with object composition) is an act or mechanism to combine simple functions
+ *  	to build more complicated ones. Like the usual composition of functions in
+ *  	mathematics, the result of each function is passed as the argument of the
+ *  	next, and the result of the last one is the result of the whole.
+ *  - Higher-order functions start to shine when you need to compose functions.
+ *  	ex: code that finds the average age for men and for women in the data set
+ *  - Putting bits and pieces togather, so that a meaning can be made out of it
+ *  - comes at at cost due to 'inefficiency'.
+ *    - Function calls in JavaScript are costly compared to simple loop bodies.
+ *    - Abstractions add layers between the raw things the computer is doing and
+ *    	the concepts we are working with and thus cause the machine to perform
+ *    	more work.
+ *    - This is not an iron law—there are programming languages that have better
+ *    	support for building abstractions without adding inefficiencies, and even
+ *    	in JavaScript, an experienced programmer can find ways to write abstract
+ *    	code that is still fast. But it is a problem that comes up a lot
+ *    - Fortunately, most computers are insanely fast. If you are processing a
+ *    	modest set of data or doing something that has to happen only on a human
+ *    	time scale (say, every time the user clicks a button), then it does not
+ *    	matter whether you wrote a pretty solution that takes half a millisecond
+ *    	or a super-optimized solution that takes a tenth of a millisecon
+ *    - It is helpful to roughly keep track of how often a piece of your program
+ *    	is going to run. If you have a loop inside a loop (either directly or
+ *    	through the outer loop calling a function that ends up performing the
+ *    	inner loop), the code inside the inner loop will end up running N×M times,
+ *    	where N is the number of times the outer loop repeats and M is the number
+ *    	of times the inner loop repeats within each iteration of the outer loop.
+ *    	If that inner loop contains another loop that makes P rounds, its body
+ *    	will run M×N×P times, and so on. This can add up to large numbers, and
+ *    	when a program is slow, the problem can often be traced to only a small
+ *    	part of the code, which sits inside an inner loop
+ *
  * First Class Functions:
  * 	- everything you can do with other types such as objects, strings, numbers, and booleans
  * 		you can do with functions
