@@ -59,16 +59,17 @@ var rounded = Math.round( number * 10 ) / 10;
 console.log(rounded); // 12.3
 console.log('---------------------');
 
+// If you want to display a number in your UI then use .toFixed() as it converts
+// it to a string as shown below
 var fixed = rounded.toFixed(1); // fixed is always to 1dp BUT: returns string!
 console.log(typeof fixed === 'string'); // true
 console.log('---------------------');
 console.log(fixed); // 12.3
 console.log('---------------------');
-// to get it back to number format use format below but will not have any trailing zeros
-// using parseFloat() and to fixed to round 1 and 2 decimal place
-// Generally, if you want to do the math it's best to follow your Math.round() example above. If you want to
-// display a number in your UI then use .toFixed()
 
+// to get it back to number format use format below but will not have any trailing zeros
+// using parseFloat() and toFixed() to round x decimal place
+// Generally, if you want to do the math it's best to follow your Math.round() example above
 var number1 = 61.666666666666664;
 var number2 = 54.55555555555556;
 
