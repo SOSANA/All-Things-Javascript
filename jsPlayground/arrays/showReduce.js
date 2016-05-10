@@ -106,6 +106,20 @@ console.log([2, 4, 6, 8].reduce(function(previousValue, currentValue, currentInd
   return previousValue + currentValue;
 })); // 20
 console.log('-----------------------');
+
+// same as above but showing alternative way to pass around functions
+var numbers = [65, 44, 12, 4];
+
+function getSum(total, num) {
+    return total + num;
+}
+function mySumFunction(array, sum) {
+    console.log(array.reduce(sum));
+    console.log('-----------------------');
+}
+
+mySumFunction(numbers, getSum); // 125
+
 // find the most ancient known ancestor
 console.log('most ancient known ancestor: ');
 console.log(ancestry.reduce(function (prev, cur) {
