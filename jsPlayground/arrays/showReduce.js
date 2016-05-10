@@ -1,5 +1,6 @@
 /**
  * .reduce():
+ *  - src: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
  *  - builds up a value by repeated calling the iterator, passing in previous values;
  * 		see the spec for the details; useful for summing the contents of an array and
  * 		many other things
@@ -93,11 +94,27 @@ console.log(showReduce(test, function (a, b) {
   return a + b;
 }, 0)); // 10
 console.log('-----------------------');
-// using javascripts built in reduce method that comes with arrays
-console.log(ancestry.reduce(function (min, cur) {
-  if (cur.born < min.born) {
+// here is how the actual built-in reduce method works
+// The first time the callback is called, previousValue and currentValue can be one of two
+// values. If initialValue is provided in the call to reduce, then previousValue will be
+// equal to initialValue and currentValue will be equal to the first value in the array. If
+// no initialValue was provided, then previousValue will be equal to the first value in the
+// array and currentValue will be equal to the second value
+console.log([2, 4, 6, 8].reduce(function(previousValue, currentValue, currentIndex, array) {
+  // previousValue will be equal to the first value in the
+  // array and currentValue will be equal to the second value
+  return previousValue + currentValue;
+})); // 20
+console.log('-----------------------');
+// find the most ancient known ancestor
+console.log('most ancient known ancestor: ');
+console.log(ancestry.reduce(function (prev, cur) {
+  // previousValue will be equal to the first value in the
+  // array and currentValue will be equal to the second value
+  // iterate thru comparing second value less than the first value until we find lowest date born
+  if (cur.born < prev.born) {
     return cur;
   } else {
-    return min;
+    return prev;
   }
 })); // {name: "Pauwels van Haverbeke", born: 1535, …}
