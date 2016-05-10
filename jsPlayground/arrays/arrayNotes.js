@@ -63,6 +63,7 @@
  *  - can be used to add values to the end of the array
  *
  * .reduce():
+ *  - src: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
  * 	- builds up a value by repeated calling the iterator, passing in previous values;
  * 		see the spec for the details; useful for summing the contents of an array and
  * 		many other things
