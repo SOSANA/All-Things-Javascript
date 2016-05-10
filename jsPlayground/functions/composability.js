@@ -8,6 +8,30 @@
  *  - Higher-order functions start to shine when you need to compose functions.
  *  	ex: code that finds the average age for men and for women in the data set
  *  - Putting bits and pieces togather, so that a meaning can be made out of it
+ *  - comes at at cost due to 'inefficiency'.
+ *    - Function calls in JavaScript are costly compared to simple loop bodies.
+ *    - Abstractions add layers between the raw things the computer is doing and
+ *    	the concepts we are working with and thus cause the machine to perform
+ *    	more work.
+ *    - This is not an iron law—there are programming languages that have better
+ *    	support for building abstractions without adding inefficiencies, and even
+ *    	in JavaScript, an experienced programmer can find ways to write abstract
+ *    	code that is still fast. But it is a problem that comes up a lot
+ *    - Fortunately, most computers are insanely fast. If you are processing a
+ *    	modest set of data or doing something that has to happen only on a human
+ *    	time scale (say, every time the user clicks a button), then it does not
+ *    	matter whether you wrote a pretty solution that takes half a millisecond
+ *    	or a super-optimized solution that takes a tenth of a millisecon
+ *    - It is helpful to roughly keep track of how often a piece of your program
+ *    	is going to run. If you have a loop inside a loop (either directly or
+ *    	through the outer loop calling a function that ends up performing the
+ *    	inner loop), the code inside the inner loop will end up running N×M times,
+ *    	where N is the number of times the outer loop repeats and M is the number
+ *    	of times the inner loop repeats within each iteration of the outer loop.
+ *    	If that inner loop contains another loop that makes P rounds, its body
+ *    	will run M×N×P times, and so on. This can add up to large numbers, and
+ *    	when a program is slow, the problem can often be traced to only a small
+ *    	part of the code, which sits inside an inner loop
  */
 
 /* eslint-disable */
@@ -57,27 +81,37 @@ var ancestryArray = '[\n  ' + [
 
 var ancestry = JSON.parse(ancestryArray);
 
+// Function that computes the average for all the numbers in an array
 function average(array) {
+  // Plus is the combine function that computes the sum of all numbers in the array
+  // It’s a bit silly that we have to define plus as a function, but operators in
+  // JavaScript, unlike functions, are not values, so you can’t pass them as arguments
   function plus(a, b) {
     return a + b;
   }
   return array.reduce(plus) / array.length;
 }
 
+
+// Maps an object p, that represents a person to an age by using p’s born and died properties
 function age(p) {
   return p.died - p.born;
 }
 
+// Filter function used to return male family members
 function male(p) {
   return p.sex === 'm';
 }
 
+// Filter function used to return female family members
 function female(p) {
   return p.sex === 'f';
 }
 
-console.log('average age for male: ' + average(ancestry.filter(male).map(age))); // 61.666666666666664
-console.log('average age for male: ' + average(ancestry.filter(female).map(age))); // 54.55555555555556
+// Find the average age for males in the ancestry array
+console.log('average age for males: ' + average(ancestry.filter(male).map(age))); // 61.666666666666664
+// Find the average age for females in the ancestry array
+console.log('average age for females: ' + average(ancestry.filter(female).map(age))); // 54.55555555555556
 console.log('---------------------');
 
 // using parseFloat() and toFixed() to round 2 decimal points
@@ -90,6 +124,6 @@ console.log('is fixed and fixed2 a number?: ');
 console.log(typeof fixed === 'number'); // true
 console.log(typeof fixed2 === 'number'); // true
 console.log('---------------------');
-console.log('average age for male rounded 2 DP: ' + fixed); // 61.7
-console.log('average age for female rounded 2 DP: ' + fixed2); // 54.56
+console.log('average age for males rounded 2 DP: ' + fixed); // 61.7
+console.log('average age for females rounded 2 DP: ' + fixed2); // 54.56
 console.log('---------------------');
