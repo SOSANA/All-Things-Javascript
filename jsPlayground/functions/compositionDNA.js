@@ -108,5 +108,9 @@ function sharedDNA(person, fromMother, fromFather) {
 }
 
 var ph = byName['Philibert Haverbeke'];
-console.log('DNA shared with Philibert Haverbeke: ' + reduceAncestors(ph, sharedDNA, 0) / 4); // 0.00048828125
-console.log('Approx. DNA shared with Philibert Haverbeke: ' + parseFloat(reduceAncestors(ph, sharedDNA, 0) / 4).toFixed(5)); // 0.00049
+console.log('Tracing DNA lineage shared between grandfather Philibert Haverbeke' + '\n' +
+'and most ancient person in data, Pauwels van Haverbeke: ');
+console.log(reduceAncestors(ph, sharedDNA, 0) / 4); // 0.00048828125
+console.log('Approx. DNA lineage shared between grandfather Philibert Haverbeke'+ '\n' +
+'and most ancient person in data, Pauwels van Haverbeke: ');
+console.log(parseFloat(reduceAncestors(ph, sharedDNA, 0) / 4).toFixed(5)); // 0.00049
