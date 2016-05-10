@@ -132,3 +132,18 @@ console.log(ancestry.reduce(function (prev, cur) {
     return prev;
   }
 })); // {name: "Pauwels van Haverbeke", born: 1535, …}
+console.log('-----------------------');
+
+// showing how we could have found most ancient ancestor manually
+function reduceManually() {
+  var min = ancestry[0];
+  for (var i = 1; i < ancestry.length; i++) {
+    var cur = ancestry[i];
+    if (cur.born < min.born) {
+      min = cur;
+    }
+  }
+  return min;
+}
+console.log('most ancient known ancestor reduced manually: ');
+console.log(reduceManually());
