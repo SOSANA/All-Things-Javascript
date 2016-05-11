@@ -114,3 +114,37 @@ console.log(reduceAncestors(ph, sharedDNA, 0) / 4); // 0.00048828125
 console.log('Approx. DNA lineage shared between grandfather Philibert Haverbeke'+ '\n' +
 'and most ancient person in data, Pauwels van Haverbeke: ');
 console.log(parseFloat(reduceAncestors(ph, sharedDNA, 0) / 4).toFixed(5)); // 0.00049
+console.log('---------------------');
+
+
+// seeing how much DNA I share with my 'Mom'
+var parents = ['Mom', 'Dad'];
+parents.forEach(function(person) {
+  byName[person.name] = person;
+});
+
+console.log(byName['Mom']);
+
+function reduceAncestors2(person, f, defaultValue) {
+  function valueFor(person) {
+    if (person === undefined) {
+      return defaultValue;
+    } else {
+      return f(person, valueFor(byName[person]),
+                       valueFor(byName[person]));
+
+    }
+  }
+  return valueFor(person);
+}
+
+function sharedDNA2(person, fromMother, fromFather) {
+  if (person === 'Mom') {
+    return 1;
+  } else {
+    return (fromMother + fromFather) / 2;
+  }
+}
+
+var me = byName['Sosana'];
+console.log(reduceAncestors2(me, sharedDNA2, 0) / 4);
