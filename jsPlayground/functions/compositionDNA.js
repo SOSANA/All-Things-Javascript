@@ -118,21 +118,19 @@ console.log('---------------------');
 
 
 // seeing how much DNA I share with my 'Mom'
+var byName2 = {};
 var parents = ['Mom', 'Dad'];
 parents.forEach(function(person) {
-  byName[person.name] = person;
+  byName2[person] = person;
 });
-
-console.log(byName['Mom']);
 
 function reduceAncestors2(person, f, defaultValue) {
   function valueFor(person) {
     if (person === undefined) {
       return defaultValue;
     } else {
-      return f(person, valueFor(byName[person]),
-                       valueFor(byName[person]));
-
+      return f(person, valueFor(byName2.Mom),
+                       valueFor(byName2.Dad));
     }
   }
   return valueFor(person);
@@ -146,5 +144,6 @@ function sharedDNA2(person, fromMother, fromFather) {
   }
 }
 
-var me = byName['Sosana'];
-console.log(reduceAncestors2(me, sharedDNA2, 0) / 4);
+var me = byName2['Sosana'];
+console.log(byName2);
+console.log(reduceAncestors2(me, sharedDNA2, 2) /4 ); // 0.05
