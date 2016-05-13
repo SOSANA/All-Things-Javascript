@@ -113,6 +113,7 @@ console.log('Tracing DNA lineage shared between grandfather Philibert Haverbeke'
 console.log(reduceAncestors(ph, sharedDNA, 0) / 4); // 0.00048828125
 console.log('Approx. DNA lineage shared between grandfather Philibert Haverbeke'+ '\n' +
 'and most ancient person in data, Pauwels van Haverbeke: ');
+// this rounded it but is a string!!!
 console.log(parseFloat(reduceAncestors(ph, sharedDNA, 0) / 4).toFixed(5)); // 0.00049
 console.log('---------------------');
 
@@ -147,3 +148,28 @@ function sharedDNA2(person, fromMother, fromFather) {
 var me = byName2['Sosana'];
 console.log(byName2);
 console.log(reduceAncestors2(me, sharedDNA2, 2) /4 ); // 0.05
+console.log('---------------------');
+
+
+// the following code finds the percentage of known ancestors, for a given person, who lived past 70
+function countAncestors(person, test) {
+  function combine(person, fromMother, fromFather) {
+    var thisOneCounts = test(person);
+    return fromMother + fromFather + (thisOneCounts ? 1 : 0);
+  }
+  return reduceAncestors(person, combine, 0);
+}
+
+function longLivingPercentage(person) {
+  var all = countAncestors(person, function() {
+    return true;
+  });
+  var longLiving = countAncestors(person, function(person) {
+    return (person.died - person.born) >= 70;
+  });
+  return longLiving / all;
+}
+
+console.log(longLivingPercentage(byName['Emile Haverbeke'])); // 0.14545454545454545
+// this rounded it but is a string!!!
+console.log(parseFloat(longLivingPercentage(byName['Emile Haverbeke'])).toFixed(3)); // 0.145
