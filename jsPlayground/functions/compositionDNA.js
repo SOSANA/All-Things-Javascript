@@ -152,6 +152,8 @@ console.log('---------------------');
 
 
 // the following code finds the percentage of known ancestors, for a given person, who lived past 70
+// countAncestors counts the number of ancestors for a given person by adding the number of ancestors
+// for each of the person’s parents. It will also include person if thisOneCounts evaluates to true
 function countAncestors(person, test) {
   function combine(person, fromMother, fromFather) {
     var thisOneCounts = test(person);
