@@ -1,6 +1,8 @@
 /**
  * Composability:
  *  - See functionNotes.js or composability.js for explanation
+ *  - Helpful walk through
+ *  	src: http://watchandcode.com/courses/eloquent-javascript-the-annotated-version/lectures/206821
  *
  * Great-great-great-great grandfather:
  *  - most ancient known ancestor is grandfather Philibert Haverbeke. By starting with him, you can
