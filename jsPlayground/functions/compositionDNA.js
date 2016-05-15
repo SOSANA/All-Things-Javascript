@@ -64,6 +64,7 @@ var ancestry = JSON.parse(ancestryArray);
 // To be able to go from a parent’s name to the actual object that represents this person,
 // we first build up an object that associates names with people
 var byName = {};
+
 ancestry.forEach(function(person) {
   byName[person.name] = person;
 });
@@ -83,7 +84,7 @@ console.log('---------------------');
 function reduceAncestors(person, f, defaultValue) {
   // handles a single person
   function valueFor(person) {
-    if (person === undefined) {
+    if (person === undefined || null) {
       return defaultValue;
     } else {
       return f(person, valueFor(byName[person.mother]),
@@ -120,25 +121,40 @@ console.log('---------------------');
 
 // seeing how much DNA I share with my 'Mom'
 var byName2 = {};
-var parents = ['Mom', 'Dad'];
+var parents = [
+  {
+    name: 'Mom',
+    sex: 'f',
+    born: 1961,
+    died: null,
+    father: null,
+    mother: null
+  },
+  {
+    name: 'Dad',
+    sex: 'm',
+    born: 1962,
+    died: null,
+    father: null,
+    mother: null
+  },
+  {
+    name: 'Sosana',
+    sex: 'm',
+    born: 1982,
+    died: null,
+    father: 'Dad',
+    mother: 'Mom'
+  }
+];
+
+
 parents.forEach(function(person) {
-  byName2[person] = person;
+  byName2[person.name] = person;
 });
 
-function reduceAncestors2(person, f, defaultValue) {
-  function valueFor(person) {
-    if (person === undefined) {
-      return defaultValue;
-    } else {
-      return f(person, valueFor(byName2.Mom),
-                       valueFor(byName2.Dad));
-    }
-  }
-  return valueFor(person);
-}
-
 function sharedDNA2(person, fromMother, fromFather) {
-  if (person === 'Mom') {
+  if (person.name === 'Sosana') {
     return 1;
   } else {
     return (fromMother + fromFather) / 2;
@@ -147,7 +163,7 @@ function sharedDNA2(person, fromMother, fromFather) {
 
 var me = byName2['Sosana'];
 console.log(byName2);
-console.log(reduceAncestors2(me, sharedDNA2, 2) /4 ); // 0.05
+console.log(reduceAncestors(me, sharedDNA2, 0) / 2); // 0.05
 console.log('---------------------');
 
 
@@ -155,10 +171,12 @@ console.log('---------------------');
 // countAncestors counts the number of ancestors for a given person by adding the number of ancestors
 // for each of the person’s parents. It will also include person if thisOneCounts evaluates to true
 function countAncestors(person, test) {
+
   function combine(person, fromMother, fromFather) {
     var thisOneCounts = test(person);
     return fromMother + fromFather + (thisOneCounts ? 1 : 0);
   }
+
   return reduceAncestors(person, combine, 0);
 }
 
@@ -166,12 +184,15 @@ function countAncestors(person, test) {
 // only the ancestors that lived 70 or more years and saves this to longLiving. It then returns the
 // percentage of all ancestors that lived 70 or more years
 function longLivingPercentage(person) {
+
   var all = countAncestors(person, function() {
     return true;
   });
+
   var longLiving = countAncestors(person, function(person) {
     return (person.died - person.born) >= 70;
   });
+
   return longLiving / all;
 }
 
