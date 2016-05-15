@@ -9,8 +9,8 @@
  *  	share with him
  *  - This person shares half thier DNA with my Mom and half with thier Dad. This is given by the formula
  *  	1/2G, where G is the number of generations from this person. Their parents are one generation from
- *  	this person, so this person shares 1/21 = 1/2 of my DNA with each of them. Their grandparents are 2
- *  	generations away from them. That means that they share 1/2G = 1/22 = 1/4 of my DNA with each of their
+ *  	this person, so this person shares 1/2 1 = 1/2 of my DNA with each of them. Their grandparents are 2
+ *  	generations away from them. That means that they share 1/2 G = 1/2 2 = 1/4 of my DNA with each of their
  *  	four grandparents. This pattern, 1/2G, keeps going with each generation
  */
 
@@ -81,10 +81,15 @@ console.log('---------------------');
 // values from their ancestors. This can be done recursively: if we are interested in person A,
 // we have to compute the values for A’s parents, which in turn requires us to compute the value
 // for A’s grandparents, and so on
+// Given a person, a function to combine values from the two parents of a given person, and a
+// default value, reduceAncestors condenses a value from a family tree
 function reduceAncestors(person, f, defaultValue) {
   // handles a single person
   function valueFor(person) {
     if (person === undefined || null) {
+      // defaultValue will be used for people who are not in the data. In this case, that value
+      // is simply zero, on the assumption that people not in the list don’t share DNA with the
+      // ancestor we are looking at
       return defaultValue;
     } else {
       return f(person, valueFor(byName[person.mother]),
@@ -148,13 +153,27 @@ var parents = [
   }
 ];
 
-
 parents.forEach(function(person) {
   byName2[person.name] = person;
 });
 
+function reduceAncestors2(person, f, defaultValue) {
+  function valueFor(person) {
+    if (person === undefined || null) {
+      return defaultValue;
+    } else {
+      return f(person, valueFor(byName2[person.mother]),
+                       valueFor(byName2[person.father]));
+
+    }
+  }
+
+  return valueFor(person);
+}
+
+
 function sharedDNA2(person, fromMother, fromFather) {
-  if (person.name === 'Sosana') {
+  if (person.name === 'Mom') {
     return 1;
   } else {
     return (fromMother + fromFather) / 2;
@@ -162,8 +181,7 @@ function sharedDNA2(person, fromMother, fromFather) {
 }
 
 var me = byName2['Sosana'];
-console.log(byName2);
-console.log(reduceAncestors(me, sharedDNA2, 0) / 2); // 0.05
+console.log(me.name + ' shares about ' + reduceAncestors2(me, sharedDNA2, 0) + ' of his DNA with his Mom'); // 0.5
 console.log('---------------------');
 
 
