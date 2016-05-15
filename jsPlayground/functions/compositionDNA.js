@@ -151,7 +151,7 @@ console.log(reduceAncestors2(me, sharedDNA2, 2) /4 ); // 0.05
 console.log('---------------------');
 
 
-// the following code finds the percentage of known ancestors, for a given person, who lived past 70
+// the following code below finds the percentage of known ancestors, for a given person, who lived past 70
 // countAncestors counts the number of ancestors for a given person by adding the number of ancestors
 // for each of the person’s parents. It will also include person if thisOneCounts evaluates to true
 function countAncestors(person, test) {
@@ -162,6 +162,9 @@ function countAncestors(person, test) {
   return reduceAncestors(person, combine, 0);
 }
 
+// longLivingPercentage counts all of the ancestors for person and saves this value to all. It then counts
+// only the ancestors that lived 70 or more years and saves this to longLiving. It then returns the
+// percentage of all ancestors that lived 70 or more years
 function longLivingPercentage(person) {
   var all = countAncestors(person, function() {
     return true;
