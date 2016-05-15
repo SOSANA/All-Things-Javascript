@@ -173,7 +173,6 @@ function reduceAncestors2(person, f, defaultValue) {
   return valueFor(person);
 }
 
-
 function sharedDNA2(person, fromMother, fromFather) {
   if (person.name === 'Mom') {
     return 1;
