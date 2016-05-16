@@ -161,9 +161,16 @@ parents.forEach(function(person) {
 
 function reduceAncestors2(person, f, defaultValue) {
   function valueFor(person) {
+    // first call tries to pass the 'me' argument and skips this as it does exist
+    // it than steps into the 'sharedDNA2'
+    // second call mom is defined return 1 so we move on to third call
+    // on the third call for 'Dad' we get null for person as it it is not equal to 'Mom',
+    // if the person argument is null, we return the defaultValue, which is 0
     if (person === undefined || null) {
       return defaultValue;
     } else {
+      // it then recursively calls Me, Mom, and Dad from 'sharedDNA2'
+      // = sharedDNA2(me, valueFor(Mom), valueFor(Dad));
       return f(person, valueFor(byName2[person.mother]),
                        valueFor(byName2[person.father]));
 
@@ -174,9 +181,24 @@ function reduceAncestors2(person, f, defaultValue) {
 }
 
 function sharedDNA2(person, fromMother, fromFather) {
+  // When you step into 'sharedDNA' this time, 'Mom' name is in fact 'Mom', so the
+  // function returns 1
+  // = (valueFor(Mom) + valueFor(Dad)) / 2
+  // This simplified tree doesn’t have people older than my parents so returns null
+  // = sharedDNA2(Mom, valueFor(null), valueFor(null));
+  // = (1 + valueFor(Dad)) / 2
   if (person.name === 'Mom') {
     return 1;
   } else {
+    // 'Dad' name is not 'Mom' though, so we have to return the default 0 and same with
+    // 'Mom' there is no people older so both come back null
+    // = (valueFor(null) + valueFor(null)) / 2
+    // = (0 + 0) / 2
+    // = 0 / 2
+    // = 0
+    // so finally we get our value for on final recursive call
+    // = (valueFor(Mom) + valueFor(Dad)) / 2
+    // = (1 + 0) / 2 = 0.5
     return (fromMother + fromFather) / 2;
   }
 }
