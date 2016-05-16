@@ -7,3 +7,6 @@
  * 					array. The byName object, which makes it easy to find a person’s object from
  * 					their name, might be useful here.
  */
+
+/* eslint-disable */
+'use strict';
