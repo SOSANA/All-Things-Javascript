@@ -214,6 +214,8 @@ console.log('---------------------');
 function countAncestors(person, test) {
 
   function combine(person, fromMother, fromFather) {
+    // don’t care how old they are, so the test function (the second parameter in the call below)
+    // in 'longLivingPercentage' returns true on everything
     var thisOneCounts = test(person);
     return fromMother + fromFather + (thisOneCounts ? 1 : 0);
   }
@@ -240,3 +242,83 @@ function longLivingPercentage(person) {
 console.log(longLivingPercentage(byName['Emile Haverbeke'])); // 0.14545454545454545
 // this rounded it but is a string!!!
 console.log(parseFloat(longLivingPercentage(byName['Emile Haverbeke'])).toFixed(3)); // 0.145
+console.log('---------------------');
+
+
+// lets break down what is happening above in 'countAncestors' due to the complexity to figure out what
+// is happening recursively, we will leave out 'longLivingPercentage'
+var byName3 = {};
+var ancestry3 = [
+  {
+    name: 'Mom',
+    sex: 'f',
+    born: 0,
+    died: 80,
+    father: null,
+    mother: null
+  },
+  {
+    name: 'John Doe',
+    sex: 'm',
+    born: 110,
+    died: 200,
+    father: null,
+    mother: 'Mom'
+  }
+];
+
+ancestry3.forEach(function(person) {
+  byName3[person.name] = person;
+});
+
+// We want to use countAncestors on John Doe, so we’d make the call below. I want to count all
+// of the ancestors. I don’t care how old they are, so the test function (the second parameter
+// in the call below) returns true on everything
+function countAncestors3(person, test) {
+  // we don't have all the arguments yet so we skip combine and evaluate 'reduceAncestors2'
+  // Now that we have all the arguments, we can step into combine. Once we’re inside, the thisOneCounts
+  // variable is true because our test function returns true on everything. So combine returns:
+  // = fromMother + fromFather + (thisOneCounts ? 1 : 0)
+  // = 0 + 0 + (thisOneCounts ? 1 : 0)
+  // = 0 + 0 + 1
+  // = 1
+  // What we just calculated was the second argument. So this line is now
+  // combine(johnDoe, 1, valueFor(null))
+  // this makes sense because Mom should count for exactly 1 ancestor
+  // From the work we did before, we know that valueFor(null) returns the defaultValue, which is 0.
+  // So now the highlighted line is
+  // = combine(johnDoe, 1, 0)
+  // So let’s step into the combine function. thisOneCounts is true like before. So the function returns
+  // = fromMother + fromFather + (thisOneCounts ? 1 : 0)
+  // = 1 + 0 + (thisOneCounts ? 1 : 0)
+  // = 1 + 0 + 1
+  // = 2
+  function combine(person, fromMother, fromFather) {
+    var thisOneCounts = test(person);
+    return fromMother + fromFather + (thisOneCounts ? 1 : 0);
+  }
+  // steping into 'countAncestors' returns
+  // = reduceAncestors(johnDoe, combine, 0);
+  // now we have to step into 'reduceAncestors2'. We see that the last line in reduceAncestors returns
+  // = valueFor(johnDoe)
+  // So we have to step into the valueFor function, which returns the line below
+  // = combine(johnDoe, valueFor(mom), valueFor(null))
+  // Since Dad isn’t in the data, it’s null. Mom is in the data, so mom represents her person object.
+  // Looking at this, you might guess that we have to step into the 'combine' function now, but we can’t
+  // do that quite yet. We have to evaluate the second and third parameters first, so we can pass the
+  // correct values to combine. That means we have to step into valueFor(mom), which returns
+  // = combine(mom, valueFor(null), valueFor(null))
+  // If you eye the valueFor function quickly, you’ll see that it returns defaultValue if person is
+  // null. So that means the line above becomes
+  // = combine(mom, 0, 0)
+  // Now that we have all the arguments, we can step into 'combine' function
+  return reduceAncestors2(person, combine, 0);
+}
+
+// Get the object for John Doe
+var johnDoe = byName3['John Doe'];
+
+// Count all the ancestors for John Doe
+console.log(countAncestors3(johnDoe, function() {
+  return true;
+}));
