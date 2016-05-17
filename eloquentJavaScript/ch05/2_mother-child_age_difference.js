@@ -55,6 +55,13 @@ var ancestryArray = '[\n  ' + [
 
 var ancestry = JSON.parse(ancestryArray);
 
+function average(array) {
+  function plus(a, b) {
+    return a + b;
+  }
+  return array.reduce(plus) / array.length;
+}
+
 // To be able to go from a parent’s name to the actual object that represents this person,
 // we first build up an object that associates names with people
 var byName = {};
