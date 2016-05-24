@@ -72,14 +72,14 @@ function average(array) {
 
 var byName = {};
 
-// To be able to go from a parent’s name to the actual object that represents this person,
+// To be able to go from a person’s name to the actual object that represents this person,
 // we first build up an object that associates names with people
 ancestry.forEach(function(person) {
   byName[person.name] = person;
 });
 
 
-var differences = ancestry.filter(function (person) {
+var differences = ancestry.filter(function(person) {
   return byName[person.mother] !== undefined || null;
 }).map(function (person) {
   return person.born - byName[person.mother].born;
