@@ -80,6 +80,8 @@ ancestry.forEach(function(person) {
 // Only include people whose mothers are in the data
 var differences = ancestry.filter(function(person) {
   return byName[person.mother] !== undefined || null;
+  // Now that you have an array of people with known mothers,
+  // transform each person to an age difference
 }).map(function (person) {
   return person.born - byName[person.mother].born;
 });
