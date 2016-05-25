@@ -30,23 +30,29 @@
 /* eslint-disable */
 'use strict';
 
+// shows how the build-in .every() method works
 // if everything in the array element has the same typeOf value in array return boolean
 function showEvery(array, predicate) {
   for (var i = 0; i < array.length; i++) {
+    // If the element does not satisfy the predicate, return false
     if (!predicate(array[i])) {
       return false;
     }
   }
+  // If we get all the way to the end, all the predicate functions pass
   return true;
 }
 
+// shows how the build-in .some() method works
 // if some of the array elements have typeOf value in array return boolean
 function showSome(array, predicate) {
   for (var i = 0; i < array.length; i++) {
+    // If the element satisfies the predicate, return true
     if (predicate(array[i])) {
       return true;
     }
   }
+  // If we get all the way to the end, none of the predicates function pass
   return false;
 }
 
@@ -56,6 +62,7 @@ console.log('showing how the some() method works internally: ' + showSome([NaN, 
 console.log('showing how the some() method works internally: ' + showSome([2, 3, 4], isNaN)); // false
 console.log('------------------------');
 
+// function to verify if element is string or not
 function isAString(a) {
   if (typeof a === 'string') {
     return true;
@@ -67,6 +74,7 @@ console.log('showing how the every() method works internally: ' + showEvery(['hi
 console.log('showing how the some() method works internally: ' + showSome(['hi', 'bonjour', 'hola'], isAString)); // true
 console.log('showing how the some() method works internally: ' + showSome(['hi', 'bonjour', 'hola', 2], isAString)); // true
 console.log('------------------------');
+// showing how to use the built-in .every() & .some() method
 console.log(['hi', 'bonjour', 'hola'].every(isAString)); // true
 console.log(['hi', 'bonjour', 'hola', 5, 6, 2].every(isAString)); // false
 console.log(['hi', 'bonjour', 'hola'].some(isAString)); // true
