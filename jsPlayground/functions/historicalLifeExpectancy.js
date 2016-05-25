@@ -88,6 +88,7 @@ function groupBy(array, groupOf) {
 // Use groupBy to separate people from the ancestry array into groups. The year each person died is
 // divided by 100 to give us a century group
 var byCentury = groupBy(ancestry, function(person) {
+  // rounds upwards to nearest 100th ex: 1607 → 1700
   return Math.ceil(person.died / 100);
 });
 
