@@ -197,5 +197,11 @@
  *    defined specifically to be 1. The factorials of larger numbers are calculated by multiplying
  *    1 * 2 * ..., incrementing by 1 until you reach the number for which you are calculating the
  *    factorial.
- *  - Ex: url ref https://msdn.microsoft.com/library/wwbyhkx4
+ *  - ex: url ref https://msdn.microsoft.com/library/wwbyhkx4
+ *
+ * Predicate functions:
+ *  - is a function that returns true or false based on some condition. In this problem, we’re using
+ *  	isNaN(testValue), which returns true if testValue is NaN (remember this means not a number),
+ *  	and false otherwise
+ *  - ex: arrays/showSome.js and arrays/showEvery.js
  */
