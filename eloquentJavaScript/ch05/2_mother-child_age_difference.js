@@ -63,6 +63,7 @@ var ancestryArray = '[\n  ' + [
 
 var ancestry = JSON.parse(ancestryArray);
 
+// Function that uses reduce to compute the average of the numbers in an array
 function average(array) {
   function plus(a, b) {
     return a + b;
@@ -70,19 +71,18 @@ function average(array) {
   return array.reduce(plus) / array.length;
 }
 
+// Create an object that associates names with person objects
 var byName = {};
-
-// To be able to go from a person’s name to the actual object that represents this person,
-// we first build up an object that associates names with people
 ancestry.forEach(function(person) {
   byName[person.name] = person;
 });
 
-
+// Only include people whose mothers are in the data
 var differences = ancestry.filter(function(person) {
   return byName[person.mother] !== undefined || null;
 }).map(function (person) {
   return person.born - byName[person.mother].born;
 });
 
+// Log the average age difference
 console.log('The average age for Mothers at the time of birth is: ' + average(differences)); // 31.22222222222222
