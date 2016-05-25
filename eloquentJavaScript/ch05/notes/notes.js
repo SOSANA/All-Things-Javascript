@@ -29,21 +29,9 @@
  * 	 converts it to the value it encodes.
  * 	 - JSON.stringify converts from JavaScript to JSON
  * 	 - JSON.parse converts from JSON to JavaScript
- * Filtering an array:
- * 	-
- *
- * Transforming with map:
- * 	-
- *
- * Summarizing with reduce:
- * 	-
  *
  * Composability:
- * 	-
- *
- * The cost:
- * 	-
- *
- * Binding:
- * 	-
+ *  - See functionNotes.js or composability.js for explanation
+ *  - Helpful walk through
+ *  	src: http://watchandcode.com/courses/eloquent-javascript-the-annotated-version/lectures/206821
  */
