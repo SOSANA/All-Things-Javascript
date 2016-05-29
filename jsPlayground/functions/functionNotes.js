@@ -41,6 +41,23 @@
  *  - so the function you call (ex: invoke), 'calls back' by calling the function you gave it when it
  *    finishes
  *
+ * Classical Vs Prototypal Inheritance:
+ *  - Inheritance
+ *    - one object gets access to the properites and methods of another object.
+ *  - Classical Inheritance
+ *    - commonly use in classical programming such as java, c++, php, etc
+ *    - considered verbose, uses friend, protected, private, interface
+ *  - Protypal Inheritance
+ *    - Simple, flexible, extensible and easy to understand
+ *    - two patterns of prototypal inheritance
+ *        - prototypal pattern of prototypal inheritance
+ *        - the constructor pattern of prototypal inheritance
+ *    - there are two ways of creating objects using prototypal inheritance
+ *        - create a brand new object.
+ *        - clone an existing object and extend it
+ *  - good explanation found here:
+ *    http://stackoverflow.com/questions/2800964/benefits-of-prototypal-inheritance-over-classical
+ *
  * Closures:
  *  - are a feature of the javascript programming language, this just happens
  *  - the js engine will always make sure that what ever function you are running that it will
@@ -155,6 +172,12 @@
           var greeting = 'Inside IIFE: Hello';
           console.log(greeting + ' ' + name);
         }(firstName));
+ *
+ * Methods:
+ *  - are simply properties that hold function values
+ *  - Usually a method needs to do something with the object it was called on. When a function is
+ *  	called as a method—looked up as a property and immediately called, as in object.method()—the
+ *  	special variable this in its body will point to the object that it was called on
  *
  * Mutate:
  *  - to change something
