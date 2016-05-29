@@ -17,7 +17,10 @@
  *    http://stackoverflow.com/questions/2800964/benefits-of-prototypal-inheritance-over-classical
  *
  * Methods:
- *  -
+ *  - are simply properties that hold function values
+ *  - Usually a method needs to do something with the object it was called on. When a function is
+ *  	called as a method—looked up as a property and immediately called, as in object.method()—the
+ *  	special variable this in its body will point to the object that it was called on
  *
  * Prototypes:
  *  - all functions and arrays have prototype pointing to an object with those function methods
