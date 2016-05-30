@@ -45,41 +45,29 @@
  *    assigning prototypes to objects as it will come back undefined
  *  - understand the difference of using "new" and built-in functions
  *    ex: var b = new Number(3); // creating a new object
- *        var c = Numnber(3); // calling the function and getting an object back
+ *        var c = Number(3); // calling the function and getting an object back
  *  - allows access to all objects just once, rather than every object taking up memory space
  *    and getting a copy for every object ex: if you have a 1000 Person Objects with getFullName
  *    methods you will have a 1000 getFullName methods taking up memory space rather than having
  *    a prototype you will only have need one method
+ *  - A prototype is another object that is used as a fallback source of properties. When an
+ *  	object gets a request for a property that it does not have, its prototype will be searched
+ *  	for the property, then the prototype’s prototype, and so on
+ *  - The prototype relations of JavaScript objects form a tree-shaped structure, and at the root
+ *  	of this structure sits Object.prototype. It provides a few methods that show up in all objects,
+ *  	such as toString, which converts an object to a string representation
+ *  - Many objects don’t directly have Object.prototype as their prototype, but instead have another
+ *  	object, which provides its own default properties. Functions derive from Function.prototype, and
+ *  	arrays derive from Array.prototype. The Object.getPrototypeOf function obviously returns the
+ *  	prototype of an object
+ *  - Such a prototype object will itself have a prototype, often Object.prototype, so that it still
+ *  	indirectly provides methods like toString.
+ *  - You can use Object.create to create an object with a specific prototype
+ *  - the Object.getPrototypeOf function returns the prototype of an object
+ *  	ex: ./theSecretLifeOfObjects.js
  *
  * Function Constructors:
  *  - a normal function that is used to construct objects
  *  - the 'this' variable points to a new empty object, and that object is returned from the
  *    function automatically
- *
- * Overriding derived properties:
- *  -
- *
- * Prototype interference:
- *  -
- *
- * Prototype-less objects:
- *  -
- *
- * Polymorphism:
- *  -
- *
- * Object.keys:
- *  -
- *
- * Inheritance:
- *  -
- *
- * The instanceof operator:
- *  -
- *
- * Getters and setters:
- *  -
- *
- * Methods:
- *  -
  */

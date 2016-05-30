@@ -126,7 +126,7 @@
  *  	properties of that object. There are other things that the function can have attached to
  *  	it, and other things the function can do, it can be moved around, copied, and given to
  *  	other elements or other areas of your code. Just like any objects, value, string and
- *  	number.
+ *  	number
  *
  * Function currying:
  * 	- creating a copy of a function but with some preset parameters
@@ -228,4 +228,33 @@
  *  	isNaN(testValue), which returns true if testValue is NaN (remember this means not a number),
  *  	and false otherwise
  *  - ex: arrays/showSome.js and arrays/showEvery.js
+ *
+ * Prototypes:
+ *  - all functions and arrays have prototype pointing to an object with those function methods
+ *  - all functions have a property called prototype that starts out as an empty object
+ *  - always use captial letter ex: function Person(firstname, lastname) {};
+ *  - prototype property is used only by the "new" operator. Make sure to always use "new"
+ *    assigning prototypes to objects as it will come back undefined
+ *  - understand the difference of using "new" and built-in functions
+ *    ex: var b = new Number(3); // creating a new object
+ *        var c = Number(3); // calling the function and getting an object back
+ *  - allows access to all objects just once, rather than every object taking up memory space
+ *    and getting a copy for every object ex: if you have a 1000 Person Objects with getFullName
+ *    methods you will have a 1000 getFullName methods taking up memory space rather than having
+ *    a prototype you will only have need one method
+ *  - A prototype is another object that is used as a fallback source of properties. When an
+ *  	object gets a request for a property that it does not have, its prototype will be searched
+ *  	for the property, then the prototype’s prototype, and so on
+ *  - The prototype relations of JavaScript objects form a tree-shaped structure, and at the root
+ *  	of this structure sits Object.prototype. It provides a few methods that show up in all objects,
+ *  	such as toString, which converts an object to a string representation
+ *  - Many objects don’t directly have Object.prototype as their prototype, but instead have another
+ *  	object, which provides its own default properties. Functions derive from Function.prototype, and
+ *  	arrays derive from Array.prototype. The Object.getPrototypeOf function obviously returns the
+ *  	prototype of an object
+ *  - Such a prototype object will itself have a prototype, often Object.prototype, so that it still
+ *  	indirectly provides methods like toString.
+ *  - You can use Object.create to create an object with a specific prototype
+ *  - the Object.getPrototypeOf function returns the prototype of an object
+ *  	ex: ./theSecretLifeOfObjects.js
  */
