@@ -4,8 +4,11 @@
  *  	difference is it wants an array of parameters
  *
  * .bind():
- *  - does not invoke the function, it creates a copy of the function and you can tell it what the
- *    "this" variable is
+ *  - does not invoke the function, it creates a copy of the function and you can tell it what the "this"
+ *  	variable is
+ *  - The bind method, which all functions have, creates a new function that will call the original function
+ *  	but with some of the arguments already fixed
+ *  - The first argument, is used for method calls
  *
  * .call():
  *  - unlike the bind method, call doesn't make a copy it actually executes or invokes it and
