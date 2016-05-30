@@ -53,4 +53,6 @@ console.log('---------------------');
 // can be passed a specific this value
 speak.apply(fatRabbit, ['Burb!']); // The fat rabbit says "Burb!"
 speak.call({type: 'old'}, 'oh my'); // The old rabbit says "oh my"
+var uglyRabbit = speak.bind({type: 'ugly'}, 'Why am I so ugly!');
+uglyRabbit(); // The ugly rabbit says "Why am I so ugly!"
 console.log('---------------------');
