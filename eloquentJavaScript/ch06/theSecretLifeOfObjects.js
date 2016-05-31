@@ -20,6 +20,22 @@
  *  	called as a method—looked up as a property and immediately called, as in object.method()—the
  *  	special variable this in its body will point to the object that it was called on
  *
+ * Function Constructors:
+ *  - a normal function that is used to construct objects
+ *  - the 'this' variable points to a new empty object, and that object is returned from the
+ *    function automatically. The constructor will have its 'this' variable bound to a fresh object, and
+ *    unless it explicitly returns another object value, this new object will be returned from the call
+ *  - In JavaScript, calling a function with the 'new' keyword in front of it causes it to be treated
+ *  	as a constructor. An object created with 'new' is said to be an instance of its constructor
+ *  - Constructors (in fact, all functions) automatically get a property named prototype, which by
+ *  	default holds a plain, empty object that derives from Object.prototype. Every instance created with
+ *  	this constructor will have this object as its prototype
+ *  - It is important to note the distinction between the way a prototype is associated with a constructor
+ *  	(through its prototype property) and the way objects have a prototype (which can be retrieved with
+ *  	Object.getPrototypeOf). The actual prototype of a constructor is Function.prototype since constructors
+ *  	are functions. Its prototype property will be the prototype of instances created through it but is not
+ *  	its own prototype
+ *
  * Prototypes:
  *  - all functions and arrays have prototype pointing to an object with those function methods
  *  - all functions have a property called prototype that starts out as an empty object
@@ -47,6 +63,36 @@
  *  	indirectly provides methods like toString.
  *  - You can use Object.create to create an object with a specific prototype
  *  - the Object.getPrototypeOf function returns the prototype of an object
+ *
+ * enumerable/nonenumerable:
+ *  - All properties that we create by simply assigning to them are 'enumerable'. Enumerable properties are
+ *  	those properties whose internal [[Enumerable]] flag is set to true, which is the default for properties
+ *  	created via simple assignment or via a property initializer (properties defined via Object.defineProperty
+ *  	and such default [[Enumerable]] to false).
+ *  - Enumerable properties show up in for...in loops unless the property's name is a Symbol. Ownership of
+ *  	properties is determined by whether the property belongs to the object directly and not to its prototype
+ *  	chain. Properties of an object can also be retrieved in total
+ *  -	There are a number of built-in means of detecting, iterating/enumerating, and retrieving object properties,
+ *  	with the chart on MDN showing which are available to use
+ *  - The standard properties in Object.prototype are all 'nonenumerable', which is why they do not show up in such
+ *  	a for/in loop. It is possible to define our own 'nonenumerable properties' by using the 'Object.defineProperty'
+ *  	function, which allows us to control the type of property we are creating
+ *  - src: https://developer.mozilla.org/en/docs/Web/JavaScript/Enumerability_and_ownership_of_properties
+ *  - ex: ./theSecretLifeOfObjects.js
+ *
+ * Polymorphism:
+ *  - is one of the tenets of Object Oriented Programming (OOP). It is the practice of designing objects to share
+ *  	behaviors and to be able to override shared behaviors with specific ones.
+ *  - takes advantage of inheritance in order to make this happen
+ *  - In OOP everything is considered to be modeled as an object. This abstraction can be taken all the way down to
+ *  	nuts and bolts for a car, or as broad as simple a car type with a year, make, and model
+ *  - ex:
+ *  	 - To have a polymorphic car scenario there would be the base car type, and then there would subclasses which
+ *  	 	 would inherit from car and provide their own behaviors on top of the basic behaviors a car would have.
+ *  	 - a subclass could be TowTruck which would still have a year make and model, but might also have some extra
+ *  	 	 behaviors and properties which could be as basic as a flag for IsTowing to as complicated as the specifics
+ *  	 	 of the lift
+ *  	 - ./theSecretLifeOfObjects.js
  */
 
 /* eslint-disable */
@@ -247,3 +293,71 @@ for (var name in map) {
     // touched tree is true
   }
 }
+console.log('---------------------');
+
+
+// Prototype-less objects What if someone registered the name hasOwnProperty in our map object
+// and set it to the value 42? Now the call to map.hasOwnProperty will try to call the local
+// property, which holds a number, not a function. In such a case, prototypes just get in the
+// way, and we would actually prefer to have objects without prototypes. We saw the
+// Object.create function, which allows us to create an object with a specific prototype.
+// You are allowed to pass null as the prototype to create a fresh object with no prototype.
+// For objects like map, where the properties could be anything, this is exactly what we want.
+var map = Object.create(null);
+map.pizza = 0.069;
+// We no longer need the 'hasOwnProperty' kludge because all the properties the object has are
+// its own properties. Now we can safely use for/in loops, no matter what people have been doing
+// to Object.prototype.
+console.log('look below: ');
+console.log('toString' in map); // false
+console.log('pizza' in map); // true
+console.log('---------------------');
+
+/**
+ * 'Polymorphism' is the practice of designing objects to share behaviors and to be able to override
+ * shared behaviors with specific ones. Polymorphism takes advantage of inheritance in order
+ * to make this happen.
+ *  - In OOP everything is considered to be modeled as an object. This abstraction can be taken all
+ *  	the way down to nuts and bolts for a car, or as broad as simple a car type with a year, make,
+ *  	and model
+ *  - To have a polymorphic car scenario there would be the base car type, and then there would
+ *  	subclasses which would inherit from car and provide their own behaviors on top of the basic
+ *  	behaviors a car would have. For example, a subclass could be TowTruck which would still have a
+ *  	year make and model, but might also have some extra behaviors and properties which could be as
+ *  	basic as a flag for IsTowing to as complicated as the specifics of the lift
+ *  - Below we show an example of people and employees, all employees are people, but all people
+ *    are not employees. Which is to say that people will be the super class, and employee the sub
+ *    class. People may have ages and weights, but they do not have salaries. Employees are people so
+ *    they will inherently have an age and weight, but also because they are employees they will have
+ *    a salary
+ */
+console.log('Working with Polymorphism:');
+// we will first write out the super class (Person)
+function Person(age, weight) {
+  this.age = age;
+  this.weight = weight;
+}
+
+// we will give Person the ability to share their information
+Person.prototype.getInfo = function() {
+  return 'I am ' + this.age + ' years old ' + 'and I weigh ' + this.weight + ' lbs.';
+};
+
+// Next we wish to have a subclass of Person, Employee
+function Employee(age, weight, salary) {
+  this.age = age;
+  this.weight = weight;
+  this.salary = salary;
+}
+
+Employee.prototype = new Person();
+
+// And we will override the behavior of getInfo by defining one which is more fitting to an Employee
+Employee.prototype.getInfo = function() {
+  return 'I am ' + this.age + ' years old ' + 'and I weigh ' + this.weight + ' lbs ' + 'and earn ' + this.salary + ' dollars a year.';
+};
+
+var person = new Person(50, 150);
+var employee = new Employee(43, 210, 50000);
+console.log(person.getInfo());
+console.log(employee.getInfo());
