@@ -97,4 +97,18 @@
  *  	function, which allows us to control the type of property we are creating
  *  - src: https://developer.mozilla.org/en/docs/Web/JavaScript/Enumerability_and_ownership_of_properties
  *  - ex: ./theSecretLifeOfObjects.js
+ *
+ * Polymorphism:
+ *  - is one of the tenets of Object Oriented Programming (OOP). It is the practice of designing objects to share
+ *  	behaviors and to be able to override shared behaviors with specific ones.
+ *  - takes advantage of inheritance in order to make this happen
+ *  - In OOP everything is considered to be modeled as an object. This abstraction can be taken all the way down to
+ *  	nuts and bolts for a car, or as broad as simple a car type with a year, make, and model
+ *  - ex:
+ *  	 - To have a polymorphic car scenario there would be the base car type, and then there would subclasses which
+ *  	 	 would inherit from car and provide their own behaviors on top of the basic behaviors a car would have.
+ *  	 - a subclass could be TowTruck which would still have a year make and model, but might also have some extra
+ *  	 	 behaviors and properties which could be as basic as a flag for IsTowing to as complicated as the specifics
+ *  	 	 of the lift
+ *  	 - ./theSecretLifeOfObjects.js
  */
