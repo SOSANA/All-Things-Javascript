@@ -69,5 +69,31 @@
  * Function Constructors:
  *  - a normal function that is used to construct objects
  *  - the 'this' variable points to a new empty object, and that object is returned from the
- *    function automatically
+ *    function automatically. The constructor will have its 'this' variable bound to a fresh object, and
+ *    unless it explicitly returns another object value, this new object will be returned from the call
+ *  - In JavaScript, calling a function with the 'new' keyword in front of it causes it to be treated
+ *  	as a constructor. An object created with 'new' is said to be an instance of its constructor
+ *  - Constructors (in fact, all functions) automatically get a property named prototype, which by
+ *  	default holds a plain, empty object that derives from Object.prototype. Every instance created with
+ *  	this constructor will have this object as its prototype
+ *  - It is important to note the distinction between the way a prototype is associated with a constructor
+ *  	(through its prototype property) and the way objects have a prototype (which can be retrieved with
+ *  	Object.getPrototypeOf). The actual prototype of a constructor is Function.prototype since constructors
+ *  	are functions. Its prototype property will be the prototype of instances created through it but is not
+ *  	its own prototype
+ *
+ * enumerable/nonenumerable:
+ *  - All properties that we create by simply assigning to them are 'enumerable'. Enumerable properties are
+ *  	those properties whose internal [[Enumerable]] flag is set to true, which is the default for properties
+ *  	created via simple assignment or via a property initializer (properties defined via Object.defineProperty
+ *  	and such default [[Enumerable]] to false). Enumerable properties show up in for...in loops unless the
+ *  	property's name is a Symbol. Ownership of properties is determined by whether the property belongs to the
+ *  	object directly and not to its prototype chain. Properties of an object can also be retrieved in total.
+ *  	There are a number of built-in means of detecting, iterating/enumerating, and retrieving object properties,
+ *  	with the chart showing which are available.
+ *  - The standard properties in Object.prototype are all 'nonenumerable', which is why they do not show up in such
+ *  	a for/in loop. It is possible to define our own nonenumerable properties by using the 'Object.defineProperty'
+ *  	function, which allows us to control the type of property we are creating
+ *  - src: https://developer.mozilla.org/en/docs/Web/JavaScript/Enumerability_and_ownership_of_properties
+ *  - ex: ./theSecretLifeOfObjects.js
  */
