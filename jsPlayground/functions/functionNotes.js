@@ -101,6 +101,22 @@
  *    	when a program is slow, the problem can often be traced to only a small
  *    	part of the code, which sits inside an inner loop
  *
+ * enumerable/nonenumerable:
+ *  - All properties that we create by simply assigning to them are 'enumerable'. Enumerable properties are
+ *  	those properties whose internal [[Enumerable]] flag is set to true, which is the default for properties
+ *  	created via simple assignment or via a property initializer (properties defined via Object.defineProperty
+ *  	and such default [[Enumerable]] to false).
+ *  - Enumerable properties show up in for...in loops unless the property's name is a Symbol. Ownership of
+ *  	properties is determined by whether the property belongs to the object directly and not to its prototype
+ *  	chain. Properties of an object can also be retrieved in total
+ *  -	There are a number of built-in means of detecting, iterating/enumerating, and retrieving object properties,
+ *  	with the chart on MDN showing which are available to use
+ *  - The standard properties in Object.prototype are all 'nonenumerable', which is why they do not show up in such
+ *  	a for/in loop. It is possible to define our own 'nonenumerable properties' by using the 'Object.defineProperty'
+ *  	function, which allows us to control the type of property we are creating
+ *  - src: https://developer.mozilla.org/en/docs/Web/JavaScript/Enumerability_and_ownership_of_properties
+ *  - ex: ./theSecretLifeOfObjects.js
+ *
  * First Class Functions:
  * 	- everything you can do with other types such as objects, strings, numbers, and booleans
  * 		you can do with functions
@@ -127,6 +143,22 @@
  *  	it, and other things the function can do, it can be moved around, copied, and given to
  *  	other elements or other areas of your code. Just like any objects, value, string and
  *  	number
+ *
+ * Function Constructors:
+ *  - a normal function that is used to construct objects
+ *  - the 'this' variable points to a new empty object, and that object is returned from the
+ *    function automatically. The constructor will have its 'this' variable bound to a fresh object, and
+ *    unless it explicitly returns another object value, this new object will be returned from the call
+ *  - In JavaScript, calling a function with the 'new' keyword in front of it causes it to be treated
+ *  	as a constructor. An object created with 'new' is said to be an instance of its constructor
+ *  - Constructors (in fact, all functions) automatically get a property named prototype, which by
+ *  	default holds a plain, empty object that derives from Object.prototype. Every instance created with
+ *  	this constructor will have this object as its prototype
+ *  - It is important to note the distinction between the way a prototype is associated with a constructor
+ *  	(through its prototype property) and the way objects have a prototype (which can be retrieved with
+ *  	Object.getPrototypeOf). The actual prototype of a constructor is Function.prototype since constructors
+ *  	are functions. Its prototype property will be the prototype of instances created through it but is not
+ *  	its own prototype
  *
  * Function currying:
  * 	- creating a copy of a function but with some preset parameters
@@ -215,13 +247,19 @@
  *  - always use the dot operator over the computed member access operator []. see the
  *    d1-objects-and-the-dot folder for more info
  *
- * Recursion:
- *  - Recursion is an important programming technique. It is used to have a function call itself
- *    from within itself. One example is the calculation of factorials. The factorial of 0 is
- *    defined specifically to be 1. The factorials of larger numbers are calculated by multiplying
- *    1 * 2 * ..., incrementing by 1 until you reach the number for which you are calculating the
- *    factorial.
- *  - ex: url ref https://msdn.microsoft.com/library/wwbyhkx4
+ * Polymorphism:
+ *  - is one of the tenets of Object Oriented Programming (OOP). It is the practice of designing objects to share
+ *  	behaviors and to be able to override shared behaviors with specific ones.
+ *  - takes advantage of inheritance in order to make this happen
+ *  - In OOP everything is considered to be modeled as an object. This abstraction can be taken all the way down to
+ *  	nuts and bolts for a car, or as broad as simple a car type with a year, make, and model
+ *  - ex:
+ *  	 - To have a polymorphic car scenario there would be the base car type, and then there would subclasses which
+ *  	 	 would inherit from car and provide their own behaviors on top of the basic behaviors a car would have.
+ *  	 - a subclass could be TowTruck which would still have a year make and model, but might also have some extra
+ *  	 	 behaviors and properties which could be as basic as a flag for IsTowing to as complicated as the specifics
+ *  	 	 of the lift
+ *  	 - ./theSecretLifeOfObjects.js
  *
  * Predicate functions:
  *  - is a function that returns true or false based on some condition. In this problem, we’re using
@@ -257,4 +295,12 @@
  *  - You can use Object.create to create an object with a specific prototype
  *  - the Object.getPrototypeOf function returns the prototype of an object
  *  	ex: ./theSecretLifeOfObjects.js
+ *
+ * Recursion:
+ *  - Recursion is an important programming technique. It is used to have a function call itself
+ *    from within itself. One example is the calculation of factorials. The factorial of 0 is
+ *    defined specifically to be 1. The factorials of larger numbers are calculated by multiplying
+ *    1 * 2 * ..., incrementing by 1 until you reach the number for which you are calculating the
+ *    factorial.
+ *  - ex: url ref https://msdn.microsoft.com/library/wwbyhkx4
  */
