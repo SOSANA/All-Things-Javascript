@@ -86,13 +86,14 @@
  *  - All properties that we create by simply assigning to them are 'enumerable'. Enumerable properties are
  *  	those properties whose internal [[Enumerable]] flag is set to true, which is the default for properties
  *  	created via simple assignment or via a property initializer (properties defined via Object.defineProperty
- *  	and such default [[Enumerable]] to false). Enumerable properties show up in for...in loops unless the
- *  	property's name is a Symbol. Ownership of properties is determined by whether the property belongs to the
- *  	object directly and not to its prototype chain. Properties of an object can also be retrieved in total.
- *  	There are a number of built-in means of detecting, iterating/enumerating, and retrieving object properties,
- *  	with the chart showing which are available.
+ *  	and such default [[Enumerable]] to false).
+ *  - Enumerable properties show up in for...in loops unless the property's name is a Symbol. Ownership of
+ *  	properties is determined by whether the property belongs to the object directly and not to its prototype
+ *  	chain. Properties of an object can also be retrieved in total
+ *  -	There are a number of built-in means of detecting, iterating/enumerating, and retrieving object properties,
+ *  	with the chart on MDN showing which are available to use
  *  - The standard properties in Object.prototype are all 'nonenumerable', which is why they do not show up in such
- *  	a for/in loop. It is possible to define our own nonenumerable properties by using the 'Object.defineProperty'
+ *  	a for/in loop. It is possible to define our own 'nonenumerable properties' by using the 'Object.defineProperty'
  *  	function, which allows us to control the type of property we are creating
  *  - src: https://developer.mozilla.org/en/docs/Web/JavaScript/Enumerability_and_ownership_of_properties
  *  - ex: ./theSecretLifeOfObjects.js
