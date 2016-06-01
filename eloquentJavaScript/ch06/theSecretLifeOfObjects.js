@@ -64,7 +64,7 @@
  *  - You can use Object.create to create an object with a specific prototype
  *  - the Object.getPrototypeOf function returns the prototype of an object
  *
- * enumerable/nonenumerable:
+ * enumerable/non-enumerable:
  *  - All properties that we create by simply assigning to them are 'enumerable'. Enumerable properties are
  *  	those properties whose internal [[Enumerable]] flag is set to true, which is the default for properties
  *  	created via simple assignment or via a property initializer (properties defined via Object.defineProperty
@@ -74,8 +74,8 @@
  *  	chain. Properties of an object can also be retrieved in total
  *  -	There are a number of built-in means of detecting, iterating/enumerating, and retrieving object properties,
  *  	with the chart on MDN showing which are available to use
- *  - The standard properties in Object.prototype are all 'nonenumerable', which is why they do not show up in such
- *  	a for/in loop. It is possible to define our own 'nonenumerable properties' by using the 'Object.defineProperty'
+ *  - The standard properties in Object.prototype are all 'non-enumerable', which is why they do not show up in such
+ *  	a for/in loop. It is possible to define our own 'non-enumerable properties' by using the 'Object.defineProperty'
  *  	function, which allows us to control the type of property we are creating
  *  - src: https://developer.mozilla.org/en/docs/Web/JavaScript/Enumerability_and_ownership_of_properties
  *  - ex: ./theSecretLifeOfObjects.js
@@ -233,8 +233,8 @@ console.log('---------------------');
 
 
 // 'Prototype interference' can cause problems due to JavaScript distinguishing between enumerable and
-// nonenumerable properties. You will see below that All properties that we create by simply assigning
-// to them are enumerable. The standard properties in Object.prototype are all nonenumerable, which is
+// non-enumerable properties. You will see below that All properties that we create by simply assigning
+// to them are enumerable. The standard properties in Object.prototype are all non-enumerable, which is
 // why they do not show up in such a for/in loop.
 // Built-in properties are non-enumerable. A plain object {} has only inherited non-enumerable properties
 // (toString etc). A plain array has one own non-enumerable property length and many inherited ones
@@ -245,14 +245,14 @@ function storePhi(event, phi) {
 storePhi('pizza', 0.069);
 storePhi('touched tree', -0.081);
 console.log('Working with Prototype interference that can cause problems due to JavaScript' + '\n' +
-'distinguishing between enumerable and nonenumerable properties:');
+'distinguishing between enumerable and non-enumerable properties:');
 
 // We can iterate over all phi values in the object using a for/in loop and test whether a name is in
 // there using the regular in operator. But unfortunately, the object’s prototype gets in the way
 // notice that 'toString' did not show when logging to console but shows up below
 Object.prototype.nonsense = 'hi';
 // All properties that we create by simply assigning to them are enumerable. The standard properties
-// in Object.prototype are all nonenumerable, which is why they do not show up in such a for/in loop
+// in Object.prototype are all non-enumerable, which is why they do not show up in such a for/in loop
 for (var name in map) {
   console.log(name);
 }
@@ -270,7 +270,7 @@ console.log('toString' in map); // true
 // Delete the problematic property again
 delete Object.prototype.nonsense;
 
-// It is possible to define our own nonenumerable properties by using the Object.defineProperty
+// It is possible to define our own non-enumerable properties by using the Object.defineProperty
 // function, which allows us to control the type of property we are creating
 Object.defineProperty(Object.prototype, 'hiddenNonsense', { enumerable: false, value: 'hi'});
 for (var name in map) {

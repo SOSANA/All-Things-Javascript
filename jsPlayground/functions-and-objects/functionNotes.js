@@ -101,7 +101,7 @@
  *    	when a program is slow, the problem can often be traced to only a small
  *    	part of the code, which sits inside an inner loop
  *
- * enumerable/nonenumerable:
+ * enumerable/non-enumerable:
  *  - All properties that we create by simply assigning to them are 'enumerable'. Enumerable properties are
  *  	those properties whose internal [[Enumerable]] flag is set to true, which is the default for properties
  *  	created via simple assignment or via a property initializer (properties defined via Object.defineProperty

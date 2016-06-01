@@ -82,7 +82,7 @@
  *  	are functions. Its prototype property will be the prototype of instances created through it but is not
  *  	its own prototype
  *
- * enumerable/nonenumerable:
+ * enumerable/non-enumerable:
  *  - All properties that we create by simply assigning to them are 'enumerable'. Enumerable properties are
  *  	those properties whose internal [[Enumerable]] flag is set to true, which is the default for properties
  *  	created via simple assignment or via a property initializer (properties defined via Object.defineProperty
