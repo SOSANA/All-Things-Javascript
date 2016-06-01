@@ -253,6 +253,7 @@ console.log('Working with Prototype interference that can cause problems due to 
 Object.prototype.nonsense = 'hi';
 // All properties that we create by simply assigning to them are enumerable. The standard properties
 // in Object.prototype are all non-enumerable, which is why they do not show up in such a for/in loop
+// for...in loops only enumerable properties from own and inherited properties.
 for (var name in map) {
   console.log(name);
 }
@@ -261,8 +262,7 @@ for (var name in map) {
 // nonsense
 
 // in operator and for..in loop are different. The in operator considers own and inherited
-// properties and both enumerable and non-enumerable properties. for...in loops only enumerable
-// properties from own and inherited properties.
+// properties and both enumerable and non-enumerable properties
 // This is wrong. There is no event called 'nonsense' in our data set
 console.log('nonsense' in map); // true
 // This is wrong. There is no event called 'toString' in our data set
