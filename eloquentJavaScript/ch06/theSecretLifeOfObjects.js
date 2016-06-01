@@ -235,7 +235,9 @@ console.log('---------------------');
 // 'Prototype interference' can cause problems due to JavaScript distinguishing between enumerable and
 // nonenumerable properties. You will see below that All properties that we create by simply assigning
 // to them are enumerable. The standard properties in Object.prototype are all nonenumerable, which is
-// why they do not show up in such a for/in loop
+// why they do not show up in such a for/in loop.
+// Built-in properties are non-enumerable. A plain object {} has only inherited non-enumerable properties
+// (toString etc). A plain array has one own non-enumerable property length and many inherited ones
 var map = {};
 function storePhi(event, phi) {
   map[event] = phi;
@@ -258,6 +260,9 @@ for (var name in map) {
 // touched tree
 // nonsense
 
+// in operator and for..in loop are different. The in operator considers own and inherited
+// properties and both enumerable and non-enumerable properties. for...in loops only enumerable
+// properties from own and inherited properties.
 // This is wrong. There is no event called 'nonsense' in our data set
 console.log('nonsense' in map); // true
 // This is wrong. There is no event called 'toString' in our data set
