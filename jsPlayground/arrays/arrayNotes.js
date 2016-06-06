@@ -1,4 +1,7 @@
 /**
+ * - map, forEach, filter, and similar array methods passes a second argument to the function it is given:
+ * 	 the index of the current element
+ *
  * .apply():
  *  - doesn't make a copy, invokes the function and lets you set the 'this' keyword but only difference
  *  	is it wants an array of parameters
