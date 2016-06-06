@@ -86,6 +86,8 @@ function drawTable(rows) {
   return rows.map(drawRow).join('\n');
 }
 
+
+
 // writing a constructor for cells that contain text, which implements the interface for table cells.
 // The constructor splits a string into an array of lines using the string method split, which cuts
 // up a string at every occurrence of its argument and returns an array of the pieces. The minWidth
@@ -132,8 +134,8 @@ for (var i = 0; i < 5; i++) {
    for (var j = 0; j < 5; j++) {
      if ((j + i) % 2 === 0){
        row.push(new TextCell('##'));
-     }else {
-       row.push(new TextCell(' '));
+     } else {
+       row.push(new TextCell('  '));
      }
    }
    rows.push(row);
@@ -141,3 +143,62 @@ for (var i = 0; i < 5; i++) {
 
 // Pass rows to drawTable to output checkerboard to the console.
 console.log(drawTable(rows));
+console.log('---------------------');
+
+// We will want to highlight the top row, which contains the column names, by
+// underlining the cells with a series of dash characters. No problem—we simply
+// write a cell type that handles underlining
+var MOUNTAINS = [
+  {name: 'Kilimanjaro', height: 5895, country: 'Tanzania'},
+  {name: 'Everest', height: 8848, country: 'Nepal'},
+  {name: 'Mount Fuji', height: 3776, country: 'Japan'},
+  {name: 'Mont Blanc', height: 4808, country: 'Italy/France'},
+  {name: 'Vaalserberg', height: 323, country: 'Netherlands'},
+  {name: 'Denali', height: 6168, country: 'United States'},
+  {name: 'Popocatepetl', height: 5465, country: 'Mexico'}
+];
+
+// The inner parameter is a TextCell() object
+function UnderlinedCell(inner) {
+  this.inner = inner;
+}
+UnderlinedCell.prototype.minWidth = function() {
+  // minWidth() works the same as it does for TextCell()
+  return this.inner.minWidth();
+};
+UnderlinedCell.prototype.minHeight = function() {
+  // Add 1 to account for the underline, which is just some dashes
+  return this.inner.minHeight() + 1;
+};
+UnderlinedCell.prototype.draw = function(width, height) {
+  // When drawing the inner cell, subtract 1 from height since the inner cell doesn’t have dashes
+  return this.inner.draw(width, height - 1)
+  // Add the dashes in!
+  .concat([repeat('-'), width]);
+};
+
+// Having an underlining mechanism, we can now write a function that builds up a grid of cells from our data set
+function dataTable(data) {
+  // The standard 'Object.keys' function returns an array of property names in an object. The top row of the table
+  // must contain underlined cells that give the names of the columns. Below that, the values of all the objects
+  // in the data set appear as normal cells—we extract them by mapping over the 'keys' array so that we are sure
+  // that the order of the cells is the same in every row
+  // Get keys from object. keys will be equal to [‘name’, ‘height’, ‘country’]
+  var keys = Object.keys(data[0]);
+  // Create an array of UnderlinedCell objects for each key
+  var headers = keys.map(function(name) {
+    return new UnderlinedCell(new TextCell(name));
+  });
+  // Build an array of TextCell objects for each mountain in data
+  var body = data.map(function(row) {
+    return keys.map(function(name) {
+      return new TextCell(String(row[name]));
+    });
+  });
+
+  return [headers].concat(body);
+}
+// The resulting table resembles the example shown before, except
+// that it does not right-align the numbers in the height column
+console.log(drawTable(dataTable(MOUNTAINS)));
+console.log('---------------------');
