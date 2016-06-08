@@ -118,7 +118,7 @@
  * 	 	be added to the end of the array
  * 	- ex:
  * 			- var list = [1, 2, 3, 4]
- * 			- list.splice(0, 1) // removes first index and stops at second index
+ * 			- list.splice(0, 1) // removes first index and deletes 1 element aka deleteCount
  *    	- list // [2, 3, 4]
  *
  * .unshift():
