@@ -2,6 +2,7 @@
  * - objects:
  * 		- a way to group properties and methods (functions aka receipes)
  * - basic example of creating todo object
+ * - showing two ways of creating objects via object literal and function constructor
  */
 
 /* eslint-disable */
