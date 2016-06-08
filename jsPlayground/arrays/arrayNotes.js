@@ -116,6 +116,10 @@
  * 	 	new elements
  *  - when given a start and deleteCount as its first two parameters, any parameters after this will
  * 	 	be added to the end of the array
+ * 	- ex:
+ * 			- var list = [1, 2, 3, 4]
+ * 			- list.splice(0, 1) // removes first index and stops at second index
+ *    	- list // [2, 3, 4]
  *
  * .unshift():
  *  - adds last item to the start of array and does not remove last item
