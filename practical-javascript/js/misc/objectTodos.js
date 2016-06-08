@@ -7,10 +7,74 @@
 /* eslint-disable */
 'use strict';
 
-var todos = ['item 1', 'item 2', 'item 3'];
-
 // it should store the todos array on an object
 // it should have a displayTodos method
 // it should have a addTodo method
 // it should have a changeTodo method
 // it should have a deleteTodo method
+
+// using object literal
+var todoList1 = {
+  todos1: ['item 1', 'item 2', 'item 3'],
+  displayTodos1: function() {
+    console.log('My todos:', this.todos1);
+  },
+  addTodo: function(input) {
+    this.todos1.push(input);
+    this.displayTodos1();
+  },
+  changeTodo: function(pos, val) {
+    this.todos1[pos] = val;
+    this.displayTodos1();
+  },
+  deleteTodo: function(start, deleteCount) {
+    this.todos1.splice(start, deleteCount);
+    this.displayTodos1();
+  }
+};
+console.log('This is our object Literal todo list:');
+console.log('-----------------------');
+console.log('This is our displayTodos():');
+todoList1.displayTodos1(); // My todos: [ 'item 1', 'item 2', 'item 3' ]
+console.log('This is our addTodo():');
+todoList1.addTodo('new todo'); // My todos: [ 'item 1', 'item 2', 'item 3', 'new todo' ]
+console.log('This is our changeTodo():');
+todoList1.changeTodo(0, 'changed'); // My todos: [ 'changed', 'item 2', 'item 3', 'new todo' ]
+console.log('This is our deleteTodo():');
+todoList1.deleteTodo(0, 1); // My todos: [ 'item 2', 'item 3', 'new todo' ]
+console.log('-----------------------');
+console.log('-----------------------');
+
+// using function constructor
+function TodoList() {
+  this.todos = ['item 1', 'item 2', 'item 3'];
+}
+TodoList.prototype.displayTodos = function() {
+  console.log('My todos:', this.todos);
+};
+TodoList.prototype.addTodo = function(input) {
+  this.todos.push(input);
+  this.displayTodos();
+};
+TodoList.prototype.changeTodo = function(pos, val) {
+  this.todos[pos] = val;
+  this.displayTodos();
+};
+TodoList.prototype.deleteTodo = function(start, deleteCount) {
+  this.todos.splice(start, deleteCount);
+  this.displayTodos();
+};
+
+// lets reassign it to myTodoList and inherit from TodoList
+var myTodoList = new TodoList();
+
+console.log('This is our function constructor todo list:');
+console.log('-----------------------');
+console.log('This is our displayTodos():');
+myTodoList.displayTodos(); // My todos: [ 'item 1', 'item 2', 'item 3' ]
+console.log('This is our addTodo():');
+myTodoList.addTodo('new todo'); // My todos: [ 'item 1', 'item 2', 'item 3', 'new todo' ]
+console.log('This is our changeTodo():');
+myTodoList.changeTodo(0, 'changed'); // My todos: [ 'changed', 'item 2', 'item 3', 'new todo' ]
+console.log('This is our deleteTodo():');
+myTodoList.deleteTodo(0, 1); // My todos: [ 'item 2', 'item 3', 'new todo' ]
