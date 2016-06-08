@@ -1,0 +1,15 @@
+{
+  "name": "practical-javascript",
+  "version": "1.0.0",
+  "description": "A practical way to learn javascript",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack ./js/main.js ./public/bundle.js",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
