@@ -29,7 +29,7 @@ var todoList1 = {
     this.displayTodos();
   },
   deleteTodo: function(start, deleteCount) {
-    this.todos1.splice(start, deleteCount);
+    this.todos.splice(start, deleteCount);
     this.displayTodos();
   }
 };
