@@ -3,31 +3,36 @@
  * 		- a way to group properties and methods (functions aka receipes)
  * - basic example of creating todo object
  * - showing two ways of creating objects via object literal and function constructor
+ * - Action Items:
+ * 		- it should store the todos array on an object
+ * 		- it should have a displayTodos method
+ * 		- it should have a addTodo method
+ * 		- it should have a changeTodo method
+ * 		- it should have a deleteTodo method
  */
 
 /* eslint-disable */
 'use strict';
 
-// it should store the todos array on an object
-// it should have a displayTodos method
-// it should have a addTodo method
-// it should have a changeTodo method
-// it should have a deleteTodo method
-
 // using object literal
+// it should store the todos array on an object
 var todoList1 = {
   todos1: ['item 1', 'item 2', 'item 3'],
+  // it should have a displayTodos method
   displayTodos1: function() {
     console.log('My todos:', this.todos1);
   },
+  // it should have a addTodo method
   addTodo: function(input) {
     this.todos1.push(input);
     this.displayTodos1();
   },
+  // it should have a changeTodo method
   changeTodo: function(pos, val) {
     this.todos1[pos] = val;
     this.displayTodos1();
   },
+  // it should have a deleteTodo method
   deleteTodo: function(start, deleteCount) {
     this.todos1.splice(start, deleteCount);
     this.displayTodos1();
@@ -46,28 +51,35 @@ todoList1.deleteTodo(0, 1); // My todos: [ 'item 2', 'item 3', 'new todo' ]
 console.log('-----------------------');
 console.log('-----------------------');
 
+
+
 // using function constructor
-function TodoList() {
-  this.todos = ['item 1', 'item 2', 'item 3'];
+// it should store the todos array on an object
+function TodoList(todos) {
+  this.todos = todos;
 }
+// it should have a displayTodos method
 TodoList.prototype.displayTodos = function() {
   console.log('My todos:', this.todos);
 };
+// it should have a addTodo method
 TodoList.prototype.addTodo = function(input) {
   this.todos.push(input);
   this.displayTodos();
 };
+// it should have a changeTodo method
 TodoList.prototype.changeTodo = function(pos, val) {
   this.todos[pos] = val;
   this.displayTodos();
 };
+// it should have a deleteTodo method
 TodoList.prototype.deleteTodo = function(start, deleteCount) {
   this.todos.splice(start, deleteCount);
   this.displayTodos();
 };
 
 // lets reassign it to myTodoList and inherit from TodoList
-var myTodoList = new TodoList();
+var myTodoList = new TodoList(['item 1', 'item 2', 'item 3']);
 
 console.log('This is our function constructor todo list:');
 console.log('-----------------------');
