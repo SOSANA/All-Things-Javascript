@@ -3,11 +3,10 @@
  *    - a receipe for creating things
  * - this is a basic example of creating todo functions
  * - Action Items:
- * 		- it should store the todos array on an object
- * 		- it should have a displayTodos method
- * 		- it should have a addTodo method
- * 		- it should have a changeTodo method
- * 		- it should have a deleteTodo method
+ * 		[X] it should have a function to display todos
+ * 		[X] it should have a function to add todos
+ * 		[X] it should have a function to change todos
+ * 		[X] it should have a function to delete todos
  */
 
 /* eslint-disable */

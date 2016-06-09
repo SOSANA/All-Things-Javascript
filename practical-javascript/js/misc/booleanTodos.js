@@ -1,14 +1,12 @@
 /**
- * - objects:
- * 		- a way to group properties and methods (functions aka receipes)
+ * - boolean:
+ * 		- true or false
  * - basic example of creating todo object
  * - showing two ways of creating objects via object literal and function constructor
  * - Action Items:
- * 		[X] it should store the todos array on an object
- * 		[X] it should have a displayTodos method
- * 		[X] it should have a addTodo method
- * 		[X] it should have a changeTodo method
- * 		[X] it should have a deleteTodo method
+ * 		[ ] todoList.addTodo should add objects
+ * 		[ ] todoList.changeTodo should change the todoText property
+ * 		[ ] todoList.toggleCompleted should change the completed property
  */
 
 /* eslint-disable */
