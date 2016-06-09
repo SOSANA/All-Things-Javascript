@@ -35,12 +35,17 @@ var todoList1 = {
 };
 console.log('This is our object Literal todo list:');
 console.log('-----------------------');
-console.log('This is our displayTodos():');
-todoList1.displayTodos(['item 1', 'item 2', 'item 3']); // My todos: [ 'item 1', 'item 2', 'item 3' ]
 console.log('This is our addTodo():');
-todoList1.addTodo('new todo'); // My todos: [ 'item 1', 'item 2', 'item 3', 'new todo' ]
+todoList1.addTodo('item 1'); // My todos: [ { todoText: 'new todo', completed: false } ]
+todoList1.addTodo('item 2'); // My todos: [ { todoText: 'item 1', completed: false }, { todoText: 'item 2', completed: false } ]
+todoList1.addTodo('item 3'); // My todos: [ { todoText: 'item 1', completed: false }, { todoText: 'item 2', completed: false }, ... ]
+console.log('-----------------------');
+console.log('This is our displayTodos():');
+todoList1.displayTodos(); //
+console.log('-----------------------');
 console.log('This is our changeTodo():');
 todoList1.changeTodo(0, 'changed'); // My todos: [ 'changed', 'item 2', 'item 3', 'new todo' ]
+console.log('-----------------------');
 console.log('This is our deleteTodo():');
 todoList1.deleteTodo(0, 1); // My todos: [ 'item 2', 'item 3', 'new todo' ]
 console.log('-----------------------');
