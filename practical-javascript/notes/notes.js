@@ -11,4 +11,14 @@
  * 		   [X] it should have a addTodo method
  * 		   [X] it should have a changeTodo method
  * 		   [X] it should have a deleteTodo method
+ *
+ * Javascript data types:
+ * 	- Objects (can be as complex as you want)
+ * 	 	- {} // todoList, arrays, functions
+ * 	- Primitives (building blocks)
+ * 		- String    // 'look at my srting'
+ * 		- Number    // 1, 2, 3
+ * 		- Boolean   // true, false
+ * 		- Undefined // value that hasn't been set
+ * 		- Null      // 'nothing'
  */
