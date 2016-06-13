@@ -2,8 +2,8 @@
  * - Thinking In Code:
  * 		- thinking about the .toggleAll method with Todos
  * - Action Items:
- * 		[ ] .toggleAll: if everything's true, make everything false
- * 		[ ] .toggleAll: Otherwise, make everything true
+ * 		[X] .toggleAll: if everything's true, make everything false
+ * 		[X] .toggleAll: Otherwise, make everything true
  */
 
 /* eslint-disable */
@@ -20,7 +20,7 @@ var todoList1 = {
       console.log('My Todos:');
       for (var i = 0; i < ArrayLength; i++) {
         if (this.todos[i].completed === true) {
-          console.log('[X]', this.todos[i].completed);
+          console.log('[X]', this.todos[i].todoText);
         } else {
             console.log('[ ]', this.todos[i].todoText);
         }
@@ -60,7 +60,13 @@ var todoList1 = {
       for (var j = 0; j < totalTodos; j++) {
         this.todos[j].completed = false;
       }
+      // otherwise make everything true
+    } else {
+      for (var k = 0; k < totalTodos; k++) {
+        this.todos[k].completed = true;
+      }
     }
+
     this.displayTodos();
   },
   deleteTodo: function(start, deleteCount) {
@@ -70,17 +76,11 @@ var todoList1 = {
 };
 console.log('Using a Object Literal Todo List:');
 console.log('-----------------------');
-console.log('This is our empty displayTodos() array:');
-todoList1.displayTodos();
-console.log('-----------------------');
 console.log('This is our addTodo():');
 // adding new todos
 todoList1.addTodo('first');
 todoList1.addTodo('second');
 todoList1.addTodo('third');
-console.log('-----------------------');
-console.log('This is our displayTodos():');
-todoList1.displayTodos();
 console.log('-----------------------');
 // toggling all our todos to completed
 console.log('This is our toggleCompleted() turned on:');
@@ -89,7 +89,16 @@ todoList1.toggleCompleted(1);
 todoList1.toggleCompleted(2);
 console.log('-----------------------');
 // turns all todos false if true
-console.log('This is our toggleAll():');
+console.log('This is our toggleAll() if all Todos are true make everything false:');
+todoList1.toggleAll();
+console.log('This is our toggleAll() if all Todos are false make everything true:');
+todoList1.toggleAll();
+console.log('This is our toggleAll() if all Todos are true make everything false:');
+todoList1.toggleAll();
+console.log('-----------------------');
+console.log('if one or more completed toggleCompleted() will turn all to true:');
+todoList1.toggleCompleted(0);
+todoList1.toggleCompleted(1);
 todoList1.toggleAll();
 console.log('-----------------------');
 console.log('-----------------------');
@@ -108,7 +117,7 @@ TodoList.prototype.displayTodos = function() {
     console.log('My Todos:');
     for (var i = 0; i < ArrayLength; i++) {
       if (this.todos[i].completed === true) {
-        console.log('[X]', this.todos[i].completed);
+        console.log('[X]', this.todos[i].todoText);
       } else {
           console.log('[ ]', this.todos[i].todoText);
       }
@@ -149,7 +158,13 @@ TodoList.prototype.toggleAll = function() {
     for (var j = 0; j < totalTodos; j++) {
       this.todos[j].completed = false;
     }
+    // otherwise make everything true
+  } else {
+    for (var k = 0; k < totalTodos; k++) {
+      this.todos[k].completed = true;
+    }
   }
+
   this.displayTodos();
 };
 TodoList.prototype.deleteTodo = function(start, deleteCount) {
@@ -161,17 +176,11 @@ var myTodoList = new TodoList();
 
 console.log('Using a Function Constructor Todo List:');
 console.log('-----------------------');
-console.log('This is our empty displayTodos() array:');
-myTodoList.displayTodos();
-console.log('-----------------------');
 // adding new todos
 console.log('This is our addTodo():');
 myTodoList.addTodo('first');
 myTodoList.addTodo('second');
 myTodoList.addTodo('third');
-console.log('-----------------------');
-console.log('This is our displayTodos():');
-myTodoList.displayTodos();
 console.log('-----------------------');
 // toggling all our todos to completed
 console.log('This is our toggleCompleted() turned on:');
@@ -180,5 +189,16 @@ myTodoList.toggleCompleted(1);
 myTodoList.toggleCompleted(2);
 console.log('-----------------------');
 // turns all todos false if true
-console.log('This is our toggleAll():');
+console.log('This is our toggleAll() if all Todos are true make everything false:');
 myTodoList.toggleAll();
+console.log('This is our toggleAll() if all Todos are false make everything true:');
+myTodoList.toggleAll();
+console.log('This is our toggleAll() if all Todos are true make everything false:');
+myTodoList.toggleAll();
+console.log('-----------------------');
+console.log('if one or more completed toggleCompleted() will turn all to true:');
+myTodoList.toggleCompleted(0);
+myTodoList.toggleCompleted(1);
+myTodoList.toggleAll();
+console.log('-----------------------');
+console.log('-----------------------');
