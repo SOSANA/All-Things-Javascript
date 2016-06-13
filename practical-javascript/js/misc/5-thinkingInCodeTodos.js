@@ -43,6 +43,26 @@ var todoList1 = {
     todo.completed = !todo.completed;
     this.displayTodos();
   },
+  toggleAll: function() {
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+
+    // get number of commpleted todos
+    for (var i = 0; i < totalTodos; i++) {
+      if (this.todos[i].completed === true) {
+        completedTodos++;
+      }
+    }
+
+    // if everything's true, make everything false
+    if (completedTodos === totalTodos) {
+      // make everything false
+      for (var j = 0; j < totalTodos; j++) {
+        this.todos[j].completed = false;
+      }
+    }
+    this.displayTodos();
+  },
   deleteTodo: function(start, deleteCount) {
     this.todos.splice(start, deleteCount);
     this.displayTodos();
@@ -74,6 +94,9 @@ console.log('-----------------------');
 // first
 // second
 // third
+console.log('This is our toggleAll():');
+todoList1.toggleAll();
+console.log('-----------------------');
 console.log('This is our toggleCompleted() turned on:');
 todoList1.toggleCompleted(1);
 console.log('This is our toggleCompleted() turned off:');
