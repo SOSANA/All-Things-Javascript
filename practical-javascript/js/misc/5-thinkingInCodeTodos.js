@@ -71,36 +71,26 @@ var todoList1 = {
 console.log('Using a Object Literal Todo List:');
 console.log('-----------------------');
 console.log('This is our empty displayTodos() array:');
-todoList1.displayTodos(); // Your todo list is empty!
+todoList1.displayTodos();
 console.log('-----------------------');
 console.log('This is our addTodo():');
+// adding new todos
 todoList1.addTodo('first');
-// My Todos:
-// first
 todoList1.addTodo('second');
-// My Todos:
-// first
-// second
 todoList1.addTodo('third');
-// My Todos:
-// first
-// second
-// third
 console.log('-----------------------');
 console.log('This is our displayTodos():');
 todoList1.displayTodos();
 console.log('-----------------------');
-// My Todos:
-// first
-// second
-// third
+// toggling all our todos to completed
+console.log('This is our toggleCompleted() turned on:');
+todoList1.toggleCompleted(0);
+todoList1.toggleCompleted(1);
+todoList1.toggleCompleted(2);
+console.log('-----------------------');
+// turns all todos false if true
 console.log('This is our toggleAll():');
 todoList1.toggleAll();
-console.log('-----------------------');
-console.log('This is our toggleCompleted() turned on:');
-todoList1.toggleCompleted(1);
-console.log('This is our toggleCompleted() turned off:');
-todoList1.toggleCompleted(1);
 console.log('-----------------------');
 console.log('-----------------------');
 
@@ -142,6 +132,26 @@ TodoList.prototype.toggleCompleted = function(pos) {
   todo.completed = !todo.completed;
   this.displayTodos();
 };
+TodoList.prototype.toggleAll = function() {
+  var totalTodos = this.todos.length;
+  var completedTodos = 0;
+
+  // get number of commpleted todos
+  for (var i = 0; i < totalTodos; i++) {
+    if (this.todos[i].completed === true) {
+      completedTodos++;
+    }
+  }
+
+  // if everything's true, make everything false
+  if (completedTodos === totalTodos) {
+    // make everything false
+    for (var j = 0; j < totalTodos; j++) {
+      this.todos[j].completed = false;
+    }
+  }
+  this.displayTodos();
+};
 TodoList.prototype.deleteTodo = function(start, deleteCount) {
   this.todos.splice(start, deleteCount);
   this.displayTodos();
@@ -152,30 +162,23 @@ var myTodoList = new TodoList();
 console.log('Using a Function Constructor Todo List:');
 console.log('-----------------------');
 console.log('This is our empty displayTodos() array:');
-myTodoList.displayTodos(); // Your todo list is empty!
+myTodoList.displayTodos();
 console.log('-----------------------');
+// adding new todos
 console.log('This is our addTodo():');
 myTodoList.addTodo('first');
-// My Todos:
-// first
 myTodoList.addTodo('second');
-// My Todos:
-// first
-// second
 myTodoList.addTodo('third');
-// My Todos:
-// first
-// second
-// third
 console.log('-----------------------');
 console.log('This is our displayTodos():');
 myTodoList.displayTodos();
 console.log('-----------------------');
-// My Todos:
-// first
-// second
-// third
+// toggling all our todos to completed
 console.log('This is our toggleCompleted() turned on:');
+myTodoList.toggleCompleted(0);
 myTodoList.toggleCompleted(1);
-console.log('This is our toggleCompleted() turned off:');
-myTodoList.toggleCompleted(1);
+myTodoList.toggleCompleted(2);
+console.log('-----------------------');
+// turns all todos false if true
+console.log('This is our toggleAll():');
+myTodoList.toggleAll();
