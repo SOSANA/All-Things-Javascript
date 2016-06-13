@@ -21,4 +21,8 @@
  * 		- Boolean   // true, false
  * 		- Undefined // value that hasn't been set
  * 		- Null      // 'nothing'
+ *  - object comparisions completely different than compairing Primitives
+ *  	- when compairing objects in js the are referred 'Object references' that hold
+ *  		memory address for every object created
+ *  	- ex: ./objectComparisons.png
  */
