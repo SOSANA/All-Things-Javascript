@@ -22,7 +22,7 @@ var todoList1 = {
       console.log('My Todos:');
       for (var i = 0; i < ArrayLength; i++) {
         if (this.todos[i].completed === true) {
-          console.log('[X]', this.todos[i].completed);
+          console.log('[X]', this.todos[i].todoText);
         } else {
             console.log('[ ]', this.todos[i].todoText);
         }
@@ -97,7 +97,7 @@ TodoList.prototype.displayTodos = function() {
     console.log('My Todos:');
     for (var i = 0; i < ArrayLength; i++) {
       if (this.todos[i].completed === true) {
-        console.log('[X]', this.todos[i].completed);
+        console.log('[X]', this.todos[i].todoText);
       } else {
           console.log('[ ]', this.todos[i].todoText);
       }
