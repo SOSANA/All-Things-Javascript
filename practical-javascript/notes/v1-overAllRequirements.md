@@ -1,6 +1,6 @@
 # v1.0.0  **Requirements**
 
-##### This is the list of tasks we want to complete for our app:
+##### This a high level view of our overall tasks we want to complete for our app:
 
 - [ ] It should have a place to store todos
 - [ ] It should have a way to display todos
