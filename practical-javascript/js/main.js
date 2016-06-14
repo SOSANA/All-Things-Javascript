@@ -1,19 +1,7 @@
 /* eslint-disable */
 'use strict';
 
-/**
- * - Thinking In Code:
- * 		- thinking about the .toggleAll method with Todos
- * - Action Items:
- * 		[X] .toggleAll: if everything's true, make everything false
- * 		[X] .toggleAll: Otherwise, make everything true
- */
-
-/* eslint-disable */
-'use strict';
-
-// our object literal
-var todoList1 = {
+var todoList = {
   todos: [],
   displayTodos: function() {
     var ArrayLength = this.todos.length;
@@ -50,20 +38,16 @@ var todoList1 = {
     var totalTodos = this.todos.length;
     var completedTodos = 0;
 
-    // get number of commpleted todos
     for (var i = 0; i < totalTodos; i++) {
       if (this.todos[i].completed === true) {
         completedTodos++;
       }
     }
 
-    // if everything's true, make everything false
     if (completedTodos === totalTodos) {
-      // make everything false
       for (var j = 0; j < totalTodos; j++) {
         this.todos[j].completed = false;
       }
-      // otherwise make everything true
     } else {
       for (var k = 0; k < totalTodos; k++) {
         this.todos[k].completed = true;
@@ -77,3 +61,11 @@ var todoList1 = {
     this.displayTodos();
   }
 };
+
+// get access to the display todos button
+var displayTodosButton = document.getElementById('displayTodosButton');
+
+// run displayTodos method when someone clicks the display todos button
+displayTodosButton.addEventListener('click', function() {
+  todoList.displayTodos();
+});
