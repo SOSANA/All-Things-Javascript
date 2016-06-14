@@ -62,10 +62,28 @@ var todoList = {
   }
 };
 
-// get access to the display todos button
-var displayTodosButton = document.getElementById('displayTodosButton');
+// adding event listeners
+var handlers = { // jshint ignore:line
+  displayTodos: function() {
+    todoList.displayTodos();
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+  }
+};
 
-// run displayTodos method when someone clicks the display todos button
+
+/*
+// get access to element buttons
+var displayTodosButton = document.getElementById('displayTodosButton');
+var toggleAllButton = document.getElementById('toggleAllButton');
+
+// adding event listeners
 displayTodosButton.addEventListener('click', function() {
   todoList.displayTodos();
 });
+
+toggleAllButton.addEventListener('click', function() {
+  todoList.toggleAll();
+});
+ */
