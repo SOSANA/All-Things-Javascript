@@ -2,5 +2,5 @@
 
 - [x] It should have working controls for .addTodo()
 - [x] It should have working controls for .changeTodo()
-- [ ] It should have working controls for .deleteTodo()
-- [ ] It should have working controls for .toggleCompleted()
+- [x] It should have working controls for .deleteTodo()
+- [x] It should have working controls for .toggleCompleted()
