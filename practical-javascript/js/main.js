@@ -56,8 +56,8 @@ var todoList = {
 
     this.displayTodos();
   },
-  deleteTodo: function(start, deleteCount) {
-    this.todos.splice(start, deleteCount);
+  deleteTodo: function(pos) {
+    this.todos.splice(pos, 1);
     this.displayTodos();
   }
 };
@@ -66,9 +66,6 @@ var todoList = {
 var handlers = { // jshint ignore:line
   displayTodos: function() {
     todoList.displayTodos();
-  },
-  toggleAll: function() {
-    todoList.toggleAll();
   },
   addTodo: function() {
     // get access to addTodoTextInput element
@@ -82,13 +79,25 @@ var handlers = { // jshint ignore:line
     // get access to elements
     var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
     var changeTodoTextInput = document.getElementById('changeTodoTextInput');
-    // apply input values, remember value property turns input into strings
+    // note how we add valueAsNumber for our attribute type
     todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
     // clears input field after we click button
     changeTodoPositionInput.value = '';
     changeTodoTextInput.value = '';
+  },
+  toggleCompleted: function() {
+    var toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
+    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput.value = '';
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+  },
+  deleteTodo: function() {
+    var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
+    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+    deleteTodoPositionInput.value = '';
   }
-
 };
 
 
