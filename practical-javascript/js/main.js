@@ -69,7 +69,26 @@ var handlers = { // jshint ignore:line
   },
   toggleAll: function() {
     todoList.toggleAll();
+  },
+  addTodo: function() {
+    // get access to addTodoTextInput element
+    var addTodoTextInput = document.getElementById('addTodoTextInput');
+    // applys input value to our todoList
+    todoList.addTodo(addTodoTextInput.value);
+    // clears input field after we click button
+    addTodoTextInput.value = '';
+  },
+  changeTodo: function() {
+    // get access to elements
+    var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
+    var changeTodoTextInput = document.getElementById('changeTodoTextInput');
+    // apply input values, remember value property turns input into strings
+    todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+    // clears input field after we click button
+    changeTodoPositionInput.value = '';
+    changeTodoTextInput.value = '';
   }
+
 };
 
 
