@@ -7,8 +7,22 @@
   </head>
   <body>
     <h1>Todo List</h1>
-    <button onclick="handlers.displayTodos()">Display Todos</button>
-    <button onclick="handlers.toggleAll()">Toggle All</button>
+
+    <div>
+      <button onclick="handlers.displayTodos()">Display Todos</button>
+      <button onclick="handlers.toggleAll()">Toggle All</button>
+    </div>
+      <br>
+    <div>
+      <button onclick="handlers.addTodo()">Add Todo</button>
+      <input type="text" id="addTodoTextInput">
+    </div>
+      <br>
+    <div>
+      <button onclick="handlers.changeTodo()">Change Todo</button>
+      <input id="changeTodoPositionInput" type="number">
+      <input id="changeTodoTextInput" type="text">
+    </div>
 
     <script type="text/javascript" src="main.js"></script>
     <!-- <script type="text/javascript" src="bundle.js"></script> -->
