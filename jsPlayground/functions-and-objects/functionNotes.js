@@ -184,6 +184,8 @@
  *  - ex: refer to .../d6-function-expressions
  *
  * Higher-order functions:
+ *  - functions that accept other functions
+ *  - enhance the behavior of other functions
  * 	- Functions that operate on other functions, either by taking them as arguments or by returning them
  * 	- If you have already accepted the fact that functions are regular values, there is nothing
  * 		particularly remarkable about the fact that such functions exist. The term comes from mathematics,
