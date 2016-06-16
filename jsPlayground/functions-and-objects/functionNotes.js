@@ -41,6 +41,7 @@
  *  - a function you give to another function, to be run when the other function is finished
  *  - so the function you call (ex: invoke), 'calls back' by calling the function you gave it when it
  *    finishes
+ *  - the functions that are passed into higher order functions
  *
  * Classical Vs Prototypal Inheritance:
  *  - Inheritance
