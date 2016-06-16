@@ -64,6 +64,6 @@
 
 ## v9.0.0  **Requirements**
 
-- [ ] There should be an li element for every todo
-- [ ] Each li element should contain .todoText
-- [ ] Each li element should show .completed
+- [x] There should be an li element for every todo
+- [x] Each li element should contain .todoText
+- [x] Each li element should show .completed
