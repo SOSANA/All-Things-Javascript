@@ -25,4 +25,26 @@
  *  	- when compairing objects in js the are referred 'Object references' that hold
  *  		memory address for every object created
  *  	- ex: ./objectComparisons.png
+ *
+ * Debugging:
+ *  Break Points:
+ * 	 - several ways to add break points
+ * 	 	 - manually add debugger; in your code
+ * 	 	 - using break points in dev tools
+ *   - can 'pause' your program at a perticular point in your code and allows you to step through
+ *   	 it line by line to have a deeper understanding of what is happening
+ *   - this 'pause' is called your 'break points' because it stops your code at that moment
+ *  DOM Break Points:
+ *   - can add 'dom break points' by right clicking on elements and viewing source, it will apply
+ *   	 a blue dot indicating your break point. You can apply three types of break points from the
+ *  	 parent element:
+ *  	 - subtree modifications: this will break when any child element is added, removed, or
+ *   		 moved ex: li
+ *  	 - attributes modifications: if an attribute on this element changes it will break there
+ *  		 ex: id changes
+ *  	 - node removal: the program will break when an element is removed ex: ul
+ *  Event Listener Break Points:
+ *   - another way to add break points in your program is by listening for certain events by
+ *   	 clicking on the 'Event Listener Break Points' tab in your dev tools and selecting the type
+ *   	 of events ex: Mouse/click
  */
