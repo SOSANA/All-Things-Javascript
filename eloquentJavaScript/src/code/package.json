@@ -9,7 +9,7 @@
     "url": "git://github.com/marijnh/Eloquent-JavaScript.git"
   },
   "dependencies": {
-    "acorn": "0.3",
+    "acorn": "7.1",
     "codemirror": "4",
     "jszip": "^2.5.0",
     "uglify-js": "2"
